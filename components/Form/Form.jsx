@@ -15,50 +15,51 @@ const Form = () => {
 }
 
 return (
-  <div className={style.flexboxContainer}>
+  <div className={style.flexContainer}>
     <form className={style.eventform} onSubmit={handleSubmit}>
 
-      <div className={style.box}>
-        <input 
-          type="text" 
-          required 
-          value={title}
-          placeholder="Evenemangets namn"
-          name="name"
-          onChange={(e) => setTitle(e.target.value)}
-        />
+      <input 
+        className={style.eventName}
+        type="text" 
+        required 
+        value={title}
+        placeholder="Evenemangets namn"
+        name="name"
+        onChange={(e) => setTitle(e.target.value)}
+      />
 
-        <select
-        className={style.subject}
-          value={category}
-          required
-          onChange={(e) => setCategory(e.target.value)}
-        >
-          <option label="Välj kategori"></option>
-          <option value="konsert">Konsert</option>
-          <option value="quiz">Quiz</option>
-          <option value="mat&dryck">Mat & Dryck</option>
-          <option value="kultur&livsstil">Kultur & Livsstil</option>
-          <option value="guider">Guider</option>
-          <option value="sport&fritid">Sport & Fritid</option>
-          <option value="konst&hantverk">Konst & hantverk</option>
-          <option value="hälsa&skönhet">Hälsa & Skönhet</option>
-        </select>
+      <select
+      className={style.subject}
+        value={category}
+        required
+        onChange={(e) => setCategory(e.target.value)}
+      >
+        <option label="Välj kategori"></option>
+        <option value="konsert">Konsert</option>
+        <option value="quiz">Quiz</option>
+        <option value="mat&dryck">Mat & Dryck</option>
+        <option value="kultur&livsstil">Kultur & Livsstil</option>
+        <option value="guider">Guider</option>
+        <option value="sport&fritid">Sport & Fritid</option>
+        <option value="konst&hantverk">Konst & hantverk</option>
+        <option value="hälsa&skönhet">Hälsa & Skönhet</option>
+      </select>
 
-        <div className={style.inputDateTime}>
-          <label htmlFor="appt">Tid:</label>
-          <input type="time" id="appt" name="appt"></input>
+      <div className={style.inputDateTime}>
+        <label htmlFor="appt">Tid:</label>
+        <input type="time" id="appt" name="appt"></input>
 
-          <label htmlFor="date">Datum:</label>
-          <input type="date" id="date" name="date"></input>
-        </div>
+        <label htmlFor="date">Datum:</label>
+        <input type="date" id="date" name="date"></input>
       </div>
+      
       <div className={style.box}>
-          <SvgFormBackground className={style.backImg}/>
+          <SvgFormBackground className="back-img"/>
         <textarea
+          className={style.description}
           required
           value={body}
-          rows={10}
+          rows={5}
           placeholder="Beskrivning"
           name="message"
           onChange={(e) => setBody(e.target.value)}
