@@ -17,8 +17,8 @@ export default function Home() {
       <main className={styles.main}>
       
       <Eventbutton/>
-        {/* <Topnavbar/>
-         */}
+        {/* <Topnavbar/> */}
+        
         I Blickfånget
 
         <Footer/>

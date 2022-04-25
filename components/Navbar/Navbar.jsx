@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import './Navbar.css'
+import style from './Navbar.module.css'
 
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false)
@@ -27,22 +27,22 @@ export default function Navbar() {
   return (
     <nav>
       {(toggleMenu || screenWidth > 960) && (
-      <ul className="list">
-      <li className="items">Konsert</li>
-      <li className="items">Quiz</li>
-      <li className="items">Mat & Dryck</li>
-      <li className="items">Uteliv</li>
-      <li className="items">Kultur & Livsstil</li>
-      <li className="items">Guider</li>
-      <li className="items">Sport & Fritid</li>
-      <li className="items">Konst & Hantverk</li>
-      <li className="items">Hälsa & Skönhet</li>
+      <ul className={style.list}>
+      <li className={style.item}>Konsert</li>
+      <li className={style.item}>Quiz</li>
+      <li className={style.item}>Mat & Dryck</li>
+      <li className={style.item}>Uteliv</li>
+      <li className={style.item}>Kultur & Livsstil</li>
+      <li className={style.item}>Guider</li>
+      <li className={style.item}>Sport & Fritid</li>
+      <li className={style.item}>Konst & Hantverk</li>
+      <li className={style.item}>Hälsa & Skönhet</li>
     </ul>
       )}
       
-      <button onClick={toggleNav} className="btn"><span className="bar" id="bar1"></span>
-              <span className="bar"></span>
-              <span className="bar"></span></button>
+      <button onClick={toggleNav} className={style.btn}><span className={style.bar} id="bar1"></span>
+              <span className={style.bar}></span>
+              <span className={style.bar}></span></button>
     </nav>
   )
 }

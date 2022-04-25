@@ -1,5 +1,5 @@
 import React from 'react';
-import Eventbutton from './../components/Eventbutton/Eventbutton'
+import Eventbutton from '../components/Eventbutton/Eventbutton'
 
 function Profile(){
     return(

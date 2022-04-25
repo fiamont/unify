@@ -1,6 +1,6 @@
 import { useState } from "react";
 import SvgFormBackground from "../Icons/formBackground";
-import './Form.css'
+import style from './Form.module.css'
 
 const Form = () => {
   const [title, setTitle] = useState(''); //input rutan är tom från början
@@ -15,7 +15,7 @@ const Form = () => {
 }
 
 return (
-  <div className="flexbox-container">
+  <div className={style.flexboxContainer}>
     <form className="eventform" onSubmit={handleSubmit}>
 
       <div className="box">
@@ -45,7 +45,7 @@ return (
           <option value="hälsa&skönhet">Hälsa & Skönhet</option>
         </select>
 
-        <div className="input-date-time">
+        <div className="inputDateTime">
           <label for="appt">Tid:</label>
           <input type="time" id="appt" name="appt"></input>
 
@@ -54,7 +54,7 @@ return (
         </div>
       </div>
       <div className="box">
-          <SvgFormBackground className="back-img"/>
+          <SvgFormBackground className="backImg"/>
         <textarea
           required
           value={body}
@@ -63,7 +63,7 @@ return (
           name="message"
           onChange={(e) => setBody(e.target.value)}
         ></textarea>
-      <button className="submit-btn" type="submit">Skapa event</button>
+      <button className="submitBtn" type="submit">Skapa event</button>
       </div>
                      
     </form>

@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './../../styles/Eventbutton.module.css'
+import style from './Eventbutton.module.css'
 
 function Eventbutton() {
   return (
