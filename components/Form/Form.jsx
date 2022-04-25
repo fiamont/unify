@@ -46,10 +46,10 @@ return (
         </select>
 
         <div className="inputDateTime">
-          <label for="appt">Tid:</label>
+          <label htmlFor="appt">Tid:</label>
           <input type="time" id="appt" name="appt"></input>
 
-          <label for="date">Datum:</label>
+          <label htmlFor="date">Datum:</label>
           <input type="date" id="date" name="date"></input>
         </div>
       </div>
