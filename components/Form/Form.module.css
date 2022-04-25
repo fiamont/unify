@@ -11,11 +11,11 @@
   flex-direction: column;
 }
 
-.back-img {
+.backImg {
   z-index: -1;
 }
 
-.input-date-time{
+.inputDateTime{
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -25,7 +25,7 @@
   box-sizing: border-box;
 }
 @media only screen and (max-width: 600px) {
-  .input-date-time{
+  .inputDateTime{
     flex-direction: column;
   }
 }
@@ -41,7 +41,7 @@
   padding: 7px;
 }
 
-.submit-btn {
+.submitBtn {
     background-color: var(--button-primary-color);
     color: #fff;
     font-size: 1.1rem;
@@ -52,7 +52,7 @@
     margin-top: 25px;
 }
 
-input, textarea {
+/* input, textarea {
   border: 1px solid #999999;
   box-sizing: border-box;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
@@ -60,4 +60,4 @@ input, textarea {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 7px;
-}
+} */

@@ -16,9 +16,9 @@ const Form = () => {
 
 return (
   <div className={style.flexboxContainer}>
-    <form className="eventform" onSubmit={handleSubmit}>
+    <form className={style.eventform} onSubmit={handleSubmit}>
 
-      <div className="box">
+      <div className={style.box}>
         <input 
           type="text" 
           required 
@@ -29,7 +29,7 @@ return (
         />
 
         <select
-        className="subject"
+        className={style.subject}
           value={category}
           required
           onChange={(e) => setCategory(e.target.value)}
@@ -45,7 +45,7 @@ return (
           <option value="hälsa&skönhet">Hälsa & Skönhet</option>
         </select>
 
-        <div className="inputDateTime">
+        <div className={style.inputDateTime}>
           <label htmlFor="appt">Tid:</label>
           <input type="time" id="appt" name="appt"></input>
 
@@ -53,8 +53,8 @@ return (
           <input type="date" id="date" name="date"></input>
         </div>
       </div>
-      <div className="box">
-          <SvgFormBackground className="backImg"/>
+      <div className={style.box}>
+          <SvgFormBackground className={style.backImg}/>
         <textarea
           required
           value={body}
@@ -63,7 +63,7 @@ return (
           name="message"
           onChange={(e) => setBody(e.target.value)}
         ></textarea>
-      <button className="submitBtn" type="submit">Skapa event</button>
+      <button className={style.submitBtn} type="submit">Skapa event</button>
       </div>
                      
     </form>
