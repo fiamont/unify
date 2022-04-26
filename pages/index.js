@@ -6,17 +6,11 @@ import Eventbutton from '../components/Eventbutton'
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Unify</title>
-      </Head>
-
+      <Head><title>Unify</title></Head>
       <main className={styles.main}>
-      
-      <Eventbutton/>
-        
-        <h1>I Blickfånget</h1>
+      <Eventbutton/>  
+      <h1>I Blickfånget</h1>
       </main>
-
     </div>
   )
 }

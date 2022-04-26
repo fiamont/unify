@@ -14,4 +14,12 @@
     font-size: 19px;
     line-height: 7px;
     cursor: pointer;
+    
+  }
+
+  .button {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    padding-right: 10px;
   }

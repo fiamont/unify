@@ -39,3 +39,8 @@ h1 {
 button {
   font-family: var(--default-font-family);
 }
+
+hr {
+  width: 97%;
+  border: 1px solid #000000;
+}
