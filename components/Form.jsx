@@ -1,6 +1,6 @@
 import { useState } from "react";
-import SvgFormBackground from "../Icons/formBackground";
-import style from './Form.module.css'
+import SvgFormBackground from "./Icons/formBackground";
+import style from './../styles/Form.module.css'
 
 const Form = () => {
   const [title, setTitle] = useState(''); //input rutan är tom från början

@@ -1,8 +1,8 @@
-import style from './Topnavbar.module.css'
-import Navbar from "../Navbar/Navbar"
-import SearchIcon from "../Icons/searchIcon"
-import ProfileIcon from "../Icons/profileIcon"
-import SvgUnifyLogo from '../Icons/unifyLogo'
+import style from './../styles/Topnavbar.module.css'
+import Navbar from "./Navbar"
+import SearchIcon from "./Icons/searchIcon"
+import ProfileIcon from "./Icons/profileIcon"
+import SvgUnifyLogo from './Icons/unifyLogo'
 
 function Topnavbar () {
     return(
@@ -15,7 +15,7 @@ function Topnavbar () {
                 </div>
             </div>
             <div className={style.navbar}>
-                <Navbar />
+               {/*  <Navbar /> */}
             </div>
             <div>
                 <hr />
