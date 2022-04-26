@@ -26,6 +26,15 @@
     padding: 0rem  1rem;
     background-color: #fff;
   }
+
+  .icons {
+    display: flex;
+    flex-direction:row;
+    gap: 1rem;
+    position: absolute;
+    top: 6.8rem;
+    right: 1rem;
+  }
   
   @media screen and (min-width: 960px) {
     .navbar {
@@ -33,9 +42,11 @@
         justify-content: flex-start;
         flex-direction: row;
     }
+
+    .icons{
+        top: 2.5rem;
+        right: 2rem;
+    }
   }
 
-.Icons {
-  padding-right: 40px;
-  padding-top: 90px;
-}
+

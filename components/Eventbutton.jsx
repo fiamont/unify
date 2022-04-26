@@ -4,7 +4,7 @@ import style from './../styles/Eventbutton.module.css'
 
 function Eventbutton() {
   return (
-    <div className='logo'>
+    <div>
       <Link href="/eventform" passHref><button className={style.eventbtn}> Skapa event</button></Link>
     </div>
   )

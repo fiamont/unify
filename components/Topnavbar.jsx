@@ -9,7 +9,7 @@ function Topnavbar () {
         <div className={style.topnavbar}>
             <div className={style.logo}>
             <SvgUnifyLogo/>
-            <div className={style.Icons}>
+            <div className={style.icons}>
                     <SearchIcon/>
                     <ProfileIcon/>
                 </div>
