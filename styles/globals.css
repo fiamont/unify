@@ -44,3 +44,10 @@ hr {
   width: 97%;
   border: 1px solid #000000;
 }
+
+h2{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 30px;
+}

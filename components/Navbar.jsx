@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import style from './../styles/Navbar.module.css'
 import Link from 'next/link'
+import SearchIcon from "./Icons/searchIcon"
+import ProfileIcon from "./Icons/profileIcon"
 
 export default function Navbar() { 
   const [toggleMenu, setToggleMenu] = useState(false)
@@ -26,11 +28,17 @@ export default function Navbar() {
 
   return (
       <nav className={style.navbar}>
+        <div className={style.buttons}>
         <button onClick={toggleNav} className={style.hamburger}>
           <span className={style.bar1}></span>
           <span className={style.bar}></span>
           <span className={style.bar}></span>
         </button>
+        <div className={style.Icons}>
+                <SearchIcon/>
+                <ProfileIcon/>
+            </div>
+        </div>
         {(toggleMenu || screenWidth > 960) && (
         <ul className={style.navmenu}>
           <li className={style.item}><Link href='/' passHref >Konsert</Link></li>
