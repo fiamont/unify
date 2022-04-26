@@ -6,21 +6,17 @@ import SvgUnifyLogo from './Icons/unifyLogo'
 
 function Topnavbar () {
     return(
-        <div className={style.topnavbar}>
-            <div className={style.logo}>
-            <SvgUnifyLogo/>
+        <header className={style.topnavbar}>
+            <div className={style.images}>
+            <SvgUnifyLogo className={style.unify}/>
             <div className={style.Icons}>
-                    <SearchIcon/>
-                    <ProfileIcon/>
-                </div>
+                <SearchIcon/>
+                <ProfileIcon/>
             </div>
-            <div className={style.navbar}>
-               {/*  <Navbar /> */}
             </div>
-            <div>
-                <hr />
-            </div>
-        </div>
+            <Navbar className={style.navbar}/>
+            <hr />
+        </header>
     )
 }
 export default Topnavbar

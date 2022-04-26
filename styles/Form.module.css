@@ -72,7 +72,7 @@
 }
 
 .submitBtn{
-  position: absolute;
+position: relative;
 align-items: center;
 width: 330px;
 z-index: 2;

@@ -1,12 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import style from './../styles/Navbar.module.css'
+import Link from 'next/link'
 
 export default function Navbar() { 
   const [toggleMenu, setToggleMenu] = useState(false)
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-
- 
-
+  const [screenWidth, setScreenWidth] = useState()
+  
   const toggleNav = () => {
     setToggleMenu(!toggleMenu)
   }
@@ -26,25 +25,25 @@ export default function Navbar() {
   }, [])
 
   return (
-    <nav>
-      {(toggleMenu || screenWidth > 960) && (
-      <ul className={style.list}>
-      <li className={style.item}>Konsert</li>
-      <li className={style.item}>Quiz</li>
-      <li className={style.item}>Mat & Dryck</li>
-      <li className={style.item}>Uteliv</li>
-      <li className={style.item}>Kultur & Livsstil</li>
-      <li className={style.item}>Guider</li>
-      <li className={style.item}>Sport & Fritid</li>
-      <li className={style.item}>Konst & Hantverk</li>
-      <li className={style.item}>Hälsa & Skönhet</li>
-    </ul>
-      )}
-      
-      <button onClick={toggleNav} className={style.btn}><span className={style.bar} id="bar1"></span>
-              <span className={style.bar}></span>
-              <span className={style.bar}></span></button>
-    </nav>
+      <nav className={style.navbar}>
+        <button onClick={toggleNav} className={style.hamburger}>
+          <span className={style.bar1}></span>
+          <span className={style.bar}></span>
+          <span className={style.bar}></span>
+        </button>
+        {(toggleMenu || screenWidth > 960) && (
+        <ul className={style.navmenu}>
+          <li className={style.item}><Link href='/' passHref >Konsert</Link></li>
+          <li className={style.item}><Link href='/' passHref >Quiz</Link></li>
+          <li className={style.item}><Link href='/' passHref >Mat & Dryck</Link></li>
+          <li className={style.item}><Link href='/' passHref >Uteliv</Link></li>
+          <li className={style.item}><Link href='/' passHref >Kultur & Livsstil</Link></li>
+          <li className={style.item}><Link href='/' passHref >Guider</Link></li>
+          <li className={style.item}><Link href='/' passHref >Sport & Fritid</Link></li>
+          <li className={style.item}><Link href='/' passHref >Konst & Hantverk</Link></li>
+          <li className={style.item}><Link href='/' passHref >Hälsa & Skönhet</Link></li>
+        </ul> )}
+      </nav>
   )
 
 }
