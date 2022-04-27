@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Någom som vill gå på marknad?", 
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
+        "category": "Kultur & Livsstil"
+    },
+    {
+        "title": "Öl/Biljard någon?", 
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
+        "category": "Uteliv"
+    },
+    {
+        "title": "Vill någon klättra?", 
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
+        "category": "Sport & Fritid"
+    },
+    {
+        "title": "Löparkompis någon?", 
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
+        "category": "Sport & Fritid"
+    }
+]
