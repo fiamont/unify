@@ -24,3 +24,12 @@
     padding-right: 10px;
 
   }
+
+  @media screen and (min-width: 960px) {
+    .button{
+        flex-direction: row;
+        position: absolute;
+        top: 3rem;
+        right: 8rem;
+    }
+  }

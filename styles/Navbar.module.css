@@ -97,8 +97,9 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 1rem;
     }
 
     .buttons {
@@ -106,8 +107,17 @@
     }
 
     .icons{
-        top: 3.5rem;
-        right: 2rem;
+        flex-direction: row;
+        position: absolute;
+        top: -2rem;
+        right: 2.5rem;
     }
+    .hr{
+        display: none;
+    }
+    .navbar{
+        padding-left: 0;
+    }
+ 
 
 }
