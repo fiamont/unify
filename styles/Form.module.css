@@ -22,6 +22,8 @@
   border-radius: 10px;
   border: none;
   box-shadow: 1px 2px 6px #888888;
+  font-family: var(--default-font-family);
+  font-size: 20px;
 }
 
 .subject{
@@ -32,6 +34,8 @@
   box-shadow: 1px 2px 6px #888888;
   border: none;
   margin-top: 2rem;
+  font-family: var(--default-font-family);
+  font-size: 20px;
 }
 
 .inputDateTime{
@@ -69,6 +73,8 @@
   width: 340px;
   height: 140px;
   padding: 10px;
+  font-family: var(--default-font-family);
+  font-size: 20px;
 }
 
 .submitBtn{
@@ -76,7 +82,9 @@ position: relative;
 align-items: center;
 width: 330px;
 z-index: 2;
- bottom: 4rem;
+top: 0.1rem;
+bottom: 4rem;
+font-size: 20px;
 }
 
 .submitBtn:hover{
