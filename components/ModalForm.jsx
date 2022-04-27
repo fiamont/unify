@@ -72,14 +72,13 @@ const Modals = () => {
             </div> 
 
             <div className={style.box2}>
-
-            <button 
+                <button 
                 className={style.submitBtn} 
                 type="button" 
                 onClick={() => setShowModal(true)}
                 >
-            Skapa event</button>
-                </div>
+                Skapa event</button>
+            </div>
         </form>
         
         {showModal ? (
