@@ -1,0 +1,10 @@
+.rubrik {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+}
+
+.underrubriker {
+    display: flex;
+    justify-content: space-around;
+}
