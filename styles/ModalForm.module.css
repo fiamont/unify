@@ -85,6 +85,11 @@
   height: 340px;
 }
 
+.box2 {
+  display: flex;
+  justify-content: center;
+}
+
 .test {
   position: relative;
   z-index: 0;
