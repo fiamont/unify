@@ -3,9 +3,12 @@ import style from './../styles/Navbar.module.css'
 
 export default function Navbar() { 
   const [toggleMenu, setToggleMenu] = useState(false)
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-
- 
+  const [screenWidth, setScreenWidth] = useState(/* window.innerWidth */)
+  if (typeof window !== 'undefined') {
+  
+    //here `window` is available
+  }
+  
 
   const toggleNav = () => {
     setToggleMenu(!toggleMenu)

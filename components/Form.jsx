@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import SvgFormBackground from "./Icons/formBackground";
 import style from './../styles/Form.module.css'
 
@@ -7,14 +7,15 @@ const Form = () => {
   const [body, setBody] = useState('');
   const [category, setCategory] = useState('');
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const event = { title, body, category };
 
     console.log(event);
-}
+  }
 
-return (
+  return (
   <div className={style.flexContainer}>
     <form className={style.eventform} onSubmit={handleSubmit}>
 
@@ -54,7 +55,9 @@ return (
       </div>
       
       <div className={style.box}>
-          <SvgFormBackground className="back-img"/>
+        <div className={style.test}>
+          <SvgFormBackground className="backImg"/>
+        </div>
         <textarea
           className={style.description}
           required
@@ -64,12 +67,16 @@ return (
           name="message"
           onChange={(e) => setBody(e.target.value)}
         ></textarea>
-      <button className={style.submitBtn} type="submit">Skapa event</button>
-      </div>
-                     
+    
+        
+         {/*  <button className={style.submitBtn} type="submit">Skapa event</button> */}
+      </div>                  
     </form>
+
+
   </div>
+  
 );
-}
+};
  
 export default Form;
