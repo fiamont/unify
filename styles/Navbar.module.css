@@ -1,5 +1,7 @@
 .navbar {
-    padding-left: 3%;
+    padding-left: 2%;
+    margin-top: -3rem;
+    margin-bottom: -1rem;
 }
 
 .buttons {
@@ -7,7 +9,7 @@
     justify-content: space-between;
     padding-right: 3%;
     position: relative;
-    top: -3.7rem;
+    top: -1rem;
 }
 
 .hamburger {
