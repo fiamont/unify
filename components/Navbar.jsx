@@ -34,11 +34,12 @@ export default function Navbar() {
           <span className={style.bar}></span>
           <span className={style.bar}></span>
         </button>
-        <div className={style.Icons}>
+        <div className={style.icons}>
                 <SearchIcon/>
                 <ProfileIcon/>
             </div>
         </div>
+        <hr className={style.hr}></hr>
         {(toggleMenu || screenWidth > 960) && (
         <ul className={style.navmenu}>
           <li className={style.item}><Link href='/' passHref >Konsert</Link></li>

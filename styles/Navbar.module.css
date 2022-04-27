@@ -6,6 +6,8 @@
     display: flex;
     justify-content: space-between;
     padding-right: 3%;
+    position: relative;
+    top: -3.7rem;
 }
 
 .hamburger {
@@ -69,6 +71,21 @@
     color: #fff;
 }
 
+.icons {
+    display: flex;
+    flex-direction:row;
+    gap: 0.5rem;
+    position: absolute;
+    top: -0.5rem;
+    right: 1rem;
+  }
+
+ .hr{
+     position: absolute;
+     top: 8rem;
+    right: 4%;     
+ }
+
 @media screen and (min-width: 960px){
     .hamburger {
         display: none;
@@ -84,6 +101,11 @@
 
     .buttons {
         justify-content: flex-end;
+    }
+
+    .icons{
+        top: 3.5rem;
+        right: 2rem;
     }
 
 }
