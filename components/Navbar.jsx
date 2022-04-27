@@ -26,7 +26,7 @@ export default function Navbar() {
   }, [])
 
   return (
-    <nav>
+    <nav className={style.nav}>
       {(toggleMenu || screenWidth > 960) && (
       <ul className={style.list}>
       <li className={style.item}>Konsert</li>

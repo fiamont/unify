@@ -18,7 +18,7 @@ function Topnavbar () {
                 <Navbar />
             </div>
             <div>
-                <hr />
+                <hr className={style.hr}/>
             </div>
         </div>
     )
