@@ -126,7 +126,7 @@ const Modals = () => {
                 rows={5}
                 name="message"
                 ></textarea>
-                <button className={style.submitBtn} type="submit">Skapa event</button>
+                <button className={style.submitBtn} type="submit">Skapa Event</button>
                 <button onClick={() => setShowModal(false)}>Close</button>
                 </div> 
                 </form>
