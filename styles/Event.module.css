@@ -1,0 +1,5 @@
+.event{
+    border: 2px solid #4C2F11;
+    display: flex;
+    flex-direction: column;
+}
