@@ -5,7 +5,7 @@ import style from '../styles/Event.module.css'
 
 function Event(){
  
-    function category (category) {
+    function outerBoarder (category) {
 
         let categoryClassName = "";
 
@@ -33,12 +33,40 @@ function Event(){
 
     }
 
+    function innerBoarder (category) {
+
+        let categoryClassName = "";
+
+        if(category == "Uteliv" || category == "Konsert" || category == "Quiz") {
+            categoryClassName = style.innerBoarderUtelivKonsertQuiz;
+        }
+        else if(category == "Kultur & Livsstil"){
+            categoryClassName = style.innerBoarderKulturLivstil;
+        }
+        else if(category == "Sport & Fritid" || category == "Guider"){
+            categoryClassName = style.innerBoarderSportFritidGuider;
+        }
+        else if(category == "Mat & Dryck"){
+            categoryClassName = style.innerBoarderMatDryck;
+        }
+        else if(category == "Konst & Hantverk"){
+            categoryClassName = style.innerBoarderKonstHantverk;
+        }else if(category == "Hälsa & Skönhet"){
+            categoryClassName = style.innerBoarderHalsaSkonhet;
+        }
+        else
+        categoryClassName = style.innerBoarderDefault;
+
+        return categoryClassName;
+
+    }
+
     return(
         
         <div className={style.container}>
             {listOfEvents.map((listOfEvents) =>(
-                <div key={listOfEvents.title} className={category(listOfEvents.category)}>
-                    <div className={style.borderbox}>
+                <div key={listOfEvents.title} className={outerBoarder(listOfEvents.category)}>
+                    <div className={innerBoarder(listOfEvents.category)}>
                         <div className={style.eventimg}>
                             <div className={style.event}>
                                 <p>{listOfEvents.title}</p>

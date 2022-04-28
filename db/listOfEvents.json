@@ -1,21 +1,11 @@
 [
     {
-        "title": "Någon som vill gå på marknad?", 
-        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
-        "category": "Kultur & Livsstil"
-    },
-    {
-        "title": "Öl/Biljard någon?", 
+        "title": "ÖL / BILJARDEN NÅGON?", 
         "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
         "category": "Uteliv"
     },
     {
-        "title": "PREMIÄR AV NYA BATMAN FILMEN", 
-        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
-        "category": "Kultur & Livsstil"
-    },
-    {
-        "title": "Löparkompis någon?", 
+        "title": "LÖPARKOMPIS NÅGON?", 
         "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
         "category": "Sport & Fritid"
     },
@@ -23,6 +13,11 @@
         "title": "NÅGON SOM VILL PÅ MATMARKNAD?", 
         "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
         "category": "Mat & Dryck"
+    },
+    {
+        "title": "PREMIÄR AV NYA BATMAN FILMEN", 
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
+        "category": "Kultur & Livsstil"
     },
     {
         "title": "GÅ PÅ ANSIKTSBEHANDLING", 

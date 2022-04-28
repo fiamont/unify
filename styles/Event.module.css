@@ -33,12 +33,11 @@
 }
 
 
-.borderbox{
+.innerBoarderUtelivKonsertQuiz, .innerBoarderKulturLivstil, .innerBoarderSportFritidGuider, .innerBoarderMatDryck, .innerBoarderKonstHantverk, .innerBoarderHalsaSkonhet, .innerBoarderDefault{
     width: 98%;
     height: 340px;
     margin: 10px;
     padding: 5px;
-    background: #FFC130;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
@@ -46,6 +45,37 @@
     justify-content: center;
     align-items:flex-end
 }
+.innerBoarderUtelivKonsertQuiz{
+    background: #FFC130;
+} 
+.innerBoarderKulturLivstil {
+    background: #416AD2;
+}
+.innerBoarderSportFritidGuider{
+    background: #D24341;
+}
+.innerBoarderMatDryck{
+    background: #40A593;
+}
+ .innerBoarderKonstHantverk{
+    background: #FF9211;
+ }
+ .innerBoarderHalsaSkonhet {
+    background: #B36D8F;
+ }
+ .innerBoarderDefault{
+    background: rgb(99, 99, 99);
+ }
+
+
+
+
+
+
+
+
+
+
 .eventimg{
     width: 98%;
     height: 315px;
