@@ -97,7 +97,7 @@ function Event(){
                     <div className={innerBoarder(listOfEvents.category)}>
                         <div className={style.eventimg}>
                             <div className={category(listOfEvents.category)}>
-                                <p>{listOfEvents.category}</p>
+                                <p className={style.categoryText}>{listOfEvents.category}</p>
                             </div>
                             <div className={style.event}>
                                 <p className={style.title}>{listOfEvents.title}</p>
