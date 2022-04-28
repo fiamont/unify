@@ -1,0 +1,34 @@
+[
+    {
+        "title": "ÖL / BILJARDEN NÅGON?", 
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
+        "category": "Uteliv"
+    },
+    {
+        "title": "LÖPARKOMPIS NÅGON?", 
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
+        "category": "Sport & Fritid"
+    },
+    {
+        "title": "NÅGON SOM VILL PÅ MATMARKNAD?", 
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
+        "category": "Mat & Dryck"
+    },
+    {
+        "title": "PREMIÄR AV NYA BATMAN FILMEN", 
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
+        "category": "Kultur & Livsstil"
+    },
+    {
+        "title": "GÅ PÅ ANSIKTSBEHANDLING", 
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
+        "category": "Hälsa & Skönhet"
+    },
+    {
+        "title": "BÖRJA LÄRA SIG DREJA", 
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
+        "category": "Konst & Hantverk"
+    }
+
+    
+]
