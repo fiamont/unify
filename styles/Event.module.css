@@ -1,5 +1,6 @@
 
 .title{
+    color: var(--heading-color);
     font-family: var(--heading-font-family);
     font-style: normal;
     font-weight: 400;
