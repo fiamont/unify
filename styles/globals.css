@@ -51,3 +51,12 @@ h2{
   font-size: 35px;
   line-height: 30px;
 }
+
+.not-found {
+  text-align: center;
+}
+
+.not-found a{
+  color: #4979ff;
+  text-decoration: underline;
+}

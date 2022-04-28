@@ -12,7 +12,6 @@
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,7 +36,6 @@
 }
 
 .eventform{
-  border: 2px solid #4C2F11;
   background-color: #fff;
   padding: 10px;
   border-radius: 10px;
@@ -83,6 +81,11 @@
   align-items: center;
   width: 350px;
   height: 340px;
+}
+
+.box2 {
+  display: flex;
+  justify-content: center;
 }
 
 .test {
