@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import style from './../styles/ModalForm.module.css'
 import SvgFormBackground from './Icons/formBackground';
+import { useRouter } from 'next/router';
 
 const Modals = () => {
     const [title, setTitle] = useState(''); //input rutan är tom från början
@@ -9,32 +10,80 @@ const Modals = () => {
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
 
+    //Validation
+    const [titleErr, setTitleErr] = useState({});
+    const [bodyErr, setBodyErr] = useState({});
+
+     //PopUp 
     const [showModal, setShowModal] = useState(false);
+    
+    //Timeout
+    const router = useRouter();
+
+    const onSubmit = (e) =>{
+        e.preventDefault();
+        const isValid = formValidation();
+        if(isValid){
+            //Open Popup window
+            setShowModal(true)
+ 
+        }
+    }
+
+    const formValidation = () => {
+        const titleErr = {};
+        const bodyErr = {};
+        let isValid = true;
+
+        if(title.trim().length < 5){
+            titleErr.firstNameShort = "Evenemanget måste ha ett namn på minst 5 bokstäver";
+            isValid = false
+        }
+
+        if(body.trim().length < 2){
+            bodyErr.textareaShort = "Beskriv kort om evenemanget";
+            isValid = false
+        }
+
+        setTitleErr(titleErr);
+        setBodyErr(bodyErr);
+        return isValid;
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const event = { title, category, body, time, date };
-    
+        const event = { title, category, body, time, date }; 
         console.log(event);
     }
 
+    const handleClick = () => {
+            setTimeout(() => {
+                router.push('/');
+            }, 500)
+    } 
+
   return (
-    <div className={style.flexContainer}>
-        <form className={style.eventform} onSubmit={handleSubmit}>
+    <div className={style.flexContainer} key="1">
+        <form onSubmit={onSubmit} className={style.eventform}>
             <input 
                 className={style.eventName}
                 type="text" 
-                required 
+                id="name"
                 value={title}
                 placeholder="Evenemangets namn"
                 name="name"
-                onChange={(e) => setTitle(e.target.value)}
+                onChange={(e) => {setTitle(e.target.value)}}
+                
             />
+            <br/>
+           {/*  {Object.keys(titleErr).map((key)=>{
+                return <div style={{color : "red"}}>{titleErr[key]}</div>
+            })} */}
 
             <select
                 className={style.subject}
                 value={category}
-                required
+        
                 onChange={(e) => setCategory(e.target.value)}
             >
             <option label="Välj kategori"></option>
@@ -59,23 +108,29 @@ const Modals = () => {
             <div className={style.box}>
                 <div className={style.test}>
                     <SvgFormBackground className="backImg"/>
-                </div>
+                    </div>
                 <textarea
                     className={style.description}
-                 required
+              
                     value={body}
                     rows={5}
                     placeholder="Beskrivning"
                     name="message"
                     onChange={(e) => setBody(e.target.value)}
                 ></textarea>
+                {/* {Object.keys(bodyErr).map((key)=>{
+                    return <div style={{color : "red"}}>{bodyErr[key]}</div>
+                })} */}
+                
+            
             </div> 
 
             <div className={style.box2}>
                 <button 
-                className={style.submitBtn} 
-                type="button" 
-                onClick={() => setShowModal(true)}
+                className={style.configBtn} 
+                type="submit" 
+                onClick={onSubmit}
+/*                 onClick={() => setShowModal(true)} */
                 >
                 Skapa event</button>
             </div>
@@ -88,7 +143,7 @@ const Modals = () => {
                         <input 
                             className={style.eventName}
                             type="text" 
-                            required 
+                           
                             value={title}
                             name="name"
                         />
@@ -96,7 +151,7 @@ const Modals = () => {
                         <select
                             className={style.subject}
                             value={category}
-                            required
+                         
                         >
                         <option label="Välj kategori"></option>
                         <option value="konsert">Konsert</option>
@@ -120,16 +175,18 @@ const Modals = () => {
                         <div className={style.box}>
                             <div className={style.test}>
                                 <SvgFormBackground className="backImg"/>
-                            </div>
+                                </div>
                             <textarea
                                 className={style.description}
-                                required
+                             
                                 value={body}
                                 rows={5}
                                 name="message"
                             ></textarea>
-                            <button className={style.submitBtn} type="submit">Dela</button>
-                            <button onClick={() => setShowModal(false)}>Ändra</button>
+                            <div className={style.buttonContainer}>
+                                <button className={style.submitBtn} onClick={handleClick} type="submit">Dela</button>
+                                <button className={style.cancelBtn} onClick={() => setShowModal(false)}>Ändra</button>
+                            </div>
                         </div> 
                     </form>
                 </div>
