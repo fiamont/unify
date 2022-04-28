@@ -63,7 +63,7 @@ const Modals = () => {
     } 
 
   return (
-    <div className={style.flexContainer}>
+    <div className={style.flexContainer} key="1">
         <form onSubmit={onSubmit} className={style.eventform}>
             <input 
                 className={style.eventName}
@@ -72,12 +72,13 @@ const Modals = () => {
                 value={title}
                 placeholder="Evenemangets namn"
                 name="name"
-                onChange={(e) => {setTitle(e.target.value)}}   
+                onChange={(e) => {setTitle(e.target.value)}}
+                
             />
             <br/>
-            {Object.keys(titleErr).map((key)=>{
+           {/*  {Object.keys(titleErr).map((key)=>{
                 return <div style={{color : "red"}}>{titleErr[key]}</div>
-            })}
+            })} */}
 
             <select
                 className={style.subject}
@@ -117,9 +118,9 @@ const Modals = () => {
                     name="message"
                     onChange={(e) => setBody(e.target.value)}
                 ></textarea>
-                {Object.keys(bodyErr).map((key)=>{
+                {/* {Object.keys(bodyErr).map((key)=>{
                     return <div style={{color : "red"}}>{bodyErr[key]}</div>
-                })}
+                })} */}
                 
             
             </div> 
