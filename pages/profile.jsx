@@ -1,10 +1,12 @@
 import React from 'react';
-import Eventbutton from '../components/Eventbutton'
+import ChangeButton from '../components/Buttons/ChangeButton';
+import ConcertButton from '../components/buttons/concertButton';
+
 
 function Profile(){
     return(
         <div id="profile-body">
-          <Eventbutton/>
+         <Eventbutton/> 
           <h1 id='blickf'>Mina event</h1>
       </div>
     )}
