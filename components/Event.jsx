@@ -7,15 +7,23 @@ function Event(){
    
     return(
         
-        <div >
+        <div>
+            
             {listOfEvents.map((listOfEvents) =>(
+                <div  className={style.eventbox}>
+                <div className={style.borderbox}>
+                    <div className={style.eventimg}>
                 <div className={style.event}>
                      <p>{listOfEvents.title}</p>
                      <p>{listOfEvents.body}</p>
                      <p>{listOfEvents.category}</p>
                      </div>
+                     </div>
+                     </div>
+                     </div>
 
             ) )}
+           
            
 
         </div>
