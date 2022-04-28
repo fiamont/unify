@@ -1,5 +1,4 @@
-.eventbox{
-    background: #FCD46C;
+.eventboxUtelivKonsertQuiz, .eventboxKulturLivstil, .eventboxSportFritidGuider, .eventboxMatDryck, .eventboxKonstHantverk, .eventboxHalsaSkonhet, .eventboxDefault{
    width: 100%;
    height: auto;
    display: flex;
@@ -9,6 +8,31 @@
    align-items: center;
    margin-bottom:25px;
 }
+
+.eventboxUtelivKonsertQuiz{
+    background: #FCD46C;
+}
+.eventboxKulturLivstil{
+    background:#7299E6;
+    ;
+}
+.eventboxSportFritidGuider{
+    background: #E67372;
+}
+.eventboxMatDryck {
+    background: #75C7B9;
+}
+.eventboxKonstHantverk{
+    background: #FFBD59;
+}
+.eventboxHalsaSkonhet{
+    background: #E196BB;
+}
+.eventboxDefault{
+    background: gray;
+}
+
+
 .borderbox{
     width: 98%;
     height: 340px;
@@ -16,7 +40,6 @@
     padding: 5px;
     background: #FFC130;
     border-radius: 10px;
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -46,7 +69,7 @@
 }
 
 @media screen and (min-width: 760px) {
-    .eventbox{
+    .eventboxUtelivKonsertQuiz, .eventboxKulturLivstil, .eventboxSportFritidGuider, .eventboxMatDryck, .eventboxKonstHantverk, .eventboxHalsaSkonhet, .eventboxDefault{
         width: 460px;
     }
     .container{

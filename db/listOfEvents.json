@@ -1,6 +1,6 @@
 [
     {
-        "title": "Någom som vill gå på marknad?", 
+        "title": "Någon som vill gå på marknad?", 
         "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
         "category": "Kultur & Livsstil"
     },
@@ -10,13 +10,30 @@
         "category": "Uteliv"
     },
     {
-        "title": "Vill någon klättra?", 
+        "title": "PREMIÄR AV NYA BATMAN FILMEN", 
         "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
-        "category": "Sport & Fritid"
+        "category": "Kultur & Livsstil"
     },
     {
         "title": "Löparkompis någon?", 
         "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
         "category": "Sport & Fritid"
+    },
+    {
+        "title": "NÅGON SOM VILL PÅ MATMARKNAD?", 
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
+        "category": "Mat & Dryck"
+    },
+    {
+        "title": "GÅ PÅ ANSIKTSBEHANDLING", 
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
+        "category": "Hälsa & Skönhet"
+    },
+    {
+        "title": "BÖRJA LÄRA SIG DREJA", 
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
+        "category": "Konst & Hantverk"
     }
+
+    
 ]
