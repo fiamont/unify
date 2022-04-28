@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import style from './../styles/ModalForm.module.css'
 import SvgFormBackground from './Icons/formBackground';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+
+
+
 
 const Modals = () => {
     const [title, setTitle] = useState(''); //input rutan är tom från början
@@ -11,42 +13,71 @@ const Modals = () => {
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
 
-    //PopUp 
+    const [titleErr, setTitleErr] = useState({});
+
+     //PopUp 
     const [showModal, setShowModal] = useState(false);
+
+    const onSubmit = (e) =>{
+        e.preventDefault();
+        const isValid = formValidation();
+        if(isValid){
+            //Send this data to your backend 
+            setShowModal(true)
+ 
+        }
+    }
+
+    const formValidation = () => {
+        const titleErr = {};
+        let isValid = true;
+
+        if(title.trim().length < 5){
+            titleErr.firstNameShort = "First name is too short";
+            isValid = false
+        }
+
+        setTitleErr(titleErr);
+        return isValid;
+    }
 
     //Timeout
     const router = useRouter();
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const isValid = formValidation();
         const event = { title, category, body, time, date }; 
         console.log(event);
     }
 
-     const handleClick = () => {
+    const handleClick = () => {
             setTimeout(() => {
                 router.push('/');
             }, 1000)
-    }
-
+    } 
 
   return (
     <div className={style.flexContainer}>
-        <form className={style.eventform}>
+        <form onSubmit={onSubmit} className={style.eventform}>
             <input 
                 className={style.eventName}
                 type="text" 
-                required 
+                
                 value={title}
                 placeholder="Evenemangets namn"
                 name="name"
-                onChange={(e) => setTitle(e.target.value)}   
+                onChange={(e) => {setTitle(e.target.value)}}   
             />
+            <br/>
+            {Object.keys(titleErr).map((key)=>{
+                return <div style={{color : "red"}}>{titleErr[key]}</div>
+            })}
 
             <select
                 className={style.subject}
                 value={category}
-                required
+        
                 onChange={(e) => setCategory(e.target.value)}
             >
             <option label="Välj kategori"></option>
@@ -71,10 +102,10 @@ const Modals = () => {
             <div className={style.box}>
                 <div className={style.test}>
                     <SvgFormBackground className="backImg"/>
-                </div>
+                    </div>
                 <textarea
                     className={style.description}
-                    required
+              
                     value={body}
                     rows={5}
                     placeholder="Beskrivning"
@@ -86,8 +117,9 @@ const Modals = () => {
             <div className={style.box2}>
                 <button 
                 className={style.configBtn} 
-                type="button" 
-                onClick={() => setShowModal(true)}
+                type="submit" 
+                onClick={onSubmit}
+/*                 onClick={() => setShowModal(true)} */
                 >
                 Skapa event</button>
             </div>
@@ -100,7 +132,7 @@ const Modals = () => {
                         <input 
                             className={style.eventName}
                             type="text" 
-                            required 
+                           
                             value={title}
                             name="name"
                         />
@@ -108,7 +140,7 @@ const Modals = () => {
                         <select
                             className={style.subject}
                             value={category}
-                            required
+                         
                         >
                         <option label="Välj kategori"></option>
                         <option value="konsert">Konsert</option>
@@ -132,10 +164,10 @@ const Modals = () => {
                         <div className={style.box}>
                             <div className={style.test}>
                                 <SvgFormBackground className="backImg"/>
-                            </div>
+                                </div>
                             <textarea
                                 className={style.description}
-                                required
+                             
                                 value={body}
                                 rows={5}
                                 name="message"
