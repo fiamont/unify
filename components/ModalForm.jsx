@@ -3,9 +3,6 @@ import style from './../styles/ModalForm.module.css'
 import SvgFormBackground from './Icons/formBackground';
 import { useRouter } from 'next/router';
 
-
-
-
 const Modals = () => {
     const [title, setTitle] = useState(''); //input rutan är tom från början
     const [category, setCategory] = useState('');
@@ -13,16 +10,20 @@ const Modals = () => {
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
 
+    //Validation
     const [titleErr, setTitleErr] = useState({});
 
      //PopUp 
     const [showModal, setShowModal] = useState(false);
+    
+    //Timeout
+    const router = useRouter();
 
     const onSubmit = (e) =>{
         e.preventDefault();
         const isValid = formValidation();
         if(isValid){
-            //Send this data to your backend 
+            //Open Popup window
             setShowModal(true)
  
         }
@@ -41,12 +42,8 @@ const Modals = () => {
         return isValid;
     }
 
-    //Timeout
-    const router = useRouter();
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        const isValid = formValidation();
         const event = { title, category, body, time, date }; 
         console.log(event);
     }
