@@ -105,12 +105,51 @@
   padding: 10px;
 }
 
-.submitBtn{
+.configBtn{
   align-items: center;
   width: 330px;
+  height: 40px;
+  border-radius: 10px;
   z-index: 2;
 }
 
+.configBtn:hover{
+  background-color: #157C79;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  bottom: 2rem;
+  left: 3rem;
+  gap: 10px;
+}
+
+.submitBtn{
+  align-items: center;
+  width: 115px;
+  height: 40px;
+  z-index: 2;
+  background-color: #157C79;
+  color: #fff;
+}
+
 .submitBtn:hover{
-background-color: #157C79;
+  background-color: #1B4848;
+}
+
+.cancelBtn{
+  align-items: center;
+  padding: 0;
+  width: 115px;
+  height: 40px;
+  border-radius: 10px;
+  z-index: 2;
+  background-color: #fff;
+  color: #4C2F11;
+}
+
+.cancelBtn:hover{
+  background-color: #DC5027;
 }

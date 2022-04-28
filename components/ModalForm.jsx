@@ -85,7 +85,7 @@ const Modals = () => {
 
             <div className={style.box2}>
                 <button 
-                className={style.submitBtn} 
+                className={style.configBtn} 
                 type="button" 
                 onClick={() => setShowModal(true)}
                 >
@@ -140,8 +140,10 @@ const Modals = () => {
                                 rows={5}
                                 name="message"
                             ></textarea>
-                            <button className={style.submitBtn} onClick={handleClick} type="submit">Dela</button>
-                            <button className={style.submitBtn} onClick={() => setShowModal(false)}>Ändra</button>
+                            <div className={style.buttonContainer}>
+                                <button className={style.submitBtn} onClick={handleClick} type="submit">Dela</button>
+                                <button className={style.cancelBtn} onClick={() => setShowModal(false)}>Ändra</button>
+                            </div>
                         </div> 
                     </form>
                 </div>
