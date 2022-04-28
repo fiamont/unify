@@ -34,7 +34,7 @@ const Modals = () => {
         let isValid = true;
 
         if(title.trim().length < 5){
-            titleErr.firstNameShort = "First name is too short";
+            titleErr.firstNameShort = "Evenemanget måste ha ett namn på minst 5 bokstäver";
             isValid = false
         }
 
@@ -60,7 +60,7 @@ const Modals = () => {
             <input 
                 className={style.eventName}
                 type="text" 
-                
+                id="name"
                 value={title}
                 placeholder="Evenemangets namn"
                 name="name"
