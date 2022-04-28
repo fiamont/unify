@@ -1,3 +1,39 @@
+
+.title{
+    font-family: var(--heading-font-family);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+}
+.description{
+    font-family: var(--default-font-family);
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.categoryUtelivKonsertQuiz, .categoryKulturLivstil, .categorySportFritidGuider, .categoryMatDryck, .categoryKonstHantverk, .categoryHalsaSkonhet, .categoryDefault{
+    width: 111px;
+    height: 22px;
+    display: flex;
+    position: relative;
+    left: -9.1rem;
+    top: -3rem;
+    justify-content: center;
+    align-items: center;
+
+
+    box-shadow: 0px 2.94415px 1.96277px rgba(0, 0, 0, 0.2), 0px 0.981383px 9.81383px rgba(0, 0, 0, 0.12), 0px 3.92553px 4.90692px rgba(0, 0, 0, 0.14), 0px 1.96277px 3.92553px -0.981383px rgba(0, 0, 0, 0.2);
+    
+    
+}
+
+
+
+
+
 .eventboxUtelivKonsertQuiz, .eventboxKulturLivstil, .eventboxSportFritidGuider, .eventboxMatDryck, .eventboxKonstHantverk, .eventboxHalsaSkonhet, .eventboxDefault{
    width: 100%;
    height: auto;
@@ -9,26 +45,26 @@
    margin-bottom:25px;
 }
 
-.eventboxUtelivKonsertQuiz{
+.eventboxUtelivKonsertQuiz, .categoryUtelivKonsertQuiz{
     background: #FCD46C;
 }
-.eventboxKulturLivstil{
+.eventboxKulturLivstil, .categoryKulturLivstil{
     background:#7299E6;
     ;
 }
-.eventboxSportFritidGuider{
+.eventboxSportFritidGuider, .categorySportFritidGuider{
     background: #E67372;
 }
-.eventboxMatDryck {
+.eventboxMatDryck, .categoryMatDryck  {
     background: #75C7B9;
 }
-.eventboxKonstHantverk{
+.eventboxKonstHantverk, .categoryKonstHantverk{
     background: #FFBD59;
 }
-.eventboxHalsaSkonhet{
+.eventboxHalsaSkonhet, .categoryHalsaSkonhet{
     background: #E196BB;
 }
-.eventboxDefault{
+.eventboxDefault, .categoryDefault{
     background: gray;
 }
 

@@ -61,6 +61,34 @@ function Event(){
 
     }
 
+    function category (category) {
+
+        let categoryClassName = "";
+
+        if(category == "Uteliv" || category == "Konsert" || category == "Quiz") {
+            categoryClassName = style.categoryUtelivKonsertQuiz;
+        }
+        else if(category == "Kultur & Livsstil"){
+            categoryClassName = style.categoryKulturLivstil;
+        }
+        else if(category == "Sport & Fritid" || category == "Guider"){
+            categoryClassName = style.categorySportFritidGuider;
+        }
+        else if(category == "Mat & Dryck"){
+            categoryClassName = style.categoryMatDryck;
+        }
+        else if(category == "Konst & Hantverk"){
+            categoryClassName = style.categoryKonstHantverk;
+        }else if(category == "Hälsa & Skönhet"){
+            categoryClassName = style.categoryHalsaSkonhet;
+        }
+        else
+        categoryClassName = style.categoryDefault;
+
+        return categoryClassName;
+
+    }
+
     return(
         
         <div className={style.container}>
@@ -68,10 +96,14 @@ function Event(){
                 <div key={listOfEvents.title} className={outerBoarder(listOfEvents.category)}>
                     <div className={innerBoarder(listOfEvents.category)}>
                         <div className={style.eventimg}>
-                            <div className={style.event}>
-                                <p>{listOfEvents.title}</p>
-                                <p>{listOfEvents.body}</p>
+                            <div className={category(listOfEvents.category)}>
                                 <p>{listOfEvents.category}</p>
+                            </div>
+                            <div className={style.event}>
+                                <p className={style.title}>{listOfEvents.title}</p>
+                                <p className={style.description}>{listOfEvents.body}</p>
+                                
+                            
                             </div>
                         </div>
                      </div>
