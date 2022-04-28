@@ -4,11 +4,11 @@ import style from '../styles/Event.module.css'
 
 
 function Event(){
-    
+
    
     return(
         
-        <div>
+        <div className={style.container}>
             {listOfEvents.map((listOfEvents) =>(
                 <div key={listOfEvents.title} className={style.eventbox}>
                     <div className={style.borderbox}>
