@@ -12,6 +12,7 @@ const Modals = () => {
 
     //Validation
     const [titleErr, setTitleErr] = useState({});
+    const [bodyErr, setBodyErr] = useState({});
 
      //PopUp 
     const [showModal, setShowModal] = useState(false);
@@ -31,6 +32,7 @@ const Modals = () => {
 
     const formValidation = () => {
         const titleErr = {};
+        const bodyErr = {};
         let isValid = true;
 
         if(title.trim().length < 5){
@@ -38,7 +40,13 @@ const Modals = () => {
             isValid = false
         }
 
+        if(body.trim().length < 2){
+            bodyErr.textareaShort = "Beskriv kort om evenemanget";
+            isValid = false
+        }
+
         setTitleErr(titleErr);
+        setBodyErr(bodyErr);
         return isValid;
     }
 
@@ -51,7 +59,7 @@ const Modals = () => {
     const handleClick = () => {
             setTimeout(() => {
                 router.push('/');
-            }, 1000)
+            }, 500)
     } 
 
   return (
@@ -109,6 +117,11 @@ const Modals = () => {
                     name="message"
                     onChange={(e) => setBody(e.target.value)}
                 ></textarea>
+                {Object.keys(bodyErr).map((key)=>{
+                    return <div style={{color : "red"}}>{bodyErr[key]}</div>
+                })}
+                
+            
             </div> 
 
             <div className={style.box2}>
