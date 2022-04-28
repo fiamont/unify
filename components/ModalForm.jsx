@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import style from './../styles/ModalForm.module.css'
 import SvgFormBackground from './Icons/formBackground';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 const Modals = () => {
     const [title, setTitle] = useState(''); //input rutan är tom från början
@@ -9,18 +11,28 @@ const Modals = () => {
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
 
+    //PopUp 
     const [showModal, setShowModal] = useState(false);
+
+    //Timeout
+    const router = useRouter();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const event = { title, category, body, time, date };
-    
+        const event = { title, category, body, time, date }; 
         console.log(event);
     }
 
+     const handleClick = () => {
+            setTimeout(() => {
+                router.push('/');
+            }, 1000)
+    }
+
+
   return (
     <div className={style.flexContainer}>
-        <form className={style.eventform} onSubmit={handleSubmit}>
+        <form className={style.eventform}>
             <input 
                 className={style.eventName}
                 type="text" 
@@ -28,7 +40,7 @@ const Modals = () => {
                 value={title}
                 placeholder="Evenemangets namn"
                 name="name"
-                onChange={(e) => setTitle(e.target.value)}
+                onChange={(e) => setTitle(e.target.value)}   
             />
 
             <select
@@ -62,7 +74,7 @@ const Modals = () => {
                 </div>
                 <textarea
                     className={style.description}
-                 required
+                    required
                     value={body}
                     rows={5}
                     placeholder="Beskrivning"
@@ -128,8 +140,8 @@ const Modals = () => {
                                 rows={5}
                                 name="message"
                             ></textarea>
-                            <button className={style.submitBtn} type="submit">Dela</button>
-                            <button onClick={() => setShowModal(false)}>Ändra</button>
+                            <button className={style.submitBtn} onClick={handleClick} type="submit">Dela</button>
+                            <button className={style.submitBtn} onClick={() => setShowModal(false)}>Ändra</button>
                         </div> 
                     </form>
                 </div>
