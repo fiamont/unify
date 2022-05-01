@@ -76,9 +76,10 @@ const Modals = () => {
                 
             />
             <br/>
-           {/*  {Object.keys(titleErr).map((key)=>{
+            {Object.keys(titleErr).map((key)=>{
                 return <div style={{color : "red"}}>{titleErr[key]}</div>
-            })} */}
+  
+            })} 
 
             <select
                 className={style.subject}
