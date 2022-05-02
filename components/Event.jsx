@@ -54,18 +54,15 @@ function Event(){
         
         <div className={style.container}>
             {listOfEvents.map((listOfEvents) =>(
-                <div key={listOfEvents.title} className={categoryColors(listOfEvents.category)[0]}>
-                    <div className={categoryColors(listOfEvents.category)[1]}>
-                        <div className={style.eventimg}>
-                            <div className={categoryColors(listOfEvents.category)[2]}>
+                <div key={listOfEvents.title} className={categoryColors(listOfEvents.category)[0]}>{/* outerBorder */}
+                    <div className={categoryColors(listOfEvents.category)[1]}> {/* innerBorder */}
+                        <div className={style.eventimg}> {/* place for img (currently just gray box) */}
+                            <div className={categoryColors(listOfEvents.category)[2]}> {/* the small categoryBox */}
                                 <p className={style.categoryText}>{listOfEvents.category}</p>
                             </div>
-                            <div className={style.event}>
+                            <div className={style.event}> {/* white box with event text */}
                                 <p className={style.title}>{listOfEvents.title}</p>
                                 <p className={style.description}>{listOfEvents.body}</p>
-                                <p></p>
-                               
-                            
                             </div>
                         </div>
                      </div>
