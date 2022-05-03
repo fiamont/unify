@@ -78,7 +78,7 @@
 }
 
 
-.innerBoarderUtelivKonsertQuiz, .innerBoarderKulturLivstil, .innerBoarderSportFritidGuider, .innerBoarderMatDryck, .innerBoarderKonstHantverk, .innerBoarderHalsaSkonhet, .innerBoarderDefault{
+.innerBorderUtelivKonsertQuiz, .innerBorderKulturLivstil, .innerBorderSportFritidGuider, .innerBorderMatDryck, .innerBorderKonstHantverk, .innerBorderHalsaSkonhet, .innerBorderDefault{
     width: 98%;
     height: 340px;
     margin: 10px;
@@ -90,25 +90,25 @@
     justify-content: center;
     align-items:flex-end
 }
-.innerBoarderUtelivKonsertQuiz{
+.innerBorderUtelivKonsertQuiz{
     background: #FFC130;
 } 
-.innerBoarderKulturLivstil {
+.innerBorderKulturLivstil {
     background: #416AD2;
 }
-.innerBoarderSportFritidGuider{
+.innerBorderSportFritidGuider{
     background: #D24341;
 }
-.innerBoarderMatDryck{
+.innerBorderMatDryck{
     background: #40A593;
 }
- .innerBoarderKonstHantverk{
+ .innerBorderKonstHantverk{
     background: #FF9211;
  }
- .innerBoarderHalsaSkonhet {
+ .innerBorderHalsaSkonhet {
     background: #B36D8F;
  }
- .innerBoarderDefault{
+ .innerBorderDefault{
     background: rgb(99, 99, 99);
  }
 
