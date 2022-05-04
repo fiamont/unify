@@ -3,6 +3,8 @@ import style from './../styles/ModalForm.module.css'
 import SvgFormBackground from './Icons/formBackground';
 import { useRouter } from 'next/router';
 import Event from './Event';
+// import { app, database } from '../../firebaseConfig'
+// import { collection, addDoc, getDocs } from 'firebase/firestore'
 
 const Modals = () => {
     const [title, setTitle] = useState(''); //input rutan är tom från början
@@ -146,56 +148,6 @@ const Modals = () => {
                                 <button className={style.cancelBtn} onClick={() => setShowModal(false)}>Ändra</button>
                                 <button className={style.submitBtn} onClick={handleClick} type="submit">Dela</button>
                             </div>
-                    {/* <form className={style.eventform} onSubmit={handleSubmit}>
-                        <input 
-                            className={style.eventName}
-                            type="text" 
-                           
-                            value={title}
-                            name="name"
-                        />
-
-                        <select
-                            className={style.subject}
-                            value={category}
-                         
-                        >
-                        <option label="Välj kategori"></option>
-                        <option value="konsert">Konsert</option>
-                        <option value="quiz">Quiz</option>
-                        <option value="mat&dryck">Mat & Dryck</option>
-                        <option value="kultur&livsstil">Kultur & Livsstil</option>
-                        <option value="guider">Guider</option>
-                        <option value="sport&fritid">Sport & Fritid</option>
-                        <option value="konst&hantverk">Konst & hantverk</option>
-                        <option value="hälsa&skönhet">Hälsa & Skönhet</option>
-                        </select>
-
-                        <div className={style.inputDateTime}>
-                            <label htmlFor="appt">Tid:</label>
-                            <input type="time" value={time} id="appt" name="appt"></input>
-
-                            <label htmlFor="date">Datum:</label>
-                            <input type="date" value={date} id="date" name="date"></input>
-                        </div>
-
-                        <div className={style.box}>
-                            <div className={style.test}>
-                                <SvgFormBackground className="backImg"/>
-                                </div>
-                            <textarea
-                                className={style.description}
-                             
-                                value={body}
-                                rows={5}
-                                name="message"
-                            ></textarea>
-                            <div className={style.buttonContainer}>
-                                <button className={style.submitBtn} onClick={handleClick} type="submit">Dela</button>
-                                <button className={style.cancelBtn} onClick={() => setShowModal(false)}>Ändra</button>
-                            </div>
-                        </div> 
-                    </form> */}
                 </div>
             </div>
 
