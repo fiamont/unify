@@ -7,26 +7,27 @@ import BackToTop from '../components/BackToTopButton'
 import { database } from '../firebaseConfig'
 import { collection, getDocs } from 'firebase/firestore'
 import { useState, useEffect } from 'react';
+import listOfEvents from '../db/listOfEvents.json'
 
 const dbInstance = collection(database, 'events');
 
-const [eventsArray, setEventsArray] = useState('');
-
-const getEvents = () => {
-  getDocs(dbInstance)
-      .then((data) => {
-          setEventsArray(data.docs.map((item) => {
-              return { ...item.data(), id: item.id }
-          }));
-      })
-}
-
-useEffect(() => {
-  getEvents();
-}, [])
-
-
 export default function Home() {
+  const [eventsArray, setEventsArray] = useState('');
+
+  const getEvents = () => {
+    getDocs(dbInstance)
+        .then((data) => {
+            setEventsArray(data.docs.map((item) => {
+                return { ...item.data(), id: item.id }
+            }));
+        })
+  }
+  
+  useEffect(() => {
+    getEvents();
+  }, [])
+
+  // console.log(eventsArray)
 
   return (
     <div className={styles.container}>
@@ -35,7 +36,8 @@ export default function Home() {
       <Eventbutton/>  
       <h1 className={styles.rubrik}>I Blickfånget</h1>
       <BackToTop />
-      <Event events={eventsArray}/>
+      <Event events={listOfEvents}/>
+      {/* <Event events={eventsArray}/> */}
       </main>
     </div>
   )
