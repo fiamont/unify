@@ -4,8 +4,10 @@ import styles from '../styles/Home.module.css'
 import Eventbutton from '../components/Eventbutton'
 import Event from '../components/Event' 
 import BackToTop from '../components/BackToTopButton'
+import listOfEvents from '../db/listOfEvents.json' 
 
 export default function Home() {
+
   return (
     <div className={styles.container}>
       <Head><title>Unify</title></Head>
@@ -13,7 +15,7 @@ export default function Home() {
       <Eventbutton/>  
       <h1 className={styles.rubrik}>I Blickfånget</h1>
       <BackToTop />
-      <Event/>
+      <Event events={listOfEvents}/>
       </main>
     </div>
   )
