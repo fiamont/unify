@@ -6,6 +6,9 @@ import Event from '../components/Event'
 import BackToTop from '../components/BackToTopButton'
 import listOfEvents from '../db/listOfEvents.json' 
 
+
+
+
 export default function Home() {
 
   return (
@@ -14,6 +17,7 @@ export default function Home() {
       <main className={styles.main}>
       <Eventbutton/>  
       <h1 className={styles.rubrik}>I Blickfånget</h1>
+
       <BackToTop />
       <Event events={listOfEvents}/>
       </main>
