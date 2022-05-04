@@ -143,8 +143,8 @@ const Modals = () => {
                 <div className={style.showModalInner}>
                 <Event events= {event}/>
                 <div className={style.buttonContainer}>
-                                <button className={style.submitBtn} onClick={handleClick} type="submit">Dela</button>
                                 <button className={style.cancelBtn} onClick={() => setShowModal(false)}>Ändra</button>
+                                <button className={style.submitBtn} onClick={handleClick} type="submit">Dela</button>
                             </div>
                     {/* <form className={style.eventform} onSubmit={handleSubmit}>
                         <input 
