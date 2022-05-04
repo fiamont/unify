@@ -1,10 +1,7 @@
 import React from 'react'
 import style from '../styles/Event.module.css'
 
-
 const Event = ({events}) =>{
- 
-    // const events = props.events;
 
     function categoryColors (category) {
 
@@ -63,6 +60,10 @@ const Event = ({events}) =>{
                             </div>
                             <div className={style.event}> {/* white box with event text */}
                                 <p className={style.title}>{events.title}</p>
+                                <div className={style.timedate}>
+                                    <p className={style.date}>{events.date}</p>
+                                    <p className={style.time}>Kl. {events.time}</p>
+                                </div>
                                 <p className={style.description}>{events.body}</p>
                             </div>
                         </div>

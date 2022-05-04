@@ -2,32 +2,44 @@
     {
         "title": "ÖL / BILJARDEN NÅGON?", 
         "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
-        "category": "Uteliv"
+        "category": "Uteliv",
+        "time": "13:37",
+        "date": "2022-06-20"
     },
     {
         "title": "LÖPARKOMPIS NÅGON?", 
         "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
-        "category": "Sport & Fritid"
+        "category": "Sport & Fritid",
+        "time": "13:37",
+        "date": "2022-06-21"
     },
     {
         "title": "NÅGON SOM VILL PÅ MATMARKNAD?", 
         "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
-        "category": "Mat & Dryck"
+        "category": "Mat & Dryck",
+        "time": "13:37",
+        "date": "2022-06-22"
     },
     {
         "title": "PREMIÄR AV NYA BATMAN FILMEN", 
         "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
-        "category": "Kultur & Livsstil"
+        "category": "Kultur & Livsstil",
+        "time": "13:37",
+        "date": "2022-05-30"
     },
     {
         "title": "GÅ PÅ ANSIKTSBEHANDLING", 
         "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
-        "category": "Hälsa & Skönhet"
+        "category": "Hälsa & Skönhet",
+        "time": "13:37",
+        "date": "2022-08-24"
     },
     {
         "title": "BÖRJA LÄRA SIG DREJA", 
         "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
-        "category": "Konst & Hantverk"
+        "category": "Konst & Hantverk",
+        "time": "13:37",
+        "date": "2022-07-25"
     }
 
     

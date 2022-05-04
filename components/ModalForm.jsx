@@ -3,8 +3,10 @@ import style from './../styles/ModalForm.module.css'
 import SvgFormBackground from './Icons/formBackground';
 import { useRouter } from 'next/router';
 import Event from './Event';
-// import { app, database } from '../../firebaseConfig'
-// import { collection, addDoc, getDocs } from 'firebase/firestore'
+import { app, database } from '../firebaseConfig'
+import { collection, addDoc } from 'firebase/firestore'
+
+const dbInstance = collection(database, 'events');
 
 const Modals = () => {
     const [title, setTitle] = useState(''); //input rutan är tom från början
@@ -60,6 +62,14 @@ const Modals = () => {
     }
 
     const handleClick = () => {
+        addDoc(dbInstance, {
+            title: title,
+            body: body,
+            category: category,
+            time: time,
+            date: date
+          })
+
             setTimeout(() => {
                 router.push('/');
             }, 500)
@@ -92,6 +102,7 @@ const Modals = () => {
             >
             <option label="Välj kategori"></option>
             <option value="Konsert">Konsert</option>
+            <option value="Uteliv">Uteliv</option>
             <option value="Quiz">Quiz</option>
             <option value="Mat & Dryck">Mat & Dryck</option>
             <option value="Kultur & Livsstil">Kultur & Livsstil</option>
