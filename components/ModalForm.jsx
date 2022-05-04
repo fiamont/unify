@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import style from './../styles/ModalForm.module.css'
 import SvgFormBackground from './Icons/formBackground';
 import { useRouter } from 'next/router';
+import Event from './Event';
 
 const Modals = () => {
     const [title, setTitle] = useState(''); //input rutan är tom från början
@@ -49,10 +50,10 @@ const Modals = () => {
         setBodyErr(bodyErr);
         return isValid;
     }
-
+    const event = [{title, category, body, time, date }];
     const handleSubmit = (e) => {
         e.preventDefault();
-        const event = { title, category, body, time, date }; 
+        event = { title, category, body, time, date }; 
         console.log(event);
     }
 
@@ -88,14 +89,14 @@ const Modals = () => {
                 onChange={(e) => setCategory(e.target.value)}
             >
             <option label="Välj kategori"></option>
-            <option value="konsert">Konsert</option>
-            <option value="quiz">Quiz</option>
-            <option value="mat&dryck">Mat & Dryck</option>
-            <option value="kultur&livsstil">Kultur & Livsstil</option>
-            <option value="guider">Guider</option>
-            <option value="sport&fritid">Sport & Fritid</option>
-            <option value="konst&hantverk">Konst & hantverk</option>
-            <option value="hälsa&skönhet">Hälsa & Skönhet</option>
+            <option value="Konsert">Konsert</option>
+            <option value="Quiz">Quiz</option>
+            <option value="Mat & Dryck">Mat & Dryck</option>
+            <option value="Kultur & Livsstil">Kultur & Livsstil</option>
+            <option value="Guider">Guider</option>
+            <option value="Sport & Fritid">Sport & Fritid</option>
+            <option value="Konst & Hantverk">Konst & hantverk</option>
+            <option value="Hälsa & Skönhet">Hälsa & Skönhet</option>
             </select>
 
             <div className={style.inputDateTime}>
@@ -140,7 +141,12 @@ const Modals = () => {
         {showModal ? (
             <div className={style.showModal}>
                 <div className={style.showModalInner}>
-                    <form className={style.eventform} onSubmit={handleSubmit}>
+                <Event events= {event}/>
+                <div className={style.buttonContainer}>
+                                <button className={style.submitBtn} onClick={handleClick} type="submit">Dela</button>
+                                <button className={style.cancelBtn} onClick={() => setShowModal(false)}>Ändra</button>
+                            </div>
+                    {/* <form className={style.eventform} onSubmit={handleSubmit}>
                         <input 
                             className={style.eventName}
                             type="text" 
@@ -189,7 +195,7 @@ const Modals = () => {
                                 <button className={style.cancelBtn} onClick={() => setShowModal(false)}>Ändra</button>
                             </div>
                         </div> 
-                    </form>
+                    </form> */}
                 </div>
             </div>
 

@@ -1,10 +1,11 @@
 import React from 'react'
-import listOfEvents from '../db/listOfEvents.json' 
 import style from '../styles/Event.module.css'
 
 
-function Event(){
+const Event = ({events}) =>{
  
+    // const events = props.events;
+
     function categoryColors (category) {
 
         let outerBorder = "";
@@ -53,16 +54,16 @@ function Event(){
     return(
         
         <div className={style.container}>
-            {listOfEvents.map((listOfEvents) =>(
-                <div key={listOfEvents.title} className={categoryColors(listOfEvents.category).outerBorder}>{/* outerBorder */}
-                    <div className={categoryColors(listOfEvents.category).innerBorder}> {/* innerBorder */}
+            {events.map((events) =>(
+                <div key={events.title} className={categoryColors(events.category).outerBorder}>{/* outerBorder */}
+                    <div className={categoryColors(events.category).innerBorder}> {/* innerBorder */}
                         <div className={style.eventimg}> {/* place for img (currently just gray box) */}
-                            <div className={categoryColors(listOfEvents.category).categoryBox}> {/* the small categoryBox */}
-                                <p className={style.categoryText}>{listOfEvents.category}</p>
+                            <div className={categoryColors(events.category).categoryBox}> {/* the small categoryBox */}
+                                <p className={style.categoryText}>{events.category}</p>
                             </div>
                             <div className={style.event}> {/* white box with event text */}
-                                <p className={style.title}>{listOfEvents.title}</p>
-                                <p className={style.description}>{listOfEvents.body}</p>
+                                <p className={style.title}>{events.title}</p>
+                                <p className={style.description}>{events.body}</p>
                             </div>
                         </div>
                      </div>

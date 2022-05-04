@@ -22,6 +22,7 @@
 .showModalInner {
  position: fixed;
  top: 10rem;
+ width:100%;
 
 
 }
@@ -152,4 +153,12 @@
 
 .cancelBtn:hover{
   background-color: #DC5027;
+}
+
+
+
+@media screen and (min-width: 500px){
+  .showModalInner{
+    width: 460px;
+  }
 }
