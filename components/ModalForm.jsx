@@ -16,23 +16,23 @@ const Modals = () => {
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
 
-    const dbInstance = collection(database, 'notes'); /*It takes the database from the firebaseConfig import and the name of the collection.*/
+    const dbInstance = collection(database, 'events'); /*It takes the database from the firebaseConfig import and the name of the collection.*/
     const [notesArray, setNotesArray] = useState([]);
 
-    const getNotes = () => {
+/*     const getNotes = () => {
         getDocs(dbInstance)
             .then((data) => {
                 setNotesArray(data.docs.map((item) => {
                     return { ...item.data(), id: item.id }
                 }));
             })
-    }
+    } */
 
     /*useEffect Hook will run this function every time our page loads*/
-    useEffect(() => {
+/*     useEffect(() => {
         getNotes();
-    })
-
+    }, [])
+ */
     //Validation
     const [titleErr, setTitleErr] = useState({});
     const [bodyErr, setBodyErr] = useState({});
@@ -95,10 +95,10 @@ const Modals = () => {
 
         {/* we need to map this notesArray to see our data in the UI. */}
         <div className={style.notesDisplay}>
-                {notesArray.map((note) => {
+                {notesArray.map((events) => {
                     return (
-                        <div key={note.id} className={style.notesInner}>
-                            <h4>{note.eventTitle}</h4> 
+                        <div key={events.id} className={style.notesInner}>
+                            <h4>{events.title}</h4> 
                         </div>
                     )
                 })}
