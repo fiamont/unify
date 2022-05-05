@@ -19,20 +19,20 @@ const Modals = () => {
     const dbInstance = collection(database, 'events'); /*It takes the database from the firebaseConfig import and the name of the collection.*/
     const [notesArray, setNotesArray] = useState([]);
 
-/*     const getNotes = () => {
+     const getNotes = () => {
         getDocs(dbInstance)
             .then((data) => {
                 setNotesArray(data.docs.map((item) => {
                     return { ...item.data(), id: item.id }
                 }));
             })
-    } */
+    } 
 
     /*useEffect Hook will run this function every time our page loads*/
-/*     useEffect(() => {
+    useEffect(() => {
         getNotes();
     }, [])
- */
+ 
     //Validation
     const [titleErr, setTitleErr] = useState({});
     const [bodyErr, setBodyErr] = useState({});
@@ -76,7 +76,11 @@ const Modals = () => {
  
     const handleClick = () => {
         addDoc(dbInstance, {
-            eventTitle: title
+            title: title,
+            category: category,
+            body: body,
+            time: time,
+            date: date
         })
         setTimeout(() => { 
             router.push('/');
@@ -94,15 +98,19 @@ const Modals = () => {
     <div className={style.flexContainer} key="1">
 
         {/* we need to map this notesArray to see our data in the UI. */}
-        <div className={style.notesDisplay}>
+        {/* <div className={style.notesDisplay}>
                 {notesArray.map((events) => {
                     return (
                         <div key={events.id} className={style.notesInner}>
                             <h4>{events.title}</h4> 
+                            <h4>{events.body}</h4>
+                            <h4>{events.category}</h4>
                         </div>
                     )
                 })}
-            </div>
+            </div> */}
+            <div><Event events = {notesArray}/></div>
+            
         
         <form onSubmit={onSubmit} className={style.eventform}>
             <input 

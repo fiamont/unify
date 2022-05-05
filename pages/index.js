@@ -8,31 +8,39 @@ import listOfEvents from '../db/listOfEvents.json'
 
 import React, { useState, useEffect } from 'react'
 import { app, database } from './../firebaseConfig'
-import { collection, addDoc, getDocs } from 'firebase/firestore'
+import { collection, getDocs } from 'firebase/firestore'
 
-export function getServerSideProps () {
+// export async function getServerSideProps (context) {
 
-  const dbInstance = collection(database, 'events');
+//   const dbInstance = collection(database, 'events');
+//   let eventsArray = []
+
+//   const getEvents = () => {
+//     const [eventsArray, setEventsArray] = useState([]);
+   
+//     getDocs(dbInstance)
+//         .then((data) => {
+//             setEventsArray(data.docs.map((item) => {
+//                 return { ...item.data(), id: item.id }
+//             }));
+//         })
+
+//         useEffect(() => {
+//           getEvents();
+//         }, []) 
+        
+        
+//   }
   
-  const getEvents = () => {
-    const [eventsArray, setEventsArray] = useState([]);
-    getDocs(dbInstance)
-        .then((data) => {
-            setEventsArray(data.docs.map((item) => {
-                return { ...item.data(), id: item.id }
-            }));
-        })
-}
-  
-  return {
-    props :{
-    events :events
-    }
-  }
-}
+//   return {
+//     props :{
+//       events :eventsArray
+//     }
+//   }
+// }
 
 export default function Home() {
-
+  
   return (
     <div className={styles.container}>
       <Head><title>Unify</title></Head>
@@ -41,6 +49,7 @@ export default function Home() {
       <h1 className={styles.rubrik}>I Blickfånget</h1>
 
       <BackToTop />
+      {/* <Event events={events}/> */}
       <Event events={listOfEvents}/>
       </main>
     </div>
