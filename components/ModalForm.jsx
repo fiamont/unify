@@ -17,21 +17,21 @@ const Modals = () => {
     const [date, setDate] = useState('');
 
     const dbInstance = collection(database, 'events'); /*It takes the database from the firebaseConfig import and the name of the collection.*/
-    const [notesArray, setNotesArray] = useState([]);
+    // const [notesArray, setNotesArray] = useState([]);
 
-     const getNotes = () => {
-        getDocs(dbInstance)
-            .then((data) => {
-                setNotesArray(data.docs.map((item) => {
-                    return { ...item.data(), id: item.id }
-                }));
-            })
-    } 
+    //  const getNotes = () => {
+    //     getDocs(dbInstance)
+    //         .then((data) => {
+    //             setNotesArray(data.docs.map((item) => {
+    //                 return { ...item.data(), id: item.id }
+    //             }));
+    //         })
+    // } 
 
     /*useEffect Hook will run this function every time our page loads*/
-    useEffect(() => {
-        getNotes();
-    }, [])
+    // useEffect(() => {
+    //     getNotes();
+    // }, [])
  
     //Validation
     const [titleErr, setTitleErr] = useState({});
@@ -109,7 +109,7 @@ const Modals = () => {
                     )
                 })}
             </div> */}
-            <div><Event events = {notesArray}/></div>
+            {/* <div><Event events = {notesArray}/></div> */}
             
         
         <form onSubmit={onSubmit} className={style.eventform}>
@@ -132,7 +132,6 @@ const Modals = () => {
             <select
                 className={style.subject}
                 value={category}
-        
                 onChange={(e) => setCategory(e.target.value)}
             >
             <option label="Välj kategori"></option>
