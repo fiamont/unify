@@ -138,6 +138,7 @@ const Modals = () => {
             <option value="Konsert">Konsert</option>
             <option value="Quiz">Quiz</option>
             <option value="Mat & Dryck">Mat & Dryck</option>
+            <option value="Uteliv">Uteliv</option>
             <option value="Kultur & Livsstil">Kultur & Livsstil</option>
             <option value="Guider">Guider</option>
             <option value="Sport & Fritid">Sport & Fritid</option>
