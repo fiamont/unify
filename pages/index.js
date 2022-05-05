@@ -40,7 +40,22 @@ import { collection, getDocs } from 'firebase/firestore'
 // }
 
 export default function Home() {
-  
+  const dbInstance = collection(database, 'events');
+    const [eventsArray, setEventsArray] = useState([]);
+
+     const getEvents = () => {
+        getDocs(dbInstance)
+            .then((data) => {
+                setEventsArray(data.docs.map((item) => {
+                    return { ...item.data(), id: item.id }
+                }));
+            })
+    } 
+    useEffect(() => {
+        getEvents();
+    }, [])
+
+
   return (
     <div className={styles.container}>
       <Head><title>Unify</title></Head>
@@ -49,8 +64,7 @@ export default function Home() {
       <h1 className={styles.rubrik}>I Blickfånget</h1>
 
       <BackToTop />
-      {/* <Event events={events}/> */}
-      <Event events={listOfEvents}/>
+      <Event events={eventsArray}/>
       </main>
     </div>
   )
