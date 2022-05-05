@@ -19,12 +19,6 @@ const Modals = () => {
     const dbInstance = collection(database, 'notes'); /*It takes the database from the firebaseConfig import and the name of the collection.*/
     const [notesArray, setNotesArray] = useState([]);
 
-    /* const saveNote = () => {
-        addDoc(dbInstance, {
-            noteTitle: noteTitle
-        })
-    } */
-
     const getNotes = () => {
         getDocs(dbInstance)
             .then((data) => {
@@ -34,6 +28,7 @@ const Modals = () => {
             })
     }
 
+    /*useEffect Hook will run this function every time our page loads*/
     useEffect(() => {
         getNotes();
     })
@@ -77,32 +72,33 @@ const Modals = () => {
         setBodyErr(bodyErr);
         return isValid;
     }
-    const event = [{title, category, body, time, date }];
+    
+ 
+    const handleClick = () => {
+        addDoc(dbInstance, {
+            eventTitle: title
+        })
+        setTimeout(() => { 
+            router.push('/');
+        }, 500)
+    }
+    
+    const event = [{ title, category, body, time, date }];
     const handleSubmit = (e) => {
         e.preventDefault();
         event = { title, category, body, time, date }; 
         console.log(event);
     }
 
-    const handleClick = () => {
-        addDoc(dbInstance, {
-            noteTitle: title
-        })
-        setTimeout(() => {
-            router.push('/');
-        }, 500)
-    } 
-
   return (
     <div className={style.flexContainer} key="1">
-        
-        
+
         {/* we need to map this notesArray to see our data in the UI. */}
         <div className={style.notesDisplay}>
                 {notesArray.map((note) => {
                     return (
-                        <div className={style.notesInner}>
-                            <h4>{note.noteTitle}</h4>
+                        <div key={note.id} className={style.notesInner}>
+                            <h4>{note.eventTitle}</h4> 
                         </div>
                     )
                 })}
@@ -120,10 +116,10 @@ const Modals = () => {
                 
             />
             <br/>
-            {/* {Object.keys(titleErr).map((key)=>{
-                return <div style={{color : "red"}}>{titleErr[key]}</div>
+          {Object.keys(titleErr).map((key)=>{
+                return <div key={key} style={{color : "red"}}>{titleErr[key]}</div>
   
-            })}  */}
+            })}   
 
             <select
                 className={style.subject}

@@ -2,12 +2,12 @@ import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDHft74OgicAIWu0wNeHmqIbIyg7eonSmE",
-    authDomain: "unify-sti.firebaseapp.com",
-    projectId: "unify-sti",
-    storageBucket: "unify-sti.appspot.com",
-    messagingSenderId: "298156158681",
-    appId: "1:298156158681:web:6630ab50bc28100eb718c8"
+  apiKey: "AIzaSyDxjWGByCzZpj3z-6SSc8BWfC8y4MPp-0c",
+  authDomain: "unify-c0966.firebaseapp.com",
+  projectId: "unify-c0966",
+  storageBucket: "unify-c0966.appspot.com",
+  messagingSenderId: "1033704719808",
+  appId: "1:1033704719808:web:7c998ce1e4004a5be8f425"
 };
 
   export const app = initializeApp(firebaseConfig);
