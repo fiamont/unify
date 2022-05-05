@@ -164,6 +164,25 @@
 
 
 
+.notesInner{
+  margin-top: 0.5rem;
+  border: 1px solid gold;
+  border-radius: 10px;
+  width: 15rem;
+  text-align: center;
+  cursor: pointer;
+  font-family: "Roboto";
+}
+
+.notesInner:hover{
+  background-color: blueviolet;
+  color: #fff;
+}
+
+
+
+
+
 @media screen and (min-width: 500px){
   .showModalInner{
     width: 460px;

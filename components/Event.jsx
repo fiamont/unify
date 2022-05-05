@@ -63,7 +63,10 @@ const Event = ({events}) =>{
                             </div>
                             <div className={style.event}> {/* white box with event text */}
                                 <p className={style.title}>{events.title}</p>
+                                <p className={style.description}>{events.date} kl {events.time} </p>
+
                                 <p className={style.description}>{events.body}</p>
+
                             </div>
                         </div>
                      </div>

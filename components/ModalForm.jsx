@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import style from './../styles/ModalForm.module.css'
 import SvgFormBackground from './Icons/formBackground';
 import { useRouter } from 'next/router';
 import Event from './Event';
-// import { app, database } from '../../firebaseConfig'
-// import { collection, addDoc, getDocs } from 'firebase/firestore'
+
+
+import { app, database } from './../firebaseConfig'
+import { collection, addDoc, getDocs } from 'firebase/firestore'
+
 
 const Modals = () => {
     const [title, setTitle] = useState(''); //input rutan är tom från början
@@ -13,6 +16,23 @@ const Modals = () => {
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
 
+    const dbInstance = collection(database, 'events'); /*It takes the database from the firebaseConfig import and the name of the collection.*/
+    const [notesArray, setNotesArray] = useState([]);
+
+     const getNotes = () => {
+        getDocs(dbInstance)
+            .then((data) => {
+                setNotesArray(data.docs.map((item) => {
+                    return { ...item.data(), id: item.id }
+                }));
+            })
+    } 
+
+    /*useEffect Hook will run this function every time our page loads*/
+    useEffect(() => {
+        getNotes();
+    }, [])
+ 
     //Validation
     const [titleErr, setTitleErr] = useState({});
     const [bodyErr, setBodyErr] = useState({});
@@ -52,21 +72,46 @@ const Modals = () => {
         setBodyErr(bodyErr);
         return isValid;
     }
-    const event = [{title, category, body, time, date }];
+    
+ 
+    const handleClick = () => {
+        addDoc(dbInstance, {
+            title: title,
+            category: category,
+            body: body,
+            time: time,
+            date: date
+        })
+        setTimeout(() => { 
+            router.push('/');
+        }, 500)
+    }
+    
+    const event = [{ title, category, body, time, date }];
     const handleSubmit = (e) => {
         e.preventDefault();
         event = { title, category, body, time, date }; 
         console.log(event);
     }
 
-    const handleClick = () => {
-            setTimeout(() => {
-                router.push('/');
-            }, 500)
-    } 
-
   return (
     <div className={style.flexContainer} key="1">
+
+        {/* we need to map this notesArray to see our data in the UI. */}
+        {/* <div className={style.notesDisplay}>
+                {notesArray.map((events) => {
+                    return (
+                        <div key={events.id} className={style.notesInner}>
+                            <h4>{events.title}</h4> 
+                            <h4>{events.body}</h4>
+                            <h4>{events.category}</h4>
+                        </div>
+                    )
+                })}
+            </div> */}
+            <div><Event events = {notesArray}/></div>
+            
+        
         <form onSubmit={onSubmit} className={style.eventform}>
             <input 
                 className={style.eventName}
@@ -79,10 +124,10 @@ const Modals = () => {
                 
             />
             <br/>
-            {/* {Object.keys(titleErr).map((key)=>{
-                return <div style={{color : "red"}}>{titleErr[key]}</div>
+          {Object.keys(titleErr).map((key)=>{
+                return <div key={key} style={{color : "red"}}>{titleErr[key]}</div>
   
-            })}  */}
+            })}   
 
             <select
                 className={style.subject}
