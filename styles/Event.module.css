@@ -112,15 +112,6 @@
     background: rgb(99, 99, 99);
  }
 
-
-
-
-
-
-
-
-
-
 .eventimg{
     width: 98%;
     height: 315px;
@@ -155,3 +146,7 @@
     }
 }
 
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}

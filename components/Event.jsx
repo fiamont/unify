@@ -1,5 +1,7 @@
 import React from 'react'
 import style from '../styles/Event.module.css'
+import Hangmedbutton from './HangmedButton';
+import LasmerButton from './LasmerButton';
 
 
 const Event = ({events}) =>{
@@ -57,15 +59,21 @@ const Event = ({events}) =>{
             {events.map((events) =>(
                 <div key={events.title} className={categoryColors(events.category).outerBorder}>{/* outerBorder */}
                     <div className={categoryColors(events.category).innerBorder}> {/* innerBorder */}
-                        <div className={style.eventimg}> {/* place for img (currently just gray box) */}
+                        <div className={style.eventimg}> EN BILD {/* place for img (currently just gray box) */}
                             <div className={categoryColors(events.category).categoryBox}> {/* the small categoryBox */}
                                 <p className={style.categoryText}>{events.category}</p>
                             </div>
                             <div className={style.event}> {/* white box with event text */}
                                 <p className={style.title}>{events.title}</p>
+                                <p className={style.plats}>{events.plats}EN PLATS</p>
                                 <p className={style.description}>{events.date} kl {events.time} </p>
 
-                                <p className={style.description}>{events.body}</p>
+                                {/* <p className={style.description}>{events.body}</p> */}
+                                <div className={style.buttons}>
+                                    <Hangmedbutton/>
+                                    <LasmerButton/>
+                                </div>
+                                
 
                             </div>
                         </div>

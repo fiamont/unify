@@ -12,6 +12,8 @@ import { collection, addDoc, getDocs } from 'firebase/firestore'
 const Modals = () => {
     const [title, setTitle] = useState(''); //input rutan är tom från början
     const [category, setCategory] = useState('');
+    const [city, setCity] = useState('');
+    const [place, setPlace] = useState('');
     const [body, setBody] = useState('');
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
@@ -78,6 +80,7 @@ const Modals = () => {
         addDoc(dbInstance, {
             title: title,
             category: category,
+            city: city,
             body: body,
             time: time,
             date: date
@@ -87,10 +90,10 @@ const Modals = () => {
         }, 500)
     }
     
-    const event = [{ title, category, body, time, date }];
+    const event = [{ title, category, city, place, body, time, date }];
     const handleSubmit = (e) => {
         e.preventDefault();
-        event = { title, category, body, time, date }; 
+        event = { title, category, city, place, body, time, date }; 
         console.log(event);
     }
 
@@ -153,6 +156,38 @@ const Modals = () => {
                 <label htmlFor="date">Datum:</label>
                 <input type="date" value={date} id="date" name="date"onChange={(e) => setDate(e.target.value)}></input>
             </div>
+
+            <div>
+                <select
+                    className={style.city}
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                    >
+                        <option label="Välj stad"></option>
+                        <option value="Stockholm">Stockholm</option>
+                        <option value="Göteborg">Göteborg</option>
+                        <option value="Malmö">Malmö</option>
+                        <option value="Uppsala">Uppsala</option>
+                        <option value="Västerås">Västerås</option>
+                        <option value="Örebro">Örebro</option>
+                        <option value="Linköping">Linköping</option>
+                        <option value="Lund">Lund</option>
+                        <option value="Jönköping">Jönköping</option>
+                        <option value="Umeå">Umeå</option>
+                    </select>
+            </div>
+            
+            <br />
+
+            <input 
+                className={style.place}
+                type="text" 
+                id="place"
+                value={place}
+                placeholder="På vilken plats eller adress ska evenemanget vara?"
+                name="place"
+                onChange={(e) => {setPlace(e.target.value)}}
+            />
 
             <div className={style.box}>
                 <div className={style.test}>

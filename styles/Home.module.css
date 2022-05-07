@@ -1,5 +1,22 @@
-.rubrik{
-    font-size: 35px;
-    margin-top: -3.5rem;
+.topPart{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-left: 6rem;
+}
+.nummer{
+    margin: 0;
+    margin-top: 2rem;
+    padding: 0;
+}
+.rubrik, .title{
+    font-family: var(--heading-font-family);
+    color: var(--heading-color);
+    font-size: 30px;
+    padding: 15px;
+}
+.title{
+    padding: 0;
 }
 

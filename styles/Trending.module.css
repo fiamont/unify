@@ -1,0 +1,60 @@
+.title{
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+    margin: 18px;
+}
+
+.events{
+    display: grid;
+    grid-gap: 6px;
+    grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(160px,1fr);
+    overflow-x: auto;
+}
+
+.events::-webkit-scrollbar { 
+    width: 0 !important 
+}
+
+.events{
+    overflow-x: -moz-scrollbars-none;
+}
+
+.eventboxUtelivKonsertQuiz, .eventboxKulturLivstil, .eventboxSportFritidGuider, .eventboxMatDryck, .eventboxKonstHantverk, .eventboxHalsaSkonhet, .eventboxDefault {
+    display: flex;
+    width: 140px;
+    height: 130px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 29px;
+    align-items: center;
+    justify-content: center;
+    margin: 18px;
+    border-radius: 5px;
+}
+
+.eventboxUtelivKonsertQuiz {
+    background: #FCD46C;
+}
+.eventboxKulturLivstil {
+    background:#7299E6;
+    ;
+}
+.eventboxSportFritidGuider {
+    background: #E67372;
+}
+.eventboxMatDryck {
+    background: #75C7B9;
+}
+.eventboxKonstHantverk{
+    background: #FFBD59;
+}
+.eventboxHalsaSkonhet{
+    background: #E196BB;
+}
+.eventboxDefault{
+    background: gray;
+}

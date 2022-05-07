@@ -4,6 +4,7 @@ import Link from 'next/link'
 import SearchIcon from "./Icons/searchIcon"
 import ProfileIcon from "./Icons/profileIcon"
 
+
 export default function Navbar() { 
   const [toggleMenu, setToggleMenu] = useState(false)
   const [screenWidth, setScreenWidth] = useState()
@@ -42,15 +43,14 @@ export default function Navbar() {
         <hr className={style.hr}></hr>
         {(toggleMenu || screenWidth > 960) && (
         <ul className={style.navmenu}>
-          <li className={style.item}><Link href='/' passHref >Konsert</Link></li>
-          <li className={style.item}><Link href='/' passHref >Quiz</Link></li>
-          <li className={style.item}><Link href='/' passHref >Mat & Dryck</Link></li>
-          <li className={style.item}><Link href='/' passHref >Uteliv</Link></li>
-          <li className={style.item}><Link href='/' passHref >Kultur & Livsstil</Link></li>
-          <li className={style.item}><Link href='/' passHref >Guider</Link></li>
-          <li className={style.item}><Link href='/' passHref >Sport & Fritid</Link></li>
-          <li className={style.item}><Link href='/' passHref >Konst & Hantverk</Link></li>
-          <li className={style.item}><Link href='/' passHref >Hälsa & Skönhet</Link></li>
+          <li className={style.konsertquizuteliv} id="konsertquizuteliv"><Link href='/konsertquizuteliv' passHref >Konsert, Quiz & Uteliv</Link></li>
+          <li className={style.matdryck} id="matdryck"><Link href='/matdryck' passHref >Mat & Dryck</Link></li>
+          <li className={style.kulturlivsstil} id="kulturlivsstil"><Link href='/kulturlivsstil' passHref >Kultur & Livsstil</Link></li>
+          <li className={style.sportfritid} id="sportfritid"><Link href='/sportfritid' passHref >Sport & Fritid</Link></li>
+          <li className={style.konsthantverk} id="konsthantverk"><Link href='/konsthantverk' passHref >Konst & Hantverk</Link></li>
+          <li className={style.item}><Link href='/profile' passHref >Skapa profil</Link></li>
+          <li className={style.item}><Link href='/' passHref >Kontakta oss</Link></li>
+          <li className={style.item}><Link href='/' passHref >Om oss</Link></li>
         </ul> )}
       </nav>
   )

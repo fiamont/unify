@@ -1,0 +1,24 @@
+.lasmerbtn {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    width: 126px;
+    height: 33px;
+    background: none;
+    border: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 7px;
+    cursor: pointer;
+    color: #030303;
+    
+    
+  }
+
+  .lasmerbtn:hover {
+    background-color: #daecec;
+  }

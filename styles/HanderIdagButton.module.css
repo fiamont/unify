@@ -1,25 +1,26 @@
-.eventbtn {
+.handeridagbtn {
     display: flex;
     flex-direction: row;
     text-align: center;
     justify-content: center;
     align-self: center;
     align-items: center;
-    width: 125px;
-    height: 40px;
-    background: #fff;
-    border: 2px solid #157C79;
+    width: 226px;
+    height: 33px;
+    background: var(--button-primary-color);
+    border: none;
     border-radius: 10px;
     font-style: normal;
     font-weight: 500;
     font-size: 19px;
     line-height: 7px;
     cursor: pointer;
-    color: #030303;
+    color: #ffff;
+    
     
   }
 
-  .eventbtn:hover {
+  .handeridagbtn:hover {
     background-color: #1B4848;
   }
 
@@ -28,13 +29,4 @@
     justify-content: flex-end;
     padding-right: 10px;
 
-  }
-
-  @media screen and (min-width: 960px) {
-    .button{
-        flex-direction: row;
-        position: absolute;
-        top: 3rem;
-        right: 8rem;
-    }
   }
