@@ -4,7 +4,6 @@ import SvgFormBackground from './Icons/formBackground';
 import { useRouter } from 'next/router';
 import Event from './Event';
 
-
 import { app, database } from './../firebaseConfig'
 import { collection, addDoc, getDocs } from 'firebase/firestore'
 
