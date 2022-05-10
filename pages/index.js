@@ -66,18 +66,18 @@ export default function Home() {
       <BackToTop />
       <Event events={eventsArray}/>
       {/* <pre>Hello event list {JSON.stringify(list, null, 7)}</pre> */}
-      {/* <Event events={JSON.stringify(list, null, 7)}/> */}
+      {/* <Event events={list}/> */}
       </main>
     </div>
   )
 }
 
 
-  // Home.getInitialProps = async () => {
-  //   const resp = await fetch('http://localhost:3000/api/events'); 
-  //   const json = await resp.json();
-  //   return {list: json};
-  // }
+  Home.getInitialProps = async () => {
+    const resp = await fetch('http://localhost:3000/api/events'); 
+    const json = await resp.json();
+    return {list: json};
+  }
 
   //byta ut till https://unify-sti.vercel.app/api/events ???
   // ev byta till Home.getServerSideProps... ??

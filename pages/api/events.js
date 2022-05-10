@@ -14,7 +14,12 @@ export default async function getAllEvents(req, res){
         console.log(doc.id, " => ", doc.data());
     });
 
-
+    const events = querySnapshot.docs.map(doc => {
+        return {
+            //id: doc.id,
+            ...doc.data()
+        }
+    })
     // const events = query(dbInstance, where("category", "==", "Mat & Dryck"), limit(4))
     // const [events, setEvents] = useState([]);
     // useEffect(() => {
@@ -26,5 +31,5 @@ export default async function getAllEvents(req, res){
     //     getUsers();
     // }, []);
 
-    res.json(querySnapshot);
+    res.json(events);
 }
