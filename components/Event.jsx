@@ -1,7 +1,6 @@
 import React from 'react'
 import style from '../styles/Event.module.css'
-import ComeAlongButton from './ComeAlongButton';
-
+import ShowUpBtn from './ShowUp';
 
 const Event = ({events}) =>{
  
@@ -66,8 +65,7 @@ const Event = ({events}) =>{
                                 <p className={style.title}>{events.title}</p>
                                 <p className={style.description}>{events.date} kl {events.time} </p>
                                 <p className={style.description}>{events.body}</p>
-                                <ComeAlongButton />
-
+                               <ShowUpBtn />
                             </div>
                         </div>
                      </div>
