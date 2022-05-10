@@ -1,6 +1,6 @@
 import React from 'react'
 import style from '../styles/Event.module.css'
-
+import ShowUpBtn from './ShowUp';
 
 const Event = ({events}) =>{
  
@@ -64,9 +64,8 @@ const Event = ({events}) =>{
                             <div className={style.event}> {/* white box with event text */}
                                 <p className={style.title}>{events.title}</p>
                                 <p className={style.description}>{events.date} kl {events.time} </p>
-
                                 <p className={style.description}>{events.body}</p>
-
+                               <ShowUpBtn />
                             </div>
                         </div>
                      </div>
