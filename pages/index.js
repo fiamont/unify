@@ -61,7 +61,7 @@ export default function Home() {
       <Head><title>Unify</title></Head>
       <main className={styles.main}>
       <Eventbutton/>  
-      <h1 className={styles.rubrik}>I Blickfånget</h1>
+      <h1 className={styles.rubrik}>Händer idag</h1>
 
       <BackToTop />
       <Event events={eventsArray}/>

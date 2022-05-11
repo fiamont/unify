@@ -135,15 +135,11 @@ const Modals = () => {
                 onChange={(e) => setCategory(e.target.value)}
             >
             <option label="Välj kategori"></option>
-            <option value="Konsert">Konsert</option>
-            <option value="Quiz">Quiz</option>
+            <option value="Konsert, Quiz & Uteliv">Konsert, Quiz & Uteliv</option>
             <option value="Mat & Dryck">Mat & Dryck</option>
-            <option value="Uteliv">Uteliv</option>
             <option value="Kultur & Livsstil">Kultur & Livsstil</option>
-            <option value="Guider">Guider</option>
             <option value="Sport & Fritid">Sport & Fritid</option>
             <option value="Konst & Hantverk">Konst & hantverk</option>
-            <option value="Hälsa & Skönhet">Hälsa & Skönhet</option>
             </select>
 
             <div className={style.inputDateTime}>

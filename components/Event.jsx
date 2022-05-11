@@ -12,7 +12,7 @@ const Event = ({events}) =>{
         let innerBorder = "";
         let categoryBox = "";
 
-        if(category == "Uteliv" || category == "Konsert" || category == "Quiz") {
+        if(category == "Konsert, Quiz & Uteliv") {
             outerBorder= style.eventboxUtelivKonsertQuiz;
             innerBorder = style.innerBorderUtelivKonsertQuiz;
             categoryBox = style.categoryUtelivKonsertQuiz;
@@ -22,10 +22,10 @@ const Event = ({events}) =>{
             innerBorder = style.innerBorderKulturLivstil;
             categoryBox = style.categoryKulturLivstil;
         }
-        else if(category == "Sport & Fritid" || category == "Guider"){
-            outerBorder = style.eventboxSportFritidGuider;
-            innerBorder = style.innerBorderSportFritidGuider;
-            categoryBox = style.categorySportFritidGuider;
+        else if(category == "Sport & Fritid"){
+            outerBorder = style.eventboxSportFritid;
+            innerBorder = style.innerBorderSportFritid;
+            categoryBox = style.categorySportFritid;
         }
         else if(category == "Mat & Dryck"){
             outerBorder = style.eventboxMatDryck;
@@ -37,20 +37,15 @@ const Event = ({events}) =>{
             innerBorder = style.innerBorderKonstHantverk;
             categoryBox = style.categoryKonstHantverk;
         }
-        else if(category == "Hälsa & Skönhet"){
-            outerBorder = style.eventboxHalsaSkonhet;
-            innerBorder = style.innerBorderHalsaSkonhet;
-            categoryBox = style.categoryHalsaSkonhet;
-        }
         else{
             outerBorder = style.eventboxDefault;
             innerBorder = style.innerBorderDefault;
             categoryBox = style.categoryDefault;
         }
-              
-        return {outerBorder, innerBorder, categoryBox};
 
+        return {outerBorder, innerBorder, categoryBox};
     }
+
     return(
         
         <div className={style.container}>
