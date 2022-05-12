@@ -4,57 +4,11 @@ import styles from '../styles/Home.module.css'
 import Eventbutton from '../components/Eventbutton'
 import Event from '../components/Event' 
 import BackToTop from '../components/BackToTopButton'
-import listOfEvents from '../db/listOfEvents.json' 
 
-import React, { useState, useEffect } from 'react'
-import { app, database } from './../firebaseConfig'
-import { collection, getDocs } from 'firebase/firestore'
+import React from 'react'
+import { db } from '../utils/firebase'
 
-// export async function getServerSideProps (context) {
-
-//   const dbInstance = collection(database, 'events');
-//   let eventsArray = []
-
-//   const getEvents = () => {
-//     const [eventsArray, setEventsArray] = useState([]);
-   
-//     getDocs(dbInstance)
-//         .then((data) => {
-//             setEventsArray(data.docs.map((item) => {
-//                 return { ...item.data(), id: item.id }
-//             }));
-//         })
-
-//         useEffect(() => {
-//           getEvents();
-//         }, []) 
-        
-        
-//   }
-  
-//   return {
-//     props :{
-//       events :eventsArray
-//     }
-//   }
-// }
-
-export default function Home() {
-  const dbInstance = collection(database, 'events');
-    const [eventsArray, setEventsArray] = useState([]);
-
-     const getEvents = () => {
-        getDocs(dbInstance)
-            .then((data) => {
-                setEventsArray(data.docs.map((item) => {
-                    return { ...item.data(), id: item.id }
-                }));
-            })
-    } 
-    useEffect(() => {
-        getEvents();
-    }, [])
-
+export default function Home({ events }) {
 
   return (
     <div className={styles.container}>
@@ -64,8 +18,26 @@ export default function Home() {
       <h1 className={styles.rubrik}>Händer idag</h1>
 
       <BackToTop />
-      <Event events={eventsArray}/>
+    <Event events={events} eventsKey={events.id}/> 
       </main>
-    </div>
+    </div> 
   )
+}
+
+//Server side code
+export async function getServerSideProps(){
+	const snapshots = await db.collection('events').get()
+  
+	const events = snapshots.docs.map((doc) => {
+		return {
+			id: doc.id,
+			...doc.data(),
+		}
+	})
+
+	return {
+		props: {
+      events: JSON.parse(JSON.stringify(events)),
+		},
+	}
 }

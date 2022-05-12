@@ -5,8 +5,7 @@ import { useRouter } from 'next/router';
 import Event from './Event';
 
 
-import { app, database } from './../firebaseConfig'
-import { collection, addDoc, getDocs } from 'firebase/firestore'
+
 
 
 const Modals = () => {
@@ -16,22 +15,7 @@ const Modals = () => {
     const [time, setTime] = useState('');
     const [date, setDate] = useState('');
 
-    const dbInstance = collection(database, 'events'); /*It takes the database from the firebaseConfig import and the name of the collection.*/
-    // const [notesArray, setNotesArray] = useState([]);
-
-    //  const getNotes = () => {
-    //     getDocs(dbInstance)
-    //         .then((data) => {
-    //             setNotesArray(data.docs.map((item) => {
-    //                 return { ...item.data(), id: item.id }
-    //             }));
-    //         })
-    // } 
-
-    /*useEffect Hook will run this function every time our page loads*/
-    // useEffect(() => {
-    //     getNotes();
-    // }, [])
+   
  
     //Validation
     const [titleErr, setTitleErr] = useState({});
@@ -75,13 +59,13 @@ const Modals = () => {
     
  
     const handleClick = () => {
-        addDoc(dbInstance, {
+       /*  addDoc(dbInstance, {
             title: title,
             category: category,
             body: body,
             time: time,
             date: date
-        })
+        }) */
         setTimeout(() => { 
             router.push('/');
         }, 500)
@@ -95,22 +79,7 @@ const Modals = () => {
     }
 
   return (
-    <div className={style.flexContainer} key="1">
-
-        {/* we need to map this notesArray to see our data in the UI. */}
-        {/* <div className={style.notesDisplay}>
-                {notesArray.map((events) => {
-                    return (
-                        <div key={events.id} className={style.notesInner}>
-                            <h4>{events.title}</h4> 
-                            <h4>{events.body}</h4>
-                            <h4>{events.category}</h4>
-                        </div>
-                    )
-                })}
-            </div> */}
-            {/* <div><Event events = {notesArray}/></div> */}
-            
+    <div className={style.flexContainer} key="1">        
         
         <form onSubmit={onSubmit} className={style.eventform}>
             <input 
@@ -184,7 +153,7 @@ const Modals = () => {
         {showModal ? (
             <div className={style.showModal}>
                 <div className={style.showModalInner}>
-                <Event events= {event}/>
+                <Event events= {event} eventsKey={event.title}/>
                 <div className={style.buttonContainer}>
                                 <button className={style.cancelBtn} onClick={() => setShowModal(false)}>Ändra</button>
                                 <button className={style.submitBtn} onClick={handleClick} type="submit">Dela</button>
