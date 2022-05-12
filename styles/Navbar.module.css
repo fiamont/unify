@@ -157,9 +157,11 @@
         background: none;
         box-shadow: none;
         width: 100%;
-        border-radius: 7px;
         animation-name: none;
 
+    }
+    .item, .konsertquizuteliv, .matdryck, .kulturlivsstil, .sportfritid, .konsthantverk {
+        width: 100%;
     }
 
     .buttons {
