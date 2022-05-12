@@ -1,14 +1,15 @@
 import React from 'react';
 import Head from 'next/head'
-import Modals from '../components/ModalForm';
+
+import MultiStepForm from '../components/MultiStepForm';
 
 function EventForm(){
     return(
         <div>
             <Head><title>Unify - Skapa event</title></Head>
             <main>
-                <h1>Skapa Event</h1>
-                <Modals />
+              
+                <MultiStepForm />
             </main>
         </div>
         
