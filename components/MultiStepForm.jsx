@@ -4,11 +4,43 @@ import { useState } from "react";
 import EventInfoForm from "./EventInfoForm";
 import DescriptionInfoForm from "./DescriptionForm";
 import PreviewInfoForm from "./PreviewForm";
+import axios from "axios";
+import { useRouter } from "next/router";
 
 
 
 
 export default function MultiStepForm() {
+
+    const [isLoading, setIsLoading] = useState(false)
+    const [errors, setErrors] = useState([]) //Array of string
+    const router = useRouter()
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+
+        const formData2 = new FormData(event.target)
+        const body = Object.fromEntries(formData2.entries())
+        console.log(body) 
+
+        // make an http requset
+        // request the endpoint that will create this new post
+        // POSTS /api/posts
+        // fetch('/api/posts', {method: 'POST'})
+
+        setIsLoading(true)
+       axios.event('/api/events', formData)
+            .then((res) => {
+            const eventId = res.data.id
+            router.push(`/events/${eventId}`)
+       })
+       .catch((err) => {
+           setErrors(err.response.data.errors)
+       })
+        .finally(() => {
+        setIsLoading(false)
+       })
+    }
 
     const [page, setPage] = useState(0);
     const [formData, setFormData] = useState({
@@ -36,6 +68,7 @@ export default function MultiStepForm() {
     };
 
   return (
+     
       <div className={style.flexContainer} >
         <div className={style.form}>
                     
@@ -57,7 +90,8 @@ export default function MultiStepForm() {
                     <button 
                 onClick={() => {
                     if (page === FormTitles.length -1) {
-                        alert("Form Submitted")
+                    
+                        handleSubmit();
                         console.log(formData);
                     } else {
 
@@ -69,5 +103,6 @@ export default function MultiStepForm() {
             
         </div>
     </div>
+  
   );
 }
