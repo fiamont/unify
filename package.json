@@ -9,12 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "firebase": "^9.7.0",
+    "firebase-admin": "^10.2.0",
     "next": "^12.1.5",
     "normalize.css": "^8.0.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-hook-form": "^7.30.0"
+    "react-hook-form": "^7.30.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "eslint": "8.14.0",
