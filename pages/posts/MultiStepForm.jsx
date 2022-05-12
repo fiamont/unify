@@ -1,26 +1,19 @@
 import React from "react";
-import style from './../styles/MultiStepForm.module.css'
+import style from '../../styles/MultiStepForm.module.css'
 import { useState } from "react";
-import EventInfoForm from "./EventInfoForm";
-import DescriptionInfoForm from "./DescriptionForm";
-import PreviewInfoForm from "./PreviewForm";
+import EventInfoForm from "../../components/EventInfoForm";
+import DescriptionInfoForm from "../../components/DescriptionForm";
+import PreviewInfoForm from "../../components/PreviewForm";
 import axios from "axios";
-import { useRouter } from "next/router";
-
-
 
 
 export default function MultiStepForm() {
 
-    const [isLoading, setIsLoading] = useState(false)
-    const [errors, setErrors] = useState([]) //Array of string
-    const router = useRouter()
-
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        const formData2 = new FormData(event.target)
-        const body = Object.fromEntries(formData2.entries())
+        const formData = new FormData(event.target)
+        const body = Object.fromEntries(formData.entries())
         console.log(body) 
 
         // make an http requset
@@ -28,17 +21,9 @@ export default function MultiStepForm() {
         // POSTS /api/posts
         // fetch('/api/posts', {method: 'POST'})
 
-        setIsLoading(true)
-       axios.event('/api/events', formData)
-            .then((res) => {
-            const eventId = res.data.id
-            router.push(`/events/${eventId}`)
-       })
-       .catch((err) => {
-           setErrors(err.response.data.errors)
-       })
-        .finally(() => {
-        setIsLoading(false)
+       axios.post('/api/posts', body).then((res) => {
+        const postId = res.data.id
+        router.push(`/posts/${postId}`)
        })
     }
 
@@ -68,7 +53,7 @@ export default function MultiStepForm() {
     };
 
   return (
-     
+    
       <div className={style.flexContainer} >
         <div className={style.form}>
                     
@@ -88,10 +73,12 @@ export default function MultiStepForm() {
                         <div style={{ width: page === 0 ? "33.3%" : page == 1 ? "66.6%" : "100%" }}></div>
                     </div>
                     <button 
+                    type="submit"
                 onClick={() => {
                     if (page === FormTitles.length -1) {
-                    
-                        handleSubmit();
+                        
+                       handleSubmit(formData)
+                     
                         console.log(formData);
                     } else {
 
@@ -103,6 +90,7 @@ export default function MultiStepForm() {
             
         </div>
     </div>
+  
   
   );
 }

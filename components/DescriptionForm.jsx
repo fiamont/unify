@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './../styles/MultiStepForm.module.css'
 
-function DescriptionInfoForm({ formData, setFormData }) {
+function DescriptionInfoForm({ formDatas, setFormDatas }) {
     return (
         <div className={style.eventInfoContainer}>
 
@@ -13,9 +13,9 @@ function DescriptionInfoForm({ formData, setFormData }) {
           className={style.descriptionArea} 
           type="text"
           placeholder="Beskrivning"
-          value={formData.textarea}
+          value={formDatas.textarea}
           onChange={(e) => {
-            setFormData({ ...formData, textarea: e.target.value });
+            setFormDatas({ ...formDatas, textarea: e.target.value });
           }} />
 
         <div className={style.solidLine} />
@@ -25,9 +25,9 @@ function DescriptionInfoForm({ formData, setFormData }) {
           <div className={style.priceInner}>PRIS
           <input
             type="text"
-            value={formData.price}
+            value={formDatas.price}
             onChange={(e) => {
-                setFormData({ ...formData, price: e.target.value });
+                setFormDatas({ ...formDatas, price: e.target.value });
             }}
             />
             </div>
@@ -35,9 +35,9 @@ function DescriptionInfoForm({ formData, setFormData }) {
             <div className={style.participantsInner}>ANTAL DELTAGARE
           <input
             type="text"
-            value={formData.numbOfParticipants}
+            value={formDatas.numbOfParticipants}
             onChange={(e) => {
-                setFormData({ ...formData, numbOfParticipants: e.target.value });
+                setFormDatas({ ...formDatas, numbOfParticipants: e.target.value });
             }}
             /> 
             </div>

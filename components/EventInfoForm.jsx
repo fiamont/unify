@@ -1,53 +1,59 @@
 import React from 'react'
 import style from './../styles/MultiStepForm.module.css'
 
-function EventInfoForm({ formData, setFormData }) {
+function EventInfoForm({ formDatas, setFormDatas }) {
     
   return (
       <div className={style.eventInfoContainer}>
-        <input 
+        <input  htmlFor="userName"
             className={style.userName}
           type="text"
+          id="userName"
+          name="userName"
           placeholder="Ange ditt namn"
-          value={formData.userName}
+          value={formDatas.userName}
           onChange={(event) =>
-            setFormData({ ...formData, userName: event.target.value })
+            setFormDatas({ ...formDatas, userName: event.target.value })
           } />
          
-        <input 
+        <input  htmlFor="EventName"
           type="text"
+          id="eventName"
+          name="eventName"
           placeholder="Evenemangs namn"
-          value={formData.eventName}
+          value={formDatas.eventName}
           onChange={(event) =>
-            setFormData({ ...formData, eventName: event.target.value })
+            setFormDatas({ ...formDatas, eventName: event.target.value })
           } />
         
         <div className={style.inputDateTime}>
         <label htmlFor="date">Datum:</label>
         <input 
             type="date" 
-            value={formData.date} id="date" 
+            value={formDatas.date} id="date" 
             name="date" 
             onChange={(event) =>
-                setFormData({ ...formData, date: event.target.value })
+                setFormDatas({ ...formDatas, date: event.target.value })
               }></input>
 
         <label htmlFor="appt">Tid:</label>
         <input 
-            type="time" value={formData.time} 
-            id="appt" name="appt" 
+            type="time" value={formDatas.time} 
+            id="time" name="time" 
             onChange={(event) =>
-                setFormData({ ...formData, time: event.target.value })
+                setFormDatas({ ...formDatas, time: event.target.value })
               }></input>
         </div>
 
         <div className={style.location}>
         <input 
             type="text" 
+            id="location"
+            name="location"
             placeholder="Plats" 
-            value={formData.location}
+            value={formDatas.location}
             onChange={(event) =>
-            setFormData({ ...formData, location: event.target.value })
+            setFormDatas({ ...formDatas, location: event.target.value })
           }/>
         </div>
         
@@ -55,9 +61,9 @@ function EventInfoForm({ formData, setFormData }) {
 
         <select
                 className={style.subject}
-                value={formData.category}
+                value={formDatas.category}
                 onChange={(event) =>
-                    setFormData({ ...formData, category: event.target.value })
+                    setFormDatas({ ...formDatas, category: event.target.value })
                   }
             >
             <option label="Välj kategori"></option>
