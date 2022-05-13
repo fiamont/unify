@@ -42,15 +42,15 @@ export default function Navbar() {
         </div>
         <hr className={style.hr}></hr>
         {(toggleMenu || screenWidth > 960) && (
-        <ul className={style.navmenu}>
-          <li className={style.konsertquizuteliv} id="konsertquizuteliv"><Link href='/konsertquizuteliv' passHref >Konsert, Quiz & Uteliv</Link></li>
-          <li className={style.matdryck} id="matdryck"><Link href='/matdryck' passHref >Mat & Dryck</Link></li>
-          <li className={style.kulturlivsstil} id="kulturlivsstil"><Link href='/kulturlivsstil' passHref >Kultur & Livsstil</Link></li>
-          <li className={style.sportfritid} id="sportfritid"><Link href='/sportfritid' passHref >Sport & Fritid</Link></li>
-          <li className={style.konsthantverk} id="konsthantverk"><Link href='/konsthantverk' passHref >Konst & Hantverk</Link></li>
-          <li className={style.item}><Link href='/profile' passHref >Skapa profil</Link></li>
-          <li className={style.item}><Link href='/' passHref >Kontakta oss</Link></li>
-          <li className={style.item}><Link href='/' passHref >Om oss</Link></li>
+        <ul onClick={toggleNav} className={style.navmenu}>
+          <li  id="konsertquizuteliv"><Link href='/konsertquizuteliv' passHref ><div className={style.konsertquizuteliv}>Konsert, Quiz & Uteliv</div></Link></li>
+          <li  id="matdryck"><Link href='/matdryck' passHref ><div className={style.matdryck}>Mat & Dryck</div></Link></li>
+          <li  id="kulturlivsstil"><Link href='/kulturlivsstil' passHref ><div className={style.kulturlivsstil}>Kultur & Livsstil</div></Link></li>
+          <li  id="sportfritid"><Link href='/sportfritid' passHref ><div className={style.sportfritid}>Sport & Fritid</div></Link></li>
+          <li  id="konsthantverk"><Link href='/konsthantverk' passHref ><div className={style.konsthantverk}>Konst & Hantverk</div></Link></li>
+          <li ><Link href='/profile' passHref ><div className={style.item}>Skapa profil</div></Link></li>
+          <li ><Link href='/' passHref ><div className={style.item}>Kontakta oss</div></Link></li>
+          <li ><Link href='/' passHref ><div className={style.item}>Om oss</div></Link></li>
         </ul> )}
       </nav>
   )
