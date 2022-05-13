@@ -87,6 +87,9 @@
     left: 16px;
     top: 152px;
     background-color: #fff;
+
+    display: flex;
+    align-items: center;
 }
 
 .item{

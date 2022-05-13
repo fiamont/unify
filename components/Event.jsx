@@ -2,7 +2,7 @@ import React from 'react'
 import style from '../styles/Event.module.css'
 import ShowUpBtn from './ShowUp';
 
-const Event = ({events, eventsKey}) =>{
+const Event = ({events}) =>{
  
     // const events = props.events;
 
@@ -50,7 +50,7 @@ const Event = ({events, eventsKey}) =>{
         
         <div className={style.container}>
             {events.map((events) =>(
-                <div key={eventsKey} className={categoryColors(events.category).outerBorder}>{/* outerBorder */}
+                <div key={events.id} className={categoryColors(events.category).outerBorder}>{/* outerBorder */}
                     <div className={categoryColors(events.category).innerBorder}> {/* innerBorder */}
                         <div className={style.eventimg}> {/* place for img (currently just gray box) */}
                             <div className={categoryColors(events.category).categoryBox}> {/* the small categoryBox */}
