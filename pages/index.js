@@ -15,13 +15,12 @@ export default function Home({ posts }) {
   return (
     <div className={styles.container}>
       <Head><title>Unify</title></Head>
+      <Eventbutton/> 
       <main className={styles.main}>
       <h1 className={styles.rubrik}>Händer idag</h1>
-      
       <BackToTop />
-      {/* <Event events={events} eventsKey={events.id}/>  */}
-      <Eventbutton/>  
-      {posts.map((post) => {
+      <Event events={posts}/> 
+      {/* {posts.map((post) => {
         return (
         <li key={post.id}>
           <Link href={`/posts/${post.id}`}>
@@ -29,7 +28,7 @@ export default function Home({ posts }) {
           </Link>
         </li>
         )
-      })}
+      })} */}
    
       </main>
     </div> 
