@@ -1,8 +1,9 @@
+import Link from 'next/link';
 import React from 'react'
 import style from '../styles/Event.module.css'
 import ShowUpBtn from './ShowUp';
 
-const Event = ({events, eventsKey}) =>{
+const Event = ({events}) =>{
  
     // const events = props.events;
 
@@ -50,17 +51,21 @@ const Event = ({events, eventsKey}) =>{
         
         <div className={style.container}>
             {events.map((events) =>(
-                <div key={eventsKey} className={categoryColors(events.category).outerBorder}>{/* outerBorder */}
+                
+                <div key={events.id} className={categoryColors(events.category).outerBorder}>{/* outerBorder */}
                     <div className={categoryColors(events.category).innerBorder}> {/* innerBorder */}
                         <div className={style.eventimg}> {/* place for img (currently just gray box) */}
                             <div className={categoryColors(events.category).categoryBox}> {/* the small categoryBox */}
                                 <p className={style.categoryText}>{events.category}</p>
                             </div>
                             <div className={style.event}> {/* white box with event text */}
-                                <p className={style.title}>{events.title}</p>
+                                <p className={style.title}>{events.eventName}</p>
                                 <p className={style.description}>{events.date} kl {events.time} </p>
-                                <p className={style.description}>{events.body}</p>
+                                <p className={style.description}>{events.description}</p>
                                <ShowUpBtn />
+                               <Link href={`/posts/${events.id}`}>
+                                <a className={style.readmore}>Läs mer...</a>
+                                </Link>
                             </div>
                         </div>
                      </div>
