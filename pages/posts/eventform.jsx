@@ -1,7 +1,8 @@
 import React from 'react';
 import Head from 'next/head'
 
-import MultiStepForm from './posts/MultiStepForm';
+import MultiStepForm from './MultiStepForm';
+import NewPost from '../../components/new';
 
 function EventForm(){
     return(
@@ -9,7 +10,8 @@ function EventForm(){
             <Head><title>Unify - Skapa event</title></Head>
             <main>
               
-                <MultiStepForm />
+                {/* <MultiStepForm /> */}
+                <NewPost />
             </main>
         </div>
         

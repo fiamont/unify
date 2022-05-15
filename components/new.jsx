@@ -1,15 +1,19 @@
 import axios from "axios";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import EventInfoForm from "../../components/EventInfoForm";
-import DescriptionInfoForm from "../../components/DescriptionForm";
-import PreviewInfoForm from "../../components/PreviewForm";
-import style from '../../styles/MultiStepForm.module.css'
+import EventInfoForm from "./EventInfoForm";
+import DescriptionInfoForm from "./DescriptionForm";
+import PreviewInfoForm from "./PreviewForm";
+import style from '../styles/MultiStepForm.module.css'
+import Head from 'next/head'
 
 export default function NewPost() {
     const [isLoading, setIsLoading] = useState(false)
     const [errors, setErrors] = useState([]) //Array of string
     const router = useRouter()
+    const [showButton, setShowButton] = useState(true);
+
+
 
     const [page, setPage] = useState(0);
     const [formDatas, setFormDatas] = useState({
@@ -62,6 +66,9 @@ export default function NewPost() {
        })
     }
     return (
+        <div>
+        <Head><title>Unify - Skapa event</title></Head>
+        <main>
         <div className={style.flexContainer} >
             <div className={style.form}>
                 <div className={style.header}>
@@ -77,20 +84,23 @@ export default function NewPost() {
                     <div className={style.progressbar}>
                         <div style={{ width: page === 0 ? "33.3%" : page == 1 ? "66.6%" : "100%" }}></div>
                     </div>
+                  
                     <button
                     onClick={() => {
                         if(page === FormTitles.length -1) {
-                  
-                        console.log(formDatas)
+                            console.log(formDatas)       
                         } else {
 
+                            setPage((currPage) => currPage +1);
                         }
-                        setPage((currPage) => currPage +1);
-                    }}>{page === FormTitles.length -1 ? "Publicera evenemang" : "Nästa"}</button>
-      
+                        
+                    }}>{page === FormTitles.length -1 ? "Publicera Evenemang" : "Nästa"}</button>
+              
   
                 </div>
             </div>
+        </div>
+        </main>
         </div>
   
     

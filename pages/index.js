@@ -8,7 +8,7 @@ import BackToTop from '../components/BackToTopButton'
 import React from 'react'
 import { db } from '../utils/firebase'
 import Link from 'next/link'
-import NewPost from './posts/new'
+import NewPost from './posts/eventform'
 
 export default function Home({ posts }) {
   

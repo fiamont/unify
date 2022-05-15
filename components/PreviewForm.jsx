@@ -66,13 +66,15 @@ function PreviewInfoForm({ formDatas, setFormDatas }) {
             name="eventName"
             value={formDatas.eventName}
             />
+            <div className={style.previewUserName}><p>Anordnat av:</p>
             <input htmlFor="userName"
-            className={style.previewUserName}
+            
             type="text"
             id="userName"
             name="userName"
-            value={"Anordnat av " + formDatas.userName}
+            value={formDatas.userName}
             />
+            </div>
         </div>
         <textarea
         className={style.previewTextarea}
@@ -83,8 +85,8 @@ function PreviewInfoForm({ formDatas, setFormDatas }) {
         value={formDatas.textarea}
         />
         <div>
-                <button type="submit"disabled={isLoading}>Create!</button>
-            </div> 
+          <button className={style.submitBtn} type="submit"disabled={isLoading}>Create!</button>
+        </div>
 
      
     </div>
