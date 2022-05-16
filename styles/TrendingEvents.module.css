@@ -1,0 +1,66 @@
+.title, .insidetitle{
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+    margin: 18px;
+}
+
+.insidetitle{
+    background-color: rgba(255, 255, 255, 0.505);
+    border-radius: 5px;
+}
+
+.events{
+    display: grid;
+    grid-gap: 6px;
+    grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(160px,1fr);
+    overflow-x: auto;
+}
+
+.events::-webkit-scrollbar { 
+    width: 0 !important 
+}
+
+.events{
+    overflow-x: -moz-scrollbars-none;
+}
+
+.eventboxUtelivKonsertQuiz, .eventboxKulturLivstil, .eventboxSportFritid, .eventboxMatDryck, .eventboxKonstHantverk, .eventboxDefault {
+    display: flex;
+    width: 140px;
+    height: 130px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 29px;
+    align-items: center;
+    justify-content: center;
+    margin: 18px;
+    border-radius: 5px;
+}
+
+.eventboxUtelivKonsertQuiz {
+    background: url(../public/konsertquizuteliv.svg) no-repeat center;
+    background-size: cover;
+}
+.eventboxKulturLivstil {
+    background: url(../public/kulturlivstil.svg) no-repeat center;
+    background-size: cover;
+}
+.eventboxSportFritid{
+    background: url(../public/sportfritid.svg) no-repeat center;
+    background-size: cover;
+}
+.eventboxMatDryck {
+    background: url(../public/matdryck.svg) no-repeat center;
+    background-size: cover;
+}
+.eventboxKonstHantverk{
+    background: url(../public/konsthantverk.svg) no-repeat center;
+    background-size: cover;
+}
+.eventboxDefault{
+    background: gray;
+}
