@@ -41,16 +41,17 @@ function PreviewInfoForm({ formDatas, setFormDatas }) {
         <div className={style.eventPic}></div>
        <div className={style.previewBox1}>
            <div className={style.previewDateTime}>
+                <p>Datum</p>
                 <input
-                    className={style.previewDate}
                     htmlFor="date"
                     type="text"
                     id="date"
                     name="date"
                     value={formDatas.date}
                  />
+                <p>Tid</p>
                 <input
-                    className={style.previewDate}
+                    className={style.previeTime}
                     htmlFor="time"
                     type="text"
                     id="time"

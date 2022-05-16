@@ -8,7 +8,7 @@ import BackToTop from '../components/BackToTopButton'
 import React from 'react'
 import { db } from '../utils/firebase'
 import Link from 'next/link'
-import NewPost from './posts/eventform'
+import NewPost from './skapaevent'
 
 export default function Home({ posts }) {
   

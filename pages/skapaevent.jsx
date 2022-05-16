@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head'
+import NewPost from '../components/new';
 
-import MultiStepForm from './MultiStepForm';
-import NewPost from '../../components/new';
+
 
 function EventForm(){
     return(

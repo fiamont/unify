@@ -1,6 +1,4 @@
-import axios from "axios";
 import { useState } from "react";
-import { useRouter } from "next/router";
 import EventInfoForm from "./EventInfoForm";
 import DescriptionInfoForm from "./DescriptionForm";
 import PreviewInfoForm from "./PreviewForm";
@@ -8,12 +6,7 @@ import style from '../styles/MultiStepForm.module.css'
 import Head from 'next/head'
 
 export default function NewPost() {
-    const [isLoading, setIsLoading] = useState(false)
-    const [errors, setErrors] = useState([]) //Array of string
-    const router = useRouter()
-    const [showButton, setShowButton] = useState(true);
-
-
+    const [showBtn, setShowBtn] = useState(true);
 
     const [page, setPage] = useState(0);
     const [formDatas, setFormDatas] = useState({
@@ -26,7 +19,7 @@ export default function NewPost() {
         textarea: "",
         price: "",
         numbOfParticipants: "",
-      });
+    });
 
     const FormTitles = ["Evenemanginfo", "Beskrivning", "Granska evenemang"];
 
@@ -40,31 +33,6 @@ export default function NewPost() {
         }
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-
-        const formData = new FormData(event.target)
-        const formDatas = Object.fromEntries(formData.entries())
-       
-
-        // make an http requset
-        // request the endpoint that will create this new post
-        // POSTS /api/posts
-        // fetch('/api/posts', {method: 'POST'})
-
-        setIsLoading(true)
-       axios.post('/api/posts', formDatas)
-            .then((res) => {
-            const postId = res.data.id
-            router.push(`/posts/${postId}`)
-       })
-       .catch((err) => {
-           setErrors(err.response.data.errors)
-       })
-        .finally(() => {
-        setIsLoading(false)
-       })
-    }
     return (
         <div>
         <Head><title>Unify - Skapa event</title></Head>
@@ -75,6 +43,7 @@ export default function NewPost() {
                     <button
                         disabled={page == 0} 
                         onClick={() => {setPage((currPage) => currPage -1);
+                            setShowBtn(true)
                         }}
                         >Bakåt</button>
                     <h1>{FormTitles[page]}</h1>
@@ -85,25 +54,24 @@ export default function NewPost() {
                         <div style={{ width: page === 0 ? "33.3%" : page == 1 ? "66.6%" : "100%" }}></div>
                     </div>
                   
+                    {(showBtn &&
                     <button
                     onClick={() => {
                         if(page === FormTitles.length -1) {
-                            console.log(formDatas)       
-                        } else {
-
-                            setPage((currPage) => currPage +1);
+                            console.log(formDatas)  
+                        } else if(page === FormTitles.length -2) {
+                            setShowBtn(false)
                         }
+                        setPage((currPage) => currPage +1);
                         
                     }}>{page === FormTitles.length -1 ? "Publicera Evenemang" : "Nästa"}</button>
-              
+                    )}
   
                 </div>
             </div>
         </div>
         </main>
         </div>
-  
-    
-    
+
     )
 }

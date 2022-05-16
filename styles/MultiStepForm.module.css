@@ -234,12 +234,14 @@
   
   .previewDateTime {
     display: flex;
-    flex-direction: row;
+    color: orange;
+    gap: 5px;
   }
-    
+
   .previewDateTime input {
-    width: 100px;
+    width: 100%;
     border: none;
+    margin-top: 4px;
     color: orange;
   }
      
