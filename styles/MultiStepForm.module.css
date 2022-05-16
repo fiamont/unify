@@ -209,6 +209,23 @@
     border-radius: 5px;
   }
 
+
+  
+  .progressDots{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+  }
+  
+  .progressDot{
+    background: #DC5027;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  
+
+
   /* PREVIEW */
     
   .previewInfoContainer {

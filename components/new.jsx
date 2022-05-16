@@ -53,6 +53,11 @@ export default function NewPost() {
                     <div className={style.progressbar}>
                         <div style={{ width: page === 0 ? "33.3%" : page == 1 ? "66.6%" : "100%" }}></div>
                     </div>
+                    <div className={style.progressDots}>
+                        <div className={style.progressDot}/>
+                        <div className={style.progressDot} style={{background: page >= 1 ? '#DC5027' : '#dc51275d'}}/>
+                        <div className={style.progressDot} style={{background: page >= 2 ? '#DC5027' : '#dc51275d'}}/>
+                    </div>
                   
                     {(showBtn &&
                     <button
