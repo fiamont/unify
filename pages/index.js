@@ -7,37 +7,49 @@ import BackToTop from '../components/BackToTopButton'
 
 import React from 'react'
 import { db } from '../utils/firebase'
+import Link from 'next/link'
+import NewPost from './skapaevent'
 
-export default function Home({ events }) {
-
+export default function Home({ posts }) {
+  
   return (
     <div className={styles.container}>
       <Head><title>Unify</title></Head>
+      <Eventbutton/> 
       <main className={styles.main}>
-      <Eventbutton/>  
       <h1 className={styles.rubrik}>Händer idag</h1>
-
       <BackToTop />
-    <Event events={events} eventsKey={events.id}/> 
+      <Event events={posts}/> 
+      {/* {posts.map((post) => {
+        return (
+        <li key={post.id}>
+          <Link href={`/posts/${post.id}`}>
+          <a>{post.userName}</a>
+          </Link>
+        </li>
+        )
+      })} */}
+   
       </main>
     </div> 
-  )
-}
+     
+      )
+    }
 
 //Server side code
 export async function getServerSideProps(){
-	const snapshots = await db.collection('events').get()
-  
-	const events = snapshots.docs.map((doc) => {
-		return {
-			id: doc.id,
-			...doc.data(),
-		}
-	})
+	const snapshot = await db.collection('posts').get()
 
-	return {
-		props: {
-      events: JSON.parse(JSON.stringify(events)),
-		},
-	}
+  const posts = snapshot.docs.map((doc) => {
+    return {
+      id: doc.id,
+      ...doc.data(),
+    }
+  })
+
+  return {
+    props: {
+      posts: JSON.parse(JSON.stringify(posts))
+    },
+  }
 }
