@@ -65,10 +65,13 @@ const Event = ({events}) =>{
                                 <p className={style.categoryText}>{events.category}</p>
                             </div>
                             <div className={style.event}> {/* white box with event text */}
-                                <p className={style.title}>{events.title}</p>
+                                <p className={style.title}>{events.eventName}</p>
                                 <p className={style.description}>{events.date} kl {events.time} </p>
-                                <p className={style.description}>{events.body}</p>
+                                <p className={style.description}>{events.description}</p>
                                <ShowUpBtn color={categoryColors(events.category).showUpBtn}/>
+                               <Link href={`/posts/${events.id}`}>
+                                <a className={style.readmore}>Läs mer...</a>
+                                </Link>
                             </div>
                         </div>
                      </div>
