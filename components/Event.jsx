@@ -12,41 +12,48 @@ const Event = ({events}) =>{
         let outerBorder = "";
         let innerBorder = "";
         let categoryBox = "";
+        let showUpBtn = '';
 
         if(category == "Konsert, Quiz & Uteliv") {
             outerBorder= style.eventboxUtelivKonsertQuiz;
             innerBorder = style.innerBorderUtelivKonsertQuiz;
             categoryBox = style.categoryUtelivKonsertQuiz;
+            showUpBtn = '#FFC130';
         }
         else if(category == "Kultur & Livsstil"){
             outerBorder = style.eventboxKulturLivstil;
             innerBorder = style.innerBorderKulturLivstil;
             categoryBox = style.categoryKulturLivstil;
+            showUpBtn = '#416AD2';
         }
         else if(category == "Sport & Fritid"){
             outerBorder = style.eventboxSportFritid;
             innerBorder = style.innerBorderSportFritid;
             categoryBox = style.categorySportFritid;
+            showUpBtn = '#D24341';
         }
         else if(category == "Mat & Dryck"){
             outerBorder = style.eventboxMatDryck;
             innerBorder = style.innerBorderMatDryck;
             categoryBox = style.categoryMatDryck;
+            showUpBtn = '#B36D8F';
         }
         else if(category == "Konst & Hantverk"){
             outerBorder = style.eventboxKonstHantverk;
             innerBorder = style.innerBorderKonstHantverk;
             categoryBox = style.categoryKonstHantverk;
+            showUpBtn = '#FF9211';
         }
         else{
             outerBorder = style.eventboxDefault;
             innerBorder = style.innerBorderDefault;
             categoryBox = style.categoryDefault;
+            showUpBtn = '#0b4341';
         }
 
-        return {outerBorder, innerBorder, categoryBox};
+        return {outerBorder, innerBorder, categoryBox, showUpBtn};
+        
     }
-
     return(
         
         <div className={style.container}>
@@ -58,13 +65,10 @@ const Event = ({events}) =>{
                                 <p className={style.categoryText}>{events.category}</p>
                             </div>
                             <div className={style.event}> {/* white box with event text */}
-                                <p className={style.title}>{events.eventName}</p>
+                                <p className={style.title}>{events.title}</p>
                                 <p className={style.description}>{events.date} kl {events.time} </p>
-                                <p className={style.description}>{events.description}</p>
-                               <ShowUpBtn />
-                               <Link href={`/posts/${events.id}`}>
-                                <a className={style.readmore}>Läs mer...</a>
-                                </Link>
+                                <p className={style.description}>{events.body}</p>
+                               <ShowUpBtn color={categoryColors(events.category).showUpBtn}/>
                             </div>
                         </div>
                      </div>
@@ -77,6 +81,7 @@ const Event = ({events}) =>{
 }
 
 export default Event;
+
 
 
 
