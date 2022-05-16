@@ -1,14 +1,17 @@
 import React from 'react';
 import Head from 'next/head'
-import Modals from '../components/ModalForm';
+import NewPost from '../components/new';
+
+
 
 function EventForm(){
     return(
         <div>
             <Head><title>Unify - Skapa event</title></Head>
             <main>
-                <h1>Skapa Event</h1>
-                <Modals />
+              
+                {/* <MultiStepForm /> */}
+                <NewPost />
             </main>
         </div>
         

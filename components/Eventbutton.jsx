@@ -5,7 +5,7 @@ import style from './../styles/Eventbutton.module.css'
 function Eventbutton() {
   return (
     <div className={style.button}>
-      <Link href="/eventform" passHref><button className={style.eventbtn}> Skapa event</button></Link>
+      <Link href="/skapaevent" passHref><button className={style.eventbtn}> Skapa event</button></Link>
     </div>
   )
 }

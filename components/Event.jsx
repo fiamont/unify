@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 import style from '../styles/Event.module.css'
 import ShowUpBtn from './ShowUp';
@@ -53,7 +54,6 @@ const Event = ({events}) =>{
         return {outerBorder, innerBorder, categoryBox, showUpBtn};
         
     }
-
     return(
         
         <div className={style.container}>
@@ -81,6 +81,7 @@ const Event = ({events}) =>{
 }
 
 export default Event;
+
 
 
 
