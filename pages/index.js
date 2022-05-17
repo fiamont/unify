@@ -1,35 +1,30 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Eventbutton from '../components/Eventbutton'
 import Event from '../components/Event' 
 import BackToTop from '../components/BackToTopButton'
+import HanderIdagButton from '../components/HanderIdagButton'
+import TrendingEvents from '../components/TrendingEvents'
+import Categories from '../components/Categories'
 
 import React from 'react'
 import { db } from '../utils/firebase'
-import Link from 'next/link'
-import NewPost from './skapaevent'
 
-export default function Home({ posts }) {
+export default function Home({ allposts, trendingposts, post }) {
   
   return (
     <div className={styles.container}>
       <Head><title>Unify</title></Head>
-      <Eventbutton/> 
       <main className={styles.main}>
-      <h1 className={styles.rubrik}>Händer idag</h1>
+      <div className={styles.topPart}>
+        <h1 className={styles.nummer}>{allposts.length}</h1>
+        <h1 className={styles.title}>Aktiviteter på gång<br></br>just nu</h1>
+        <HanderIdagButton/>
+      </div> 
       <BackToTop />
-      <Event events={posts}/> 
-      {/* {posts.map((post) => {
-        return (
-        <li key={post.id}>
-          <Link href={`/posts/${post.id}`}>
-          <a>{post.userName}</a>
-          </Link>
-        </li>
-        )
-      })} */}
-   
+      <TrendingEvents events={trendingposts}/>
+      <Categories/>
+      <p className={styles.insidetitle}>Kommande evenemang</p>
+      <Event events={post}/>
       </main>
     </div> 
      
@@ -38,9 +33,36 @@ export default function Home({ posts }) {
 
 //Server side code
 export async function getServerSideProps(){
-	const snapshot = await db.collection('posts').get()
+	const snapshot = await db
+  .collection('posts')
+  .get()
 
-  const posts = snapshot.docs.map((doc) => {
+  const allposts = snapshot.docs.map((doc) => {
+    return {
+      id: doc.id,
+      ...doc.data(),
+    }
+  })
+
+  const snapshot2 = await db
+  .collection('posts')
+  .orderBy('date')
+  .limit(6)
+  .get()
+
+  const trendingposts = snapshot2.docs.map((doc) => {
+    return {
+      id: doc.id,
+      ...doc.data(),
+    }
+  })
+
+  const snapshot3 = await db
+  .collection('posts')
+  .limit(1)
+  .get()
+
+  const post = snapshot3.docs.map((doc) => {
     return {
       id: doc.id,
       ...doc.data(),
@@ -49,7 +71,9 @@ export async function getServerSideProps(){
 
   return {
     props: {
-      posts: JSON.parse(JSON.stringify(posts))
+      allposts: JSON.parse(JSON.stringify(allposts)),
+      trendingposts: JSON.parse(JSON.stringify(trendingposts)),
+      post: JSON.parse(JSON.stringify(post))
     },
   }
 }
