@@ -54,9 +54,6 @@ export default function NewPost() {
                 </div>
                 <div className={style.body}>{PageDisplay()}</div>
                 <div className={style.footer}>
-                    <div className={style.progressbar}>
-                        <div style={{ width: page === 0 ? "33.3%" : page == 1 ? "66.6%" : "100%" }}></div>
-                    </div>
                     <div className={style.progressDots}>
                         <div className={style.progressDot}/>
                         <div className={style.progressDot} style={{background: page >= 1 ? '#DC5027' : '#dc51275d'}}/>
