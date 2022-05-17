@@ -5,6 +5,7 @@ import PreviewInfoForm from "./PreviewForm";
 import style from '../styles/MultiStepForm.module.css'
 import Head from 'next/head'
 import Link from "next/link";
+import Arrow from "./Icons/arrow";
 
 export default function NewPost() {
     const [showBtn, setShowBtn] = useState(true);
@@ -47,7 +48,8 @@ export default function NewPost() {
                         onClick={() => {setPage((currPage) => currPage -1);
                             setShowBtn(true)
                         }}
-                        >Bakåt</button>
+                        ><Arrow /></button>
+                        
                     <Link href="/" ><button className={style.cancelBtn}>Avbryt</button></Link>
                     </div>
                     <h1>{FormTitles[page]}</h1>

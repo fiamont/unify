@@ -105,7 +105,7 @@ function PreviewInfoForm({ formDatas, setFormDatas }) {
           {show === true ? 'Stäng' : 'Läs beskrivning'}
         </button>
                    
-        <div>
+        <div className={style.previewSubmitBtn}>
           <button className={style.submitBtn} type="submit"disabled={isLoading}>Publicera evenemang</button>
         </div>
 

@@ -8,13 +8,13 @@
 }
   
 .form {
-  border: 2px solid #4C2F11;
   background-color: #fff;
   padding: 10px;
   border-radius: 10px;
   width: 376px;
-  height: auto;
+  height: 700px;
   text-align: left;
+  position: relative;
 }
     
 .form .header {
@@ -39,7 +39,7 @@
 .form .header .cancelBtn {
   border-radius: 6px;
   width: 70px;
-  height: 20px;
+  height: auto;
   color: #898787;
   background-color: white;
   border: 0 none;
@@ -51,14 +51,17 @@
 
 .form .header .backBtn {
   border-radius: 6px;
-  width: 70px;
-  height: 20px;
-  background-color: #157C79;
+  width: auto;
+  height: auto;
+  background-color: transparent;
   color: white;
   border: 0 none;
   border-radius: 5px;
   cursor: pointer;
   padding: 2px;
+  display: flex;
+  align-items: center;
+
 }
 
 .form .body {
@@ -79,14 +82,18 @@
   width: 333px;
   height: 40px;
   background-color: #D8D8D8;
+  box-shadow: var(--button-box-shadow);
   font-weight: bold;
   color: #959595;
   border: 0 none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   padding: 10px 5px;
   margin: 10px 5px;
   margin: 5px;
+
+  position: absolute;
+  bottom: 1rem;
 }
     
 .eventInfoContainer {
@@ -188,7 +195,7 @@
   width: 333px;
   height: 128px;
   padding-left: 5px;
-  border-radius: 6px;
+  border-radius: 10px;
 }
   
 .priceAndParticipants {
@@ -202,22 +209,55 @@
   height: 30px; 
 }
    
-.priceInner {
+.priceParticipantsInner {
   padding-left: 5px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+.krSt{
+  position: absolute;
+  right: 0;
+  font-size: 1.2rem;
+  color: #898787;
+  display: flex;
+  align-items: center;
 }
     
-.priceInner input {
-  position: relative;
-  right: -200px;
+.priceParticipantsInner input {
+ position: absolute;
+ top: 1px;
+ right: 1.6rem;
+ border-radius: 10px;
+ display: flex;
+ text-align: center;
+ font-size: 1rem;
+ padding-top: 4px;
 }
 
 .participantsInner {
   padding-left: 5px;
+  border: 1px solid blue;
+
 }
   
 .participantsInner input {
   position: relative;
   right: -128px;
+}
+
+
+.priceParticipantsSymbol{
+  background-color: #F9C4B6;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
       
 /* PROGRESS BAR */
@@ -226,6 +266,8 @@
   display: flex;
   flex-direction: row;
   gap: 25px;
+  position: absolute;
+  bottom: 5rem;
 }
 
 .progressDot{
@@ -387,10 +429,10 @@
   border-radius: 6px;
   width: 333px;
   height: 40px;
-  background-color: #157C79;
+  background-color: transparent;
   font-weight: 500;
   font-size: 16px;
-  color: #fff;  
+  color: #111;  
   border: 0 none;
   border-radius: 5px;
   cursor: pointer;
@@ -404,13 +446,25 @@
   width: 333px;
   height: 40px;
   background-color: #157C79;
+  box-shadow: var(--button-box-shadow);
   font-weight: 500;
   font-size: 16px;
   color: #fff;  
   border: 0 none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   padding: 10px 5px;
   margin: 5px;
   margin-top: 40px;
+
+  position: absolute;
+  bottom: 1rem;
+}
+.previewSubmitBtn{
+  flex: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
