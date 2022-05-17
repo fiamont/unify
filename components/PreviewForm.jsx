@@ -10,6 +10,8 @@ function PreviewInfoForm({ formDatas, setFormDatas }) {
   const [errors, setErrors] = useState([]) //Array of string
   const router = useRouter()
 
+  const [show, setShow] = useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault()
 
@@ -72,21 +74,7 @@ function PreviewInfoForm({ formDatas, setFormDatas }) {
             name="eventName"
             value={formDatas.eventName}
             />
-            <div className={style.previewUserName}>
-              <p>Anordnat av:</p>
-              <input
-              type="text"
-              name="userName"
-              value={formDatas.userName}
-            />
-            </div>
         </div>
-        <textarea
-        className={style.previewTextarea}
-        type="text"
-        name="description"
-        value={formDatas.textarea}
-        />
         <div className={style.previewPriceBox}>
         <p>Pris</p>
         <input
@@ -95,7 +83,6 @@ function PreviewInfoForm({ formDatas, setFormDatas }) {
             name="price"
             value={formDatas.price}
             />
-          <p>kr</p>
         </div>
         <div className={style.previewPriceBox}>
             <p>Antal deltagare</p>
@@ -105,9 +92,19 @@ function PreviewInfoForm({ formDatas, setFormDatas }) {
             name="numbOfParticipants"
             value={formDatas.numbOfParticipants}
             />
-            <p>Antal deltagare</p>
           </div>
-            
+        {show &&
+        <textarea
+        className={style.previewTextarea}
+        type="text"
+        name="description"
+        value={formDatas.textarea}
+        />
+        }
+        <button className={style.showHideBtn} type="button" onClick={() => setShow(!show)}>
+          {show === true ? 'Stäng' : 'Läs beskrivning'}
+        </button>
+                   
         <div>
           <button className={style.submitBtn} type="submit"disabled={isLoading}>Publicera evenemang</button>
         </div>

@@ -12,7 +12,7 @@ function DescriptionInfoForm({ formDatas, setFormDatas }) {
           <textarea
           className={style.descriptionArea} 
           type="text"
-          placeholder="Beskrivning"
+          placeholder="Lägg till beskrivning"
           value={formDatas.textarea}
           onChange={(e) => {
             setFormDatas({ ...formDatas, textarea: e.target.value });
