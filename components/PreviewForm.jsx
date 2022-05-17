@@ -10,6 +10,8 @@ function PreviewInfoForm({ formDatas, setFormDatas }) {
   const [errors, setErrors] = useState([]) //Array of string
   const router = useRouter()
 
+  const [show, setShow] = useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault()
 
@@ -38,58 +40,75 @@ function PreviewInfoForm({ formDatas, setFormDatas }) {
   return (
     <form onSubmit={handleSubmit}>
     <div className={style.previewInfoContainer}>
-        <div className={style.eventPic}></div>
+        <div className={style.eventPic}>
+        <input
+              className={style.previewCategory}
+              name="category"
+              value={formDatas.category}
+              >
+            </input>
+        </div>
        <div className={style.previewBox1}>
            <div className={style.previewDateTime}>
-                <p>Datum</p>
+             <div className={style.date}>
+                <p>Datum:</p>
                 <input
-                    htmlFor="date"
                     type="text"
-                    id="date"
                     name="date"
                     value={formDatas.date}
                  />
-                <p>Tid</p>
+              </div>
+              <div className={style.time}>
+                <p>Kl.</p>
                 <input
                     className={style.previeTime}
-                    htmlFor="time"
                     type="text"
-                    id="time"
                     name="time"
                     value={formDatas.time}
                 />
+              </div>
             </div>
             <input
             className={style.previewEventName}
-            htmlFor="EventName"
             type="text"
-            id="eventName"
             name="eventName"
             value={formDatas.eventName}
             />
-            <div className={style.previewUserName}><p>Anordnat av:</p>
-            <input htmlFor="userName"
-            
-            type="text"
-            id="userName"
-            name="userName"
-            value={formDatas.userName}
-            />
-            </div>
         </div>
+        <div className={style.previewPriceBox}>
+        <p>Pris</p>
+        <input
+            className={style.previewPrice}
+            type="text"
+            name="price"
+            value={formDatas.price}
+            />
+        </div>
+        <div className={style.previewPriceBox}>
+            <p>Antal deltagare</p>
+            <input
+            className={style.previewNumbOfParticipants}
+            type="text"
+            name="numbOfParticipants"
+            value={formDatas.numbOfParticipants}
+            />
+          </div>
+        {show &&
         <textarea
         className={style.previewTextarea}
-        htmlFor="description"
         type="text"
-        id="description"
         name="description"
         value={formDatas.textarea}
         />
+        }
+        <button className={style.showHideBtn} type="button" onClick={() => setShow(!show)}>
+          {show === true ? 'Stäng' : 'Läs beskrivning'}
+        </button>
+                   
         <div>
-          <button className={style.submitBtn} type="submit"disabled={isLoading}>Create!</button>
+          <button className={style.submitBtn} type="submit"disabled={isLoading}>Publicera evenemang</button>
         </div>
 
-     
     </div>
     </form>
 

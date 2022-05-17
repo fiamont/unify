@@ -4,13 +4,13 @@ import DescriptionInfoForm from "./DescriptionForm";
 import PreviewInfoForm from "./PreviewForm";
 import style from '../styles/MultiStepForm.module.css'
 import Head from 'next/head'
+import Link from "next/link";
 
 export default function NewPost() {
     const [showBtn, setShowBtn] = useState(true);
 
     const [page, setPage] = useState(0);
     const [formDatas, setFormDatas] = useState({
-        userName: "",
         eventName: "",
         date: "",
         time: "",
@@ -40,18 +40,24 @@ export default function NewPost() {
         <div className={style.flexContainer} >
             <div className={style.form}>
                 <div className={style.header}>
+                    <div className={style.headerBtn}>
                     <button
+                        className={style.backBtn}
                         disabled={page == 0} 
                         onClick={() => {setPage((currPage) => currPage -1);
                             setShowBtn(true)
                         }}
                         >Bakåt</button>
+                    <Link href="/" ><button className={style.cancelBtn}>Avbryt</button></Link>
+                    </div>
                     <h1>{FormTitles[page]}</h1>
                 </div>
                 <div className={style.body}>{PageDisplay()}</div>
                 <div className={style.footer}>
-                    <div className={style.progressbar}>
-                        <div style={{ width: page === 0 ? "33.3%" : page == 1 ? "66.6%" : "100%" }}></div>
+                    <div className={style.progressDots}>
+                        <div className={style.progressDot}/>
+                        <div className={style.progressDot} style={{background: page >= 1 ? '#DC5027' : '#dc51275d'}}/>
+                        <div className={style.progressDot} style={{background: page >= 2 ? '#DC5027' : '#dc51275d'}}/>
                     </div>
                   
                     {(showBtn &&

@@ -3,11 +3,14 @@ import { db } from "../../utils/firebase"
 export default function Post({ post }) {
     return (
         <div>
-        <h1>{post.userName}</h1>
-        <p>{post.eventName}</p>
-        <p>{post.description}</p>
-        <p>{post.date}</p>
-        <p>{post.time}</p>
+        <h1>Username: {post.userName}</h1>
+        <p>Evenemangs namn: {post.eventName}</p>
+        <p>Beskrivning: {post.description}</p>
+        <p>Kategori: {post.category}</p>
+        <p>Datum: {post.date}</p>
+        <p>Tid: {post.time}</p>
+        <p>Pris: {post.price}</p>
+        <p>Antal deltagare: {post.numbOfParticipants}</p>
         </div>
     )
 }
