@@ -25,7 +25,7 @@ export default function Konsertquizuteliv({ events }) {
 //Server side code
 export async function getServerSideProps(){
 	const snapshots = await db
-    .collection('events')
+    .collection('posts')
     .where("category", "==", "Konsert, Quiz & Uteliv")
     .get()
   

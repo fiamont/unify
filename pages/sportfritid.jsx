@@ -25,7 +25,7 @@ export default function SportFritid({ events }) {
 //Server side code
 export async function getServerSideProps(){
 	const snapshots = await db
-    .collection('events')
+    .collection('posts')
     .where("category", "==", "Sport & Fritid")
     .get()
   
