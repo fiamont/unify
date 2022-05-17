@@ -42,24 +42,29 @@
 }
 
 .eventboxUtelivKonsertQuiz {
-    background: url(../public/konsertquizuteliv.svg) no-repeat center;
+    /* background: url(../public/konsertquizuteliv.svg) no-repeat center; */
     background-size: cover;
+    background: #FCD46C;
 }
 .eventboxKulturLivstil {
-    background: url(../public/kulturlivstil.svg) no-repeat center;
+    /* background: url(../public/kulturlivstil.svg) no-repeat center; */
     background-size: cover;
+    background:#7299E6;
 }
 .eventboxSportFritid{
-    background: url(../public/sportfritid.svg) no-repeat center;
+    /* background: url(../public/sportfritid.svg) no-repeat center; */
     background-size: cover;
+    background: #E67372;
 }
 .eventboxMatDryck {
-    background: url(../public/matdryck.svg) no-repeat center;
+    /* background: url(../public/matdryck.svg) no-repeat center; */
     background-size: cover;
+    background: #E196BB;
 }
 .eventboxKonstHantverk{
-    background: url(../public/konsthantverk.svg) no-repeat center;
+    /* background: url(../public/konsthantverk.svg) no-repeat center; */
     background-size: cover;
+    background: #FFBD59;
 }
 .eventboxDefault{
     background: gray;
