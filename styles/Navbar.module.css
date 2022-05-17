@@ -87,7 +87,7 @@
     left: 16px;
     top: 152px;
     background-color: #fff;
-
+    cursor: pointer;
     display: flex;
     align-items: center;
 }
