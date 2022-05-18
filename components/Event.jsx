@@ -17,38 +17,38 @@ const Event = ({events}) =>{
         let eventImage = "";
 
         if(category == "Konsert, Quiz & Uteliv") {
-            outerBorder= "#FCD46C";
-            innerBorder = "#FFC130";
-            categoryBox = "#FCD46C";
-            showUpBtn = "#FFC130";
+            outerBorder= "#DACAEF";
+            innerBorder = "#C2A7E4";
+            categoryBox = "#DACAEF";
+            showUpBtn = "#C2A7E4";
             eventImage = <img className={style.categoryImage} src="/konsertquizuteliv.svg"/>
         }
         else if(category == "Kultur & Livsstil"){
-            outerBorder = "#7299E6";
-            innerBorder = "#416AD2";
-            categoryBox = "#7299E6";
-            showUpBtn = "#416AD2";
+            outerBorder = "#F7CDC9";
+            innerBorder = "#F1ACA5";
+            categoryBox = "#F7CDC9";
+            showUpBtn = "#F1ACA5";
             eventImage = <img className={style.categoryImage} src="/kulturlivstil.svg"/>
         }
         else if(category == "Sport & Fritid"){
-            outerBorder = "#E67372";
-            innerBorder = "#D24341";
-            categoryBox = "#E67372";
-            showUpBtn = "#D24341";
+            outerBorder = "#C1D8EB";
+            innerBorder = "#97BEDD";
+            categoryBox = "#C1D8EB";
+            showUpBtn = "#97BEDD";
             eventImage = <img className={style.categoryImageSport} src="/sportfritid.svg"/>
         }
         else if(category == "Mat & Dryck"){
-            outerBorder = "#E196BB";
-            innerBorder = "#B36D8F";
-            categoryBox = "#E196BB";
-            showUpBtn = "#B36D8F";
+            outerBorder = "#DBE6C9";
+            innerBorder = "#C3D5A5";
+            categoryBox = "#DBE6C9";
+            showUpBtn = "#C3D5A5";
             eventImage = <img className={style.categoryImage} src="/matdryck.svg"/>
         }
         else if(category == "Konst & Hantverk"){
-            outerBorder = "#FFBD59";
-            innerBorder = "#FF9211";
-            categoryBox = "#FFBD59";
-            showUpBtn = "#FF9211";
+            outerBorder = "#FFE9C1";
+            innerBorder = "#FFDB97";
+            categoryBox = "#FFE9C1";
+            showUpBtn = "#FFDB97";
             eventImage = <img className={style.categoryImage} src="/konsthantverk.svg"/>
         }
         else{
