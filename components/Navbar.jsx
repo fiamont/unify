@@ -18,7 +18,7 @@ export default function Navbar() {
     const changeWidth = () => {
       setScreenWidth(window.innerWidth);
     }
-
+    changeWidth();
     window.addEventListener('resize', changeWidth)
 
     return () => {
@@ -26,7 +26,6 @@ export default function Navbar() {
     }
 
   }, [])
-
   return (
       <nav className={style.navbar}>
         <div className={style.buttons}>
