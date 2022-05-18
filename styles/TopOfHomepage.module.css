@@ -1,0 +1,38 @@
+.container {
+    margin: 1rem;
+    padding-top: 1rem;
+}
+
+.textPart{
+    margin: 0;
+    padding: 0;
+}
+
+.nummer{
+    margin: 0;
+    padding: 0;
+    padding-left: 0.5rem;
+}
+
+.title{
+    margin: 0;
+    padding: 0;
+    padding-bottom: 4rem;
+    font-size: 25px;
+}
+
+.greySquare{
+    position: relative;
+    background-color: #DBD4E4B0;
+    width: 130px;
+    height: 137px;
+    padding: 1rem;
+}
+
+.homepageImg{
+    
+}
+
+/* width: 162px;
+    height: 137px;
+    border: none; */

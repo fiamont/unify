@@ -1,32 +1,18 @@
 .handeridagbtn {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: center;
-    align-self: center;
-    align-items: center;
-    width: 226px;
+    width: 148px;
     height: 33px;
     background: var(--button-primary-color);
     border: none;
     border-radius: 10px;
     font-style: normal;
     font-weight: 500;
-    font-size: 19px;
-    line-height: 7px;
+    font-size: 16px;
+    line-height: 16px;
     cursor: pointer;
     color: #ffff;
-    
-    
+    text-transform: uppercase;
   }
 
   .handeridagbtn:hover {
     background-color: #1B4848;
-  }
-
-  .button {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 10px;
-
   }
