@@ -7,10 +7,15 @@ import Head from 'next/head'
 import Link from "next/link";
 import Arrow from "./Icons/arrow";
 
+import { Container, Row, Col } from "react-bootstrap";
+
 export default function NewPost() {
     const [showBtn, setShowBtn] = useState(true);
 
     const [page, setPage] = useState(0);
+
+    const [step, setstep] = useState(1);
+
     const [formDatas, setFormDatas] = useState({
         eventName: "",
         date: "",
@@ -21,6 +26,28 @@ export default function NewPost() {
         price: "",
         numbOfParticipants: "",
     });
+
+    // function for going to next step by increasing step state by 1
+  const nextStep = () => {
+    setstep(step + 1);
+  };
+
+  // function for going to previous step by decreasing step state by 1
+  const prevStep = () => {
+    setstep(step - 1);
+  };
+
+  // handling form input data by taking onchange value and updating our previous form data state
+  const handleInputData = input => e => {
+    // input value from the form
+    const {value } = e.target;
+
+    //updating for data state taking previous state and then adding new value to create new object
+    setFormData(prevState => ({
+      ...prevState,
+      [input]: value
+  }));
+  }
 
     const FormTitles = ["Evenemanginfo", "Beskrivning", "Granska evenemang"];
 
@@ -34,10 +61,76 @@ export default function NewPost() {
         }
     };
 
+    // javascript switch case to show different form in each step
+  switch (step) {
+    // case 1 to show stepOne form and passing nextStep, prevStep, and handleInputData as handleFormData method as prop and also formData as value to the fprm
+    case 1:
+      return (
+        <div className={style.flexContainer}>
+            <div className={style.form}>
+            <div className={style.header}>
+            <div className={style.headerBtn}></div>
+            <h1>{FormTitles[page]}</h1>
+            </div>
+            <div className={style.body}></div>
+
+          <Container>
+            <Row>
+              <Col  md={{ span: 6, offset: 3 }} className="custom-margin">
+                <EventInfoForm nextStep={nextStep} handleFormData={handleInputData} values={formDatas} />
+              </Col>
+            </Row>
+          </Container>
+          <div className={style.footer}>
+                    <div className={style.progressDots}>
+                        <div className={style.progressDot}/>
+                        <div className={style.progressDot} style={{background: page >= 1 ? '#DC5027' : '#dc51275d'}}/>
+                        <div className={style.progressDot} style={{background: page >= 2 ? '#DC5027' : '#dc51275d'}}/>
+                    </div>
+                    </div>
+          </div>
+        </div>
+      );
+    // case 2 to show stepTwo form passing nextStep, prevStep, and handleInputData as handleFormData method as prop and also formData as value to the fprm
+    case 2:
+      return (
+        <div className={style.flexContainer}>
+          <Container>
+            <Row>
+              <Col  md={{ span: 6, offset: 3 }} className="custom-margin">
+                <DescriptionInfoForm nextStep={nextStep} prevStep={prevStep} handleFormData={handleInputData} values={formDatas} />
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      );
+      // Only formData is passed as prop to show the final value at form submit
+    case 3:
+      return (
+        <div className={style.flexContainer}>
+          <Container>
+            <Row>
+              <Col  md={{ span: 6, offset: 3 }} className="custom-margin">
+                <PreviewInfoForm prevStep={prevStep} handleFormData={handleInputData} values={formDatas} />
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      );
+    // default case to show nothing
+    default:
+      return (
+        <div className={style.flexContainer}>
+        </div>
+      );
+  }
+    /* 
     return (
         <div>
         <Head><title>Unify - Skapa event</title></Head>
-        <main>
+        </div> */
+    
+        {/* <main>
         <div className={style.flexContainer} >
             <div className={style.form}>
                 <div className={style.header}>
@@ -78,8 +171,9 @@ export default function NewPost() {
                 </div>
             </div>
         </div>
-        </main>
-        </div>
+        </main> */}
+      
 
-    )
+    
+    
 }
