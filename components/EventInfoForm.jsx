@@ -3,7 +3,7 @@ import style from './../styles/MultiStepForm.module.css'
 import { Form, Card, Button, ListGroup, Dropdown, DropdownButton } from "react-bootstrap"
 import validator from "validator"
 
-function EventInfoForm({ formDatas, setFormDatas,nextStep, handleFormData, values }) {
+function EventInfoForm({ nextStep, handleFormData, values }) {
   const [error, setError] = useState(false);
 
   // after form submit validating the form data using validator
@@ -59,7 +59,7 @@ function EventInfoForm({ formDatas, setFormDatas,nextStep, handleFormData, value
               <Form.Control
                 style={{ border: error ? "2px solid red" : "" }}
                 name="eventName"
-                defaultValue={values.firstName}
+                defaultValue={values.eventName}
                 type="text"
                 onChange={handleFormData("eventName")}
               />

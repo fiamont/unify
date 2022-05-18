@@ -4,66 +4,87 @@ import Participants from './Icons/Participants';
 import Payments from './Icons/payments';
 
 import { Form, Card, Button } from "react-bootstrap";
-import validator from "validator";
+import validator from "validator"
 
 function DescriptionInfoForm({ formDatas, setFormDatas, nextStep, handleFormData, prevStep, values }) {
-
-  // creating functional component ans getting props from app.js and destucturing them
-const StepTwo = ({ nextStep, handleFormData, prevStep, values }) => {
   //creating error state for validation
- const [error, setError] = useState(false);
+  const [error, setError] = useState(false);
 
-   // after form submit validating the form data using validator
- const submitFormData = (e) => {
-   e.preventDefault();
+  // after form submit validating the form data using validator
+const submitFormData = (e) => {
+  e.preventDefault();
 
-    // checking if value of first name and last name is empty show error else take to next step
-   if (validator.isEmpty(values.age)) {
-     setError(true);
-   } else {
-     nextStep();
-   }
- };return (
-  <>
-  <Card style={{ marginTop: 100 }}>
-    <Card.Body>
-      <Form onSubmit={submitFormData}>
-      <Form.Group className={style.age}>
-          <Form.Label>Age</Form.Label>
-          <Form.Control
-            style={{ border: error ? "2px solid red" : "" }}
-            name="age"
-            defaultValue={values.age}
-            type="text"
-            onChange={handleFormData("age")}
-          />
-          {error ? (
-            <Form.Text style={{ color: "red" }}>
-              This is a required field
-            </Form.Text>
-          ) : (
-            ""
-          )}
-        </Form.Group>
+   // checking if value of first name and last name is empty show error else take to next step
+  if (
+    validator.isEmpty(values.textarea)) 
+    {
+    setError(true);
+  } else {
+    nextStep();
+  }
+};
+    return (
+      <>
+      <Card style={{ marginTop: 100 }}>
+        <Card.Body>
+          <Form onSubmit={submitFormData}>
+            <Form.Group className={style.title}>
+              <Form.Control as="textarea" 
+              className={style.descriptionArea}
+              style={{ border: error ? "2px solid red" : "" }}
+              name="textarea"
+              id="exampleFormControlTextarea1"
+              rows="5"
+              defaultValue={values.textarea}
+              onChange={handleFormData("textarea")}/>
+           
+              {error ? (
+                <Form.Text style={{ color: "red" }}>
+                  Fel
+                </Form.Text>
+              ) : (
+                ""
+              )}
+            </Form.Group>
 
-        <div style={{ display: "flex", justifyContent: "space-around" }}>
-          <Button variant="primary" onClick={prevStep}>
-            Previous
-          </Button>
+            <div className={style.priceAndParticipants}>     
+            <Form.Group>
+            <Form.Label>PRIS</Form.Label>
+              <Form.Control
+                style={{ border: error ? "2px solid red" : "" }}
+                name="price"
+                defaultValue={values.price}
+                type="text"
+                onChange={handleFormData("price")}
+              />
+            </Form.Group>
+            <Form.Group>
+            <Form.Label>ANTAL DELTAGARE</Form.Label>
+              <Form.Control
+                style={{ border: error ? "2px solid red" : "" }}
+                name="price"
+                defaultValue={values.numbOfParticipants}
+                type="text"
+                onChange={handleFormData("numbOfParticipants")}
+              />
+            </Form.Group>
+            </div>
 
-          <Button variant="primary" type="submit">
-          Continue
-          </Button>
-        </div>
+            <div style={{ display: "flex", justifyContent: "space-around" }}>
+              <Button variant="primary" onClick={prevStep}>
+                Previous
+              </Button>
 
-        </Form>
-    </Card.Body>
-  </Card>
-</>
-);
+              <Button variant="primary" type="submit">
+              Continue
+              </Button>
+            </div>
 
-              /* return (
-        <div className={style.eventInfoContainer}>
+            </Form>
+        </Card.Body>
+      </Card>
+    </>
+        /* <div className={style.eventInfoContainer}>
 
           <div className={style.descriptionText}>
             <p>Ange mer information om ditt evenemang så att gästerna vet vad de ska vänta sig</p>
@@ -85,7 +106,7 @@ const StepTwo = ({ nextStep, handleFormData, prevStep, values }) => {
           
           <div className={style.priceParticipantsInner}>
             <div className={style.priceParticipantsSymbol}><Payments/></div>PRIS
-          <input
+            <input
             type="text"
             value={formDatas.price}
             onChange={(e) => {
@@ -108,6 +129,7 @@ const StepTwo = ({ nextStep, handleFormData, prevStep, values }) => {
         </div>
         </div>
       ); */
+    )    
 }
 
 export default DescriptionInfoForm

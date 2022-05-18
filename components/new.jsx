@@ -22,6 +22,7 @@ export default function NewPost() {
         time: "",
         category: "",
         location: "",
+        city:"",
         textarea: "",
         price: "",
         numbOfParticipants: "",
@@ -43,7 +44,7 @@ export default function NewPost() {
     const {value } = e.target;
 
     //updating for data state taking previous state and then adding new value to create new object
-    setFormData(prevState => ({
+    setFormDatas(prevState => ({
       ...prevState,
       [input]: value
   }));

@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import style from './../styles/MultiStepForm.module.css'
 import axios from 'axios'
-import { useState } from 'react'
 import { useRouter } from 'next/router'
 
+import { Form, Card, Button } from "react-bootstrap";
+import validator from "validator"
 
-function PreviewInfoForm({ formDatas, setFormDatas }) {
+
+function PreviewInfoForm({ prevStep, values }) {
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState([]) //Array of string
   const router = useRouter()
 
   const [show, setShow] = useState(false);
+
+    //creating error state for validation
+    const [error, setError] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -36,9 +41,27 @@ function PreviewInfoForm({ formDatas, setFormDatas }) {
     .finally(() => {
     setIsLoading(false)
    })
+
+   const submitFormData = (e) => {
+    e.preventDefault();
+  
+     // checking if value of first name and last name is empty show error else take to next step
+    if (
+      validator.isEmpty(values.age)) 
+      {
+      setError(true);
+    } else {
+      console.log(values);
+    }
+  };
+  
 }
+
+           //destructuring the object from values
+           const { eventName, date, time, category, location, textarea, price, numbOfParticipants, city } = values;
   return (
-    <form onSubmit={handleSubmit}>
+    <>
+    {/* <form onSubmit={handleSubmit}>
     <div className={style.previewInfoContainer}>
         <div className={style.eventPic}>
         <input
@@ -110,7 +133,49 @@ function PreviewInfoForm({ formDatas, setFormDatas }) {
         </div>
 
     </div>
-    </form>
+    </form> */}
+    <Card style={{ marginTop: 100 }}>
+        <Card.Body>
+          <Form>
+              <p>
+            <strong>Evenemangs namn :</strong> {eventName}{" "}
+              </p>
+              <p>
+            <strong>Datum :</strong> {date}{" "}
+          </p>
+          <p>
+            <strong>Tid :</strong> {time}{" "}
+          </p>
+          <p>
+            <strong>Kategori :</strong> {category}{" "}
+          </p>
+          <p>
+            <strong>Plats :</strong> {location}{" "}
+          </p>
+          <p>
+            <strong>Stad :</strong> {city}{" "}
+          </p>
+          <p>
+            <strong>Beskrivning :</strong> {textarea}{" "}
+          </p>
+          <p>
+            <strong>Pris :</strong> {price}{" "}
+          </p>
+          <p>
+            <strong>Antal deltagare :</strong> {numbOfParticipants}{" "}
+          </p>
+
+            <div style={{ display: "flex", justifyContent: "space-around" }}>
+              <Button variant="primary" onClick={prevStep}>
+                Previous
+              </Button>
+            </div>
+            <button type='submit'>Submit</button>
+
+            </Form>
+        </Card.Body>
+      </Card>
+    </>
 
   );
 }
