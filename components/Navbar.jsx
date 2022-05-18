@@ -5,6 +5,8 @@ import SearchIcon from "./Icons/searchIcon"
 import ProfileIcon from "./Icons/profileIcon"
 import ProfileIcon2 from './Icons/ProfileIcon2'
 import ContactIcon from './Icons/ContactIcon'
+import AboutIcon from './Icons/AboutIcon'
+
 
 
 export default function Navbar() { 
@@ -51,9 +53,9 @@ export default function Navbar() {
           
           <li  id="konsthantverk"><Link href='/konsthantverk' passHref ><div className={style.konsthantverk}>Hantverk & Konst</div></Link></li>
           <li  id="allaKategorier"><Link href='/allakategorier' passHref ><div className={style.allaKategorier}>Alla kategorier</div></Link></li>
-          <li ><Link href='/profile' passHref ><div className={style.item}> <ProfileIcon2/> Mina event</div></Link></li>
-          <li ><Link href='/' passHref ><div className={style.item}> <ContactIcon/> Kontakta oss</div></Link></li>
-          <li ><Link href='/' passHref ><div className={style.item}>Om oss</div></Link></li>
+          <li ><Link href='/profile' passHref ><div className={style.item}> <ProfileIcon2/>Mina event</div></Link></li>
+          <li ><Link href='/' passHref ><div className={style.item}> <ContactIcon/>Kontakta oss</div></Link></li>
+          <li ><Link href='/' passHref ><div className={style.item}><AboutIcon/>Om oss</div></Link></li>
         </ul> )}
       </nav>
   )
