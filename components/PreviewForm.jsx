@@ -7,15 +7,15 @@ import { Form, Card, Button } from "react-bootstrap";
 import validator from "validator"
 
 
-function PreviewInfoForm({ prevStep, values }) {
+function PreviewInfoForm({ formDatas, prevStep, values }) {
   const [isLoading, setIsLoading] = useState(false)
-  const [errors, setErrors] = useState([]) //Array of string
+  const [errors, setErrors] = useState([]) //Array of string 
   const router = useRouter()
 
   const [show, setShow] = useState(false);
 
-    //creating error state for validation
-    const [error, setError] = useState(false);
+     //creating error state for validation
+  const [error, setError] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -41,19 +41,18 @@ function PreviewInfoForm({ prevStep, values }) {
     .finally(() => {
     setIsLoading(false)
    })
-
-   const submitFormData = (e) => {
+  };
+  const submitFormData = (e) => {
     e.preventDefault();
   
      // checking if value of first name and last name is empty show error else take to next step
     if (
-      validator.isEmpty(values.age)) 
+      validator.isEmpty(values.eventName)) 
       {
       setError(true);
     } else {
       console.log(values);
     }
-  };
   
 }
 
@@ -61,7 +60,56 @@ function PreviewInfoForm({ prevStep, values }) {
            const { eventName, date, time, category, location, textarea, price, numbOfParticipants, city } = values;
   return (
     <>
-    {/* <form onSubmit={handleSubmit}>
+    <Card style={{ marginTop: 100 }}>
+        <Card.Body>
+          <Form onSubmit={handleSubmit}>
+              <p
+              name="eventName"
+              defaultValue={values.eventName}
+              value={eventName}>
+            <strong>Evenemangs namn :</strong> {eventName}{" "}
+            
+              </p>
+              <p>
+            <strong>Datum :</strong> {date}{" "}
+          </p>
+          <p>
+            <strong>Tid :</strong> {time}{" "}
+          </p>
+          <p>
+            <strong>Kategori :</strong> {category}{" "}
+          </p>
+          <p>
+            <strong>Plats :</strong> {location}{" "}
+          </p>
+          <p>
+            <strong>Stad :</strong> {city}{" "}
+          </p>
+          <p>
+            <strong>Beskrivning :</strong> {textarea}{" "}
+          </p>
+          <p>
+            <strong>Pris :</strong> {price}{" "}
+          </p>
+          <p>
+            <strong>Antal deltagare :</strong> {numbOfParticipants}{" "}
+          </p>
+
+            <div style={{ display: "flex", justifyContent: "space-around" }}>
+              <Button variant="primary" onClick={prevStep}>
+                Previous
+              </Button>
+            </div>
+
+         
+            <button type='submit'>Submit</button>
+
+            </Form>
+        </Card.Body>
+      </Card>
+    </>
+
+    /* <form onSubmit={handleSubmit}>
     <div className={style.previewInfoContainer}>
         <div className={style.eventPic}>
         <input
@@ -133,49 +181,7 @@ function PreviewInfoForm({ prevStep, values }) {
         </div>
 
     </div>
-    </form> */}
-    <Card style={{ marginTop: 100 }}>
-        <Card.Body>
-          <Form>
-              <p>
-            <strong>Evenemangs namn :</strong> {eventName}{" "}
-              </p>
-              <p>
-            <strong>Datum :</strong> {date}{" "}
-          </p>
-          <p>
-            <strong>Tid :</strong> {time}{" "}
-          </p>
-          <p>
-            <strong>Kategori :</strong> {category}{" "}
-          </p>
-          <p>
-            <strong>Plats :</strong> {location}{" "}
-          </p>
-          <p>
-            <strong>Stad :</strong> {city}{" "}
-          </p>
-          <p>
-            <strong>Beskrivning :</strong> {textarea}{" "}
-          </p>
-          <p>
-            <strong>Pris :</strong> {price}{" "}
-          </p>
-          <p>
-            <strong>Antal deltagare :</strong> {numbOfParticipants}{" "}
-          </p>
-
-            <div style={{ display: "flex", justifyContent: "space-around" }}>
-              <Button variant="primary" onClick={prevStep}>
-                Previous
-              </Button>
-            </div>
-            <button type='submit'>Submit</button>
-
-            </Form>
-        </Card.Body>
-      </Card>
-    </>
+    </form> */
 
   );
 }
