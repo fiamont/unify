@@ -12,6 +12,7 @@ function Categories() {
             <div className={style.kulturlivsstil} id="kulturlivsstil"><Link href='/kulturlivsstil' passHref >Kultur & Livsstil</Link></div>
             <div className={style.sportfritid} id="sportfritid"><Link href='/sportfritid' passHref >Sport & Fritid</Link></div>
             <div className={style.konsthantverk} id="konsthantverk"><Link href='/konsthantverk' passHref >Konst & Hantverk</Link></div>
+            <div className={style.allakategorier} id="allaKategorier"><Link href='/allakategorier' passHref >Alla kategorier</Link></div>
         </div>
         
     </div>

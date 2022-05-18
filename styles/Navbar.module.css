@@ -77,7 +77,7 @@
     to {transform: translateX(0px);}
 }
 
-.item, .konsertquizuteliv, .matdryck, .kulturlivsstil, .sportfritid, .konsthantverk {
+.item, .konsertquizuteliv, .matdryck, .kulturlivsstil, .sportfritid, .konsthantverk, .allaKategorier {
     font-size: 1.2rem;
     color: var(--heading-color);
     padding: 0.4em;
@@ -97,25 +97,27 @@
 }
 
 .konsertquizuteliv {
-    background-color: #FCD46C;
+    background-color: #C2A7E4;
 }
 
 .matdryck{
-    background-color: #E196BB;
+    background-color: #C3D5A5;
 }
 
 .kulturlivsstil{
-    background-color: #7299E6;
+    background-color: #F1ACA5;
 }
 
 .sportfritid{
-    background-color: #E67372;
+    background-color: #97BEDD;
 }
 
 .konsthantverk{
-    background-color: #FCAE38;
+    background-color: #FFDB97;
 }
-
+.allaKategorier{
+    background-color: #D4BBA1;
+}
 
 
 
