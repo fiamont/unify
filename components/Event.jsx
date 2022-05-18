@@ -13,49 +13,49 @@ const Event = ({events}) =>{
         let outerBorder = "";
         let innerBorder = "";
         let categoryBox = "";
-        let showUpBtn = '';
-        let eventImage = ""
+        let showUpBtn = "";
+        let eventImage = "";
 
         if(category == "Konsert, Quiz & Uteliv") {
-            outerBorder= style.eventboxUtelivKonsertQuiz;
-            innerBorder = style.innerBorderUtelivKonsertQuiz;
-            categoryBox = style.categoryUtelivKonsertQuiz;
-            showUpBtn = '#FFC130';
+            outerBorder= "#FCD46C";
+            innerBorder = "#FFC130";
+            categoryBox = "#FCD46C";
+            showUpBtn = "#FFC130";
             eventImage = <img className={style.categoryImage} src="/konsertquizuteliv.svg"/>
         }
         else if(category == "Kultur & Livsstil"){
-            outerBorder = style.eventboxKulturLivstil;
-            innerBorder = style.innerBorderKulturLivstil;
-            categoryBox = style.categoryKulturLivstil;
-            showUpBtn = '#416AD2';
+            outerBorder = "#7299E6";
+            innerBorder = "#416AD2";
+            categoryBox = "#7299E6";
+            showUpBtn = "#416AD2";
             eventImage = <img className={style.categoryImage} src="/kulturlivstil.svg"/>
         }
         else if(category == "Sport & Fritid"){
-            outerBorder = style.eventboxSportFritid;
-            innerBorder = style.innerBorderSportFritid;
-            categoryBox = style.categorySportFritid;
-            showUpBtn = '#D24341';
+            outerBorder = "#E67372";
+            innerBorder = "#D24341";
+            categoryBox = "#E67372";
+            showUpBtn = "#D24341";
             eventImage = <img className={style.categoryImageSport} src="/sportfritid.svg"/>
         }
         else if(category == "Mat & Dryck"){
-            outerBorder = style.eventboxMatDryck;
-            innerBorder = style.innerBorderMatDryck;
-            categoryBox = style.categoryMatDryck;
-            showUpBtn = '#B36D8F';
+            outerBorder = "#E196BB";
+            innerBorder = "#B36D8F";
+            categoryBox = "#E196BB";
+            showUpBtn = "#B36D8F";
             eventImage = <img className={style.categoryImage} src="/matdryck.svg"/>
         }
         else if(category == "Konst & Hantverk"){
-            outerBorder = style.eventboxKonstHantverk;
-            innerBorder = style.innerBorderKonstHantverk;
-            categoryBox = style.categoryKonstHantverk;
-            showUpBtn = '#FF9211';
+            outerBorder = "#FFBD59";
+            innerBorder = "#FF9211";
+            categoryBox = "#FFBD59";
+            showUpBtn = "#FF9211";
             eventImage = <img className={style.categoryImage} src="/konsthantverk.svg"/>
         }
         else{
-            outerBorder = style.eventboxDefault;
-            innerBorder = style.innerBorderDefault;
-            categoryBox = style.categoryDefault;
-            showUpBtn = '#0b4341';
+            outerBorder = "#808080";
+            innerBorder = "#636363";
+            categoryBox = "#808080";
+            showUpBtn = "#0b4341";
         }
 
         return {outerBorder, innerBorder, categoryBox, showUpBtn, eventImage};
@@ -65,13 +65,13 @@ const Event = ({events}) =>{
         
         <div className={style.container}>
             {events.map((events) =>(
-                <div key={events.id} className={categoryColors(events.category).outerBorder}>{/* outerBorder */}
-                    <div className={categoryColors(events.category).innerBorder}> {/* innerBorder */}
+                <div key={events.id} className={style.eventbox} style={{background: categoryColors(events.category).outerBorder}}>{/* outerBorder */}
+                    <div className={style.innerBorder} style={{background: categoryColors(events.category).innerBorder}}> {/* innerBorder */}
                         <div className={style.eventimg}> {/* place for img (currently just gray box) */}
                             <div className={style.imgWrapper}>
                                 {categoryColors(events.category).eventImage}
                             </div>
-                            <div className={categoryColors(events.category).categoryBox}> {/* the small categoryBox */}
+                            <div className={style.categoryBox} style={{background: categoryColors(events.category).categoryBox}}> {/* the small categoryBox */}
                                 <p className={style.categoryText}>{events.category}</p>
                             </div>
                             <div className={style.event}> {/* white box with event text */}
