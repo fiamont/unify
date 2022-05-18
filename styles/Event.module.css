@@ -134,6 +134,25 @@
     font-size: 1.1rem;
 }
 
+.categoryImage{
+   width: 100%;
+   position: relative;
+   bottom: 2.3rem;
+}
+.categoryImageSport{
+    width: 100%;
+    position: relative;
+    bottom: 15rem;
+}
+
+
+.imgWrapper{
+    width: 100%;
+    height: 46%;
+    overflow: hidden;
+  }
+
+
 @media screen and (min-width: 500px) {
     .container{
         display: flex;
