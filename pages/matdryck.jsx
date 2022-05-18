@@ -25,7 +25,7 @@ export default function MatDryck({ events }) {
 //Server side code
 export async function getServerSideProps(){
 	const snapshots = await db
-    .collection('events')
+    .collection('posts')
     .where("category", "==", "Mat & Dryck")
     .get()
   

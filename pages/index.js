@@ -39,8 +39,7 @@ export async function getServerSideProps(){
 
   const allposts = snapshot.docs.map((doc) => {
     return {
-      id: doc.id,
-      ...doc.data(),
+      id: doc.id
     }
   })
 
@@ -57,8 +56,18 @@ export async function getServerSideProps(){
     }
   })
 
+  const tomorrowDate = new Date();
+  const currentMonth = tomorrowDate.getMonth()+1;
+  let tomorrow = '';
+  if(currentMonth<10){
+    tomorrow = tomorrowDate.getFullYear() + '-0' + currentMonth + '-' + (tomorrowDate.getDate() + 1);
+  }else{
+    tomorrow = tomorrowDate.getFullYear() + '-' + currentMonth + '-' + (tomorrowDate.getDate() + 1);
+  }
+
   const snapshot3 = await db
   .collection('posts')
+  .where('date', '==', tomorrow)
   .limit(1)
   .get()
 
