@@ -7,6 +7,9 @@ import Link from 'next/link';
 function EventInfoForm({ nextStep, handleFormData, values }) {
   const [error, setError] = useState(false);
 
+  //PopUp 
+  const [showModal, setShowModal] = useState(false);
+
   // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
@@ -25,13 +28,20 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
       nextStep();
     }
   };
+
+  const onSubmit = (e) =>{
+    e.preventDefault();
+   
+    setShowModal(true)
+
+}
     
   return (
     <div className={style.eventInfoContainer}>
       <div className={style.form}>
         <div className={style.header}>
           <div className={style.headerBtn}>
-            <Link href="/" passHref><button className={style.cancelBtn}>Avbryt</button></Link>
+            <button className={style.cancelBtn} onClick={onSubmit}>Avbryt</button>
           </div>
           <h1>EvenemangInfo</h1>
         </div>
@@ -158,6 +168,20 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
             Continue
           </button>
         </form>
+        {showModal ? (
+            <div className={style.showModal}>
+                <div className={style.showModalInner}>
+                  <div className={style.buttonContainer}>
+                      <Link href="/" passHref><button className={style.cancelBtnPopup}>AVSLUTA</button></Link>
+
+                      <button className={style.continueEditBtnPopup} onClick={() => setShowModal(false)}>FORTSÄTT REDIGERA</button>
+                  </div>
+                </div>
+            </div>
+
+        ) : null }
+
+
       </div>
     </div>
   )

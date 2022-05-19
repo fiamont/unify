@@ -24,7 +24,9 @@ function PreviewInfoForm({ prevStep, values }) {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+
     setShowModal(true)
+
     const formData = new FormData(event.target)
     const body = Object.fromEntries(formData.entries())
    
@@ -38,8 +40,7 @@ function PreviewInfoForm({ prevStep, values }) {
    axios.post('/api/posts', body)
         .then((res) => {
         const postId = res.data.id
-        /* router.push(`/posts/${postId}`) */
-        router.push(showModal()) 
+      /*   router.push(`/posts/${postId}`) */
    })
    .catch((err) => {
        setErrors(err.response.data.errors)
@@ -49,38 +50,6 @@ function PreviewInfoForm({ prevStep, values }) {
    })
   };
 
-  const onSubmit = (e) =>{
-    e.preventDefault();
-     setShowModal(true)
-
-}
-
-const handleClick = () => {
-  /*  addDoc(dbInstance, {
-       title: title,
-       category: category,
-       body: body,
-       time: time,
-       date: date
-   }) */
-   setTimeout(() => { 
-       router.push('/');
-   }, 500)
-}
-
-  const submitFormData = (e) => {
-    e.preventDefault();
-    setShowModal(true)
-     // checking if value of first name and last name is empty show error else take to next step
-    if (
-      validator.isEmpty(values.eventName)) 
-      {
-      setError(true);
-    } else {
-      console.log(values);
-    }
-  
-}
 
   //destructuring the object from values
   const { eventName, date, time, category, location, description, price, numbOfParticipants, city } = values;
@@ -92,7 +61,7 @@ const handleClick = () => {
             <button className={style.backBtn} variant="primary" onClick={prevStep}>
               <Arrow />
             </button>
-          <Link href="/" passHref><button className={style.cancelBtn}>Avbryt</button></Link>
+          <Link href="/"><button className={style.cancelBtn}>Avbryt</button></Link>
           </div>
           <h1>Granska evenemang</h1>
         </div>
@@ -145,39 +114,41 @@ const handleClick = () => {
           />
         </div>
         
-        {show &&
+        <div className={style.textareaBack}>
+        <p>BESKRIVNING</p>
+        
+         <button className={style.backBtn} variant="primary" onClick={prevStep}>
+              <Arrow />
+        </button>
+        </div>
         <textarea
         className={style.previewTextarea}
         type="text"
         name="description"
         value={description}
+        cols={1}
+        rows={1}
         />
-        }
-        <button className={style.showHideBtn} type="button" onClick={() => setShow(!show)}>
-          {show === true ? 'Stäng' : 'Läs beskrivning'}
-        </button>
-
         <div className={style.previewSubmitBtn}>
-        <button 
-          className={style.submitBtn} 
-          >Skapa event
-          </button>
+        <button className={style.submitBtn} type='submit'>Submit</button>
         </div>
       </form>
 
       {showModal ? (
-      <div className={style.showModal}>
-          <div className={style.showModalInner}>
-            <div className={style.buttonContainer}>
-             {/*  <button className={style.cancelPopupBtn} onClick={() => setShowModal(false)}>Ändra</button> */}
-             <button className={style.submitBtn} onClick={handleClick} type="submit">Ok</button>
+            <div className={style.showModal}>
+                <div className={style.showModalInner}>
+                <div className={style.partyImg}></div>
+                <h2>BINGOOO! <br/> DIT EVENEMANG HAR SKAPATS</h2>
+                <p>Grymt Jobbat! Du har puplicerat ditt <br/> första evenemang!</p>
+                <div className={style.solidLinePopUp} />
+                <div className={style.buttonContainer}>
+                    <Link href="/" passHref><button className={style.okPopupBtn} >OK</button></Link>
+                  </div>
+                </div>
             </div>
-          </div>
-      </div>
 
-      ) : null }
+        ) : null }
     </div> 
-
   );
 }
 
