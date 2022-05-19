@@ -2,20 +2,23 @@
     position: fixed;
     bottom: 35px;
     right: 22px;
-    width: 80px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     text-align: center;
     font-size: 19px;
     font-weight: 500;
-    background: var(--button-primary-color);
+    background: #B2A799;
     color: #fff;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 50%;
     border: none;
     box-shadow: var(--button-box-shadow);
     z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .BackToTop:hover {
-    background-color: #1B4848;
+    background-color: #B2A799;
   }

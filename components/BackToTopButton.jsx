@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import style from './../styles/BackToTop.module.css' 
+import ArrowToTop from "./Icons/ArrowToTop";
 
 const BackToTop = () => {
     // The backToTop button is hidden at the beginning
@@ -28,7 +29,7 @@ const BackToTop = () => {
     return (
         <>
         {showButton && (
-            <button onClick={scrollToTop} className={style.BackToTop}>Top</button>
+            <button onClick={scrollToTop} className={style.BackToTop}><ArrowToTop/></button>
             )}
         </>
     );
