@@ -5,7 +5,8 @@ import ShowUpBtn from './ShowUp';
 import Image from 'next/dist/client/image';
 import CategorySelector from './CategorySelector';
 import ArrowRight from './Icons/ArrowRight'
-
+import Watch from './Icons/Watch';
+import Location from './Icons/Location';
 
 const Event = ({events}) =>{
     return(
@@ -22,8 +23,14 @@ const Event = ({events}) =>{
                         </div>
                         <div className={style.event}> {/* white box with event text */}
                             <p className={style.title}>{events.eventName}</p>
-                            <p className={style.description}>{events.date} kl {events.time} </p>
-                            <p className={style.description}>{events.description}</p>
+                            <div className={style.info}>
+                                <Location/>
+                                <p className={style.description}>{events.location}</p>
+                            </div>
+                            <div className={style.info}>
+                                <Watch/>
+                                <p className={style.description}>{events.date} Kl. {events.time} </p>
+                            </div>
                             <ShowUpBtn color={CategorySelector(events.category).showUpBtn}/>
                             <Link href={`/posts/${events.id}`}>
                             <a className={style.readmoreBox} style={{background: CategorySelector(events.category).darkColor}}>
