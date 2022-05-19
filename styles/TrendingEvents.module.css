@@ -19,6 +19,7 @@
     grid-auto-flow: column;
     grid-auto-columns: minmax(165px,1fr);
     overflow-x: auto;
+    scrollbar-width: none;
 }
 
 .events::-webkit-scrollbar { 
