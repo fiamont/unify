@@ -11,9 +11,9 @@ function TopOfHomepage({events}) {
         <h1 className={style.nummer}>{events.length}</h1>
         <h1 className={style.title}>Aktiviteter<br></br>igång just nu</h1>
         <div className={style.button}>
-        <HanderIdagButton/>
+          <HanderIdagButton/>
         </div>
-      </div> 
+      </div>
       <div className={style.greySquare}>
           <div className={style.homepageImg}>
               <Image src={HomepageImg} alt='homepageImg'/>
