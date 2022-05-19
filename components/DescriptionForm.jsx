@@ -50,7 +50,7 @@ const submitFormData = (e) => {
             name="description"
             id="exampleFormControlTextarea1"
             rows="5"
-            defaultValue={values.textarea}
+            defaultValue={values.description}
             onChange={handleFormData("description")}/>
             {error ? (
               <Form.Text style={{ color: "red" }}>
