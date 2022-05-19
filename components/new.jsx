@@ -23,7 +23,7 @@ export default function NewPost() {
         category: "",
         location: "",
         city:"",
-        textarea: "",
+        description: "",
         price: "",
         numbOfParticipants: "",
     });
@@ -67,30 +67,14 @@ export default function NewPost() {
     // case 1 to show stepOne form and passing nextStep, prevStep, and handleInputData as handleFormData method as prop and also formData as value to the fprm
     case 1:
       return (
-        <div className={style.flexContainer}>
-            <div className={style.form}>
-            <div className={style.header}>
-            <div className={style.headerBtn}></div>
-            <h1>{FormTitles[page]}</h1>
-            </div>
-            <div className={style.body}></div>
-
-          <Container>
-            <Row>
-              <Col  md={{ span: 6, offset: 3 }} className="custom-margin">
-                <EventInfoForm nextStep={nextStep} handleFormData={handleInputData} values={formDatas} />
-              </Col>
-            </Row>
-          </Container>
-          <div className={style.footer}>
-                    <div className={style.progressDots}>
-                        <div className={style.progressDot}/>
-                        <div className={style.progressDot} style={{background: page >= 1 ? '#DC5027' : '#dc51275d'}}/>
-                        <div className={style.progressDot} style={{background: page >= 2 ? '#DC5027' : '#dc51275d'}}/>
-                    </div>
-                    </div>
-          </div>
-        </div>
+        <Container>
+          <Row>
+             <Col  md={{ span: 6, offset: 3 }} className="custom-margin">
+              <EventInfoForm nextStep={nextStep} handleFormData={handleInputData} values={formDatas} />
+            </Col>
+          </Row>
+        </Container>
+    
       );
     // case 2 to show stepTwo form passing nextStep, prevStep, and handleInputData as handleFormData method as prop and also formData as value to the fprm
     case 2:

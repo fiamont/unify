@@ -2,6 +2,7 @@ import React, { useState} from 'react'
 import style from './../styles/MultiStepForm.module.css'
 import { Form, Card, Button, ListGroup, Dropdown, DropdownButton } from "react-bootstrap"
 import validator from "validator"
+import Link from 'next/link';
 
 function EventInfoForm({ nextStep, handleFormData, values }) {
   const [error, setError] = useState(false);
@@ -12,8 +13,12 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
 
     // checking if value of first name and last name is empty show error else take to step 2
     if (
+      validator.isEmpty(values.category) ||
       validator.isEmpty(values.eventName) ||
-      validator.isEmpty(values.location)
+      validator.isEmpty(values.date) ||
+      validator.isEmpty(values.time) ||
+      validator.isEmpty(values.location) ||
+      validator.isEmpty(values.city) 
     ) {
       setError(true);
     } else {
@@ -22,60 +27,58 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
   };
     
   return (
-    <div className={style.flexContainer}>
-    <div className={style.form}>
     <div className={style.eventInfoContainer}>
-      
+      <div className={style.form}>
+        <div className={style.header}>
+          <div className={style.headerBtn}>
+            <Link href="/"><button className={style.cancelBtn}>Avbryt</button></Link>
+          </div>
+          <h1>EvenemangInfo</h1>
+        </div>
 
-      <Card className={style.form}>
-        <Card.Body>
-          <Form onSubmit={submitFormData}>        
+        <form onSubmit={submitFormData}>        
+          <select 
+          className={style.category}
+          name="category"
+          defaultValue={values.category}
+          onChange={handleFormData("category")}
+          >
+          <option label="Välj kategori"></option>
+          <option value="Konsert, Quiz & Uteliv">Konsert, Quiz & Uteliv</option>
+          <option value="Mat & Dryck">Mat & Dryck</option>
+          <option value="Kultur & Livsstil">Kultur & Livsstil</option>
+          <option value="Sport & Fritid">Sport & Fritid</option>
+          <option value="Konst & Hantverk">Konst & hantverk</option>
+          </select>
+          {error ? (
+            <Form.Text style={{ color: "red" }}>
+              This is a required field
+            </Form.Text>
+          ) : (
+            ""
+          )}
 
-            <Form.Group className={style.title}>
-            
-              <Form.Select aria-label="Default select example"
-              name="category"
-              defaultValue={values.category}
-              onChange={handleFormData("category")}
-              >
-              <option label="Välj kategori"></option>
-              <option value="Konsert, Quiz & Uteliv">Konsert, Quiz & Uteliv</option>
-              <option value="Mat & Dryck">Mat & Dryck</option>
-              <option value="Kultur & Livsstil">Kultur & Livsstil</option>
-              <option value="Sport & Fritid">Sport & Fritid</option>
-              <option value="Konst & Hantverk">Konst & hantverk</option>
-              </Form.Select>
-              {error ? (
-                <Form.Text style={{ color: "red" }}>
-                  This is a required field
-                </Form.Text>
-              ) : (
-                ""
-              )}
-            </Form.Group>
+          <div className={style.title}>
+            <p>Evenemangets namn</p>
+            <input
+              style={{ border: error ? "2px solid red" : "" }}
+              name="eventName"
+              defaultValue={values.eventName}
+              type="text"
+              onChange={handleFormData("eventName")}
+            />
+            {error ? (
+              <Form.Text style={{ color: "red" }}>
+                This is a required field
+              </Form.Text>
+            ) : (
+              ""
+            )}
+          </div>
 
-            <Form.Group className={style.title}>
-              <Form.Label>Evenemangets namn</Form.Label>
-              <Form.Control
-                style={{ border: error ? "2px solid red" : "" }}
-                name="eventName"
-                defaultValue={values.eventName}
-                type="text"
-                onChange={handleFormData("eventName")}
-              />
-              {error ? (
-                <Form.Text style={{ color: "red" }}>
-                  This is a required field
-                </Form.Text>
-              ) : (
-                ""
-              )}
-            </Form.Group>
-
-            <div className={style.inputDateTime}>
-            <Form.Group >
-              <Form.Label>Datum: </Form.Label>
-              <Form.Control
+          <div className={style.inputDateTime}>
+              <label>Datum: </label>
+              <input
                 style={{ border: error ? "2px solid red" : "" }}
                 name="date"
                 defaultValue={values.date}
@@ -89,11 +92,9 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
               ) : (
                 ""
               )}
-            </Form.Group>
-
-            <Form.Group >
-              <Form.Label>Tid: </Form.Label>
-              <Form.Control
+      
+              <label>Tid: </label>
+              <input
                 style={{ border: error ? "2px solid red" : "" }}
                 name="time"
                 defaultValue={values.time}
@@ -107,127 +108,58 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
               ) : (
                 ""
               )}
-            </Form.Group>
-            </div>
-            
-            
-            <Form.Group className={style.title}>
-              <Form.Label>Plats</Form.Label>
-              <Form.Control
-                style={{ border: error ? "2px solid red" : "" }}
-                name="location"
-                defaultValue={values.location}
-                type="text"
-                onChange={handleFormData("location")}
-              />
-              {error ? (
-                <Form.Text style={{ color: "red" }}>
-                  This is a required field
-                </Form.Text>
-              ) : (
-                ""
-              )}
-            </Form.Group>
-              
-            <Form.Group className={style.city}>
-            <Form.Select 
-              name="city"
-              defaultValue={values.city}
-              onChange={handleFormData("city")}>
-            <option>Välj stad</option>
-            <option value="Stockholm">Stockholm</option>
-            <option value="Göteborg">Göteborg</option>
-            <option value="Malmö">Malmö</option>
-            <option value="Uppsala">Uppsala</option>
-            <option value="Västerås">Västerås</option>
-            <option value="Örebro">Örebro</option>
-            <option value="Linköping">Linköping</option>
-            <option value="Lund">Lund</option>
-            <option value="Jönköping">Jönköping</option>
-            <option value="Umeå">Umeå</option>
-            </Form.Select>
+
+          </div>
+
+          <div className={style.title}>
+            <p>Plats</p>
+            <input
+              style={{ border: error ? "2px solid red" : "" }}
+              name="location"
+              defaultValue={values.location}
+              type="text"
+              onChange={handleFormData("location")}
+            />
             {error ? (
-                <Form.Text style={{ color: "red" }}>
-                  This is a required field
-                </Form.Text>
-              ) : (
-                ""
-              )}
-            </Form.Group>
-            
+              <Form.Text style={{ color: "red" }}>
+                This is a required field
+              </Form.Text>
+            ) : (
+              ""
+            )}
+          </div>
 
-            <Button variant="primary" type="submit">
-              Continue
-            </Button>
-            </Form>
-        </Card.Body>
-      </Card>
+          <select
+            className={style.city} 
+            name="city"
+            defaultValue={values.city}
+            onChange={handleFormData("city")}>
+          <option>Välj stad</option>
+          <option value="Stockholm">Stockholm</option>
+          <option value="Göteborg">Göteborg</option>
+          <option value="Malmö">Malmö</option>
+          <option value="Uppsala">Uppsala</option>
+          <option value="Västerås">Västerås</option>
+          <option value="Örebro">Örebro</option>
+          <option value="Linköping">Linköping</option>
+          <option value="Lund">Lund</option>
+          <option value="Jönköping">Jönköping</option>
+          <option value="Umeå">Umeå</option>
+          </select>
+          {error ? (
+              <Form.Text style={{ color: "red" }}>
+                This is a required field
+              </Form.Text>
+            ) : (
+              ""
+          )}
 
-    </div>
-    </div>
-    </div>
-
-    /* <div className={style.eventInfoContainer}>
-      <div className={style.categoryBox}>
-        <select
-          className={style.category}
-          value={formDatas.category}
-          onChange={(event) =>
-          setFormDatas({ ...formDatas, category: event.target.value })
-          }
-          >
-          <option label="Välj kategori"></option>
-          <option value="Konsert, Quiz & Uteliv">Konsert, Quiz & Uteliv</option>
-          <option value="Mat & Dryck">Mat & Dryck</option>
-          <option value="Kultur & Livsstil">Kultur & Livsstil</option>
-          <option value="Sport & Fritid">Sport & Fritid</option>
-          <option value="Konst & Hantverk">Konst & hantverk</option>
-        </select>
-      </div> 
-        
-      <div className={style.title} >
-        <p>Evenemangets namn</p>
-        <input
-          type="text"
-          name="eventName"
-          value={formDatas.eventName}
-          onChange={(event) =>
-          setFormDatas({ ...formDatas, eventName: event.target.value })
-        } />
+          <button className={style.nextPageBtn} variant="primary" type="submit">
+            Continue
+          </button>
+        </form>
       </div>
-        
-      <div className={style.inputDateTime}>
-        <label>Datum:</label>
-        <input 
-          type="date" 
-          value={formDatas.date}
-          name="date" 
-          onChange={(event) =>
-          setFormDatas({ ...formDatas, date: event.target.value })
-        }></input>
-
-        <label>Tid:</label>
-        <input 
-          type="time" value={formDatas.time} 
-          name="time" 
-          onChange={(event) =>
-          setFormDatas({ ...formDatas, time: event.target.value })
-        }></input>
-      </div>
-
-      <div className={style.title}>
-        <p>Plats</p>
-        <input 
-          className={style.location}
-          type="text" 
-          id="location"
-          name="location"
-          value={formDatas.location}
-          onChange={(event) =>
-          setFormDatas({ ...formDatas, location: event.target.value })
-        }/>
-      </div>        
-    </div> */
+    </div>
   )
 }
   

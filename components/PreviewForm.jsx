@@ -5,9 +5,11 @@ import { useRouter } from 'next/router'
 
 import { Form, Card, Button } from "react-bootstrap";
 import validator from "validator"
+import Arrow from './Icons/arrow';
+import Link from 'next/link';
 
 
-function PreviewInfoForm({ formDatas, prevStep, values }) {
+function PreviewInfoForm({ prevStep, values }) {
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState([]) //Array of string 
   const router = useRouter()
@@ -42,6 +44,7 @@ function PreviewInfoForm({ formDatas, prevStep, values }) {
     setIsLoading(false)
    })
   };
+
   const submitFormData = (e) => {
     e.preventDefault();
   
@@ -56,133 +59,86 @@ function PreviewInfoForm({ formDatas, prevStep, values }) {
   
 }
 
-           //destructuring the object from values
-           const { eventName, date, time, category, location, textarea, price, numbOfParticipants, city } = values;
+  //destructuring the object from values
+  const { eventName, date, time, category, location, description, price, numbOfParticipants, city } = values;
   return (
-    <>
-    <Card style={{ marginTop: 100 }}>
-        <Card.Body>
-          <Form onSubmit={handleSubmit}>
-              <p
-              name="eventName"
-              defaultValue={values.eventName}
-              value={eventName}>
-            <strong>Evenemangs namn :</strong> {eventName}{" "}
-            
-              </p>
-              <p>
-            <strong>Datum :</strong> {date}{" "}
-          </p>
-          <p>
-            <strong>Tid :</strong> {time}{" "}
-          </p>
-          <p>
-            <strong>Kategori :</strong> {category}{" "}
-          </p>
-          <p>
-            <strong>Plats :</strong> {location}{" "}
-          </p>
-          <p>
-            <strong>Stad :</strong> {city}{" "}
-          </p>
-          <p>
-            <strong>Beskrivning :</strong> {textarea}{" "}
-          </p>
-          <p>
-            <strong>Pris :</strong> {price}{" "}
-          </p>
-          <p>
-            <strong>Antal deltagare :</strong> {numbOfParticipants}{" "}
-          </p>
-
-            <div style={{ display: "flex", justifyContent: "space-around" }}>
-              <Button variant="primary" onClick={prevStep}>
-                Previous
-              </Button>
-            </div>
-
-         
-            <button type='submit'>Submit</button>
-
-            </Form>
-        </Card.Body>
-      </Card>
-    </>
-
-    /* <form onSubmit={handleSubmit}>
-    <div className={style.previewInfoContainer}>
-        <div className={style.eventPic}>
-        <input
-              className={style.previewCategory}
-              name="category"
-              value={formDatas.category}
-              >
-            </input>
-        </div>
-       <div className={style.previewBox1}>
-           <div className={style.previewDateTime}>
-             <div className={style.date}>
-                <p>Datum:</p>
-                <input
-                    type="text"
-                    name="date"
-                    value={formDatas.date}
-                 />
-              </div>
-              <div className={style.time}>
-                <p>Kl.</p>
-                <input
-                    className={style.previeTime}
-                    type="text"
-                    name="time"
-                    value={formDatas.time}
-                />
-              </div>
-            </div>
-            <input
-            className={style.previewEventName}
-            type="text"
-            name="eventName"
-            value={formDatas.eventName}
-            />
-        </div>
-        <div className={style.previewPriceBox}>
-        <p>Pris</p>
-        <input
-            className={style.previewPrice}
-            type="text"
-            name="price"
-            value={formDatas.price}
-            />
-        </div>
-        <div className={style.previewPriceBox}>
-            <p>Antal deltagare</p>
-            <input
-            className={style.previewNumbOfParticipants}
-            type="text"
-            name="numbOfParticipants"
-            value={formDatas.numbOfParticipants}
-            />
+    <div className={style.previewinfoContainer}>
+        <form onSubmit={handleSubmit} className={style.form}>
+        <div className={style.header}>
+          <div className={style.headerBtn}>
+            <button className={style.backBtn} variant="primary" onClick={prevStep}>
+              <Arrow />
+            </button>
+          <Link href="/"><button className={style.cancelBtn}>Avbryt</button></Link>
           </div>
+          <h1>Granska evenemang</h1>
+        </div>
+       
+        <div className={style.eventPic}>
+          <input
+          className={style.previewCategory}
+          name="category"
+          value={category}
+          />
+        </div>
+        <div className={style.previewBox1}>
+          <div className={style.previewDateTime}>
+            <div className={style.date}>
+              <p>Datum:</p>
+              <input
+                name="date"
+                value={date}
+              />
+            </div>
+            <div className={style.time}>
+              <p>Kl.</p>
+                <input
+                className={style.previeTime}
+                name="time"
+                value={time}
+                />
+            </div>
+          </div>
+          <input
+          className={style.previewEventName}
+          name="eventName"
+          value={eventName}
+          />
+        </div>
+        <div className={style.previewPriceBox}>
+          <p>Pris</p>
+            <input
+            className={style.previewPrice}
+            name="price"
+            value={price}
+            />
+        </div>
+        <div className={style.previewPriceBox}>
+          <p>Antal deltagare</p>
+          <input
+          className={style.previewNumbOfParticipants}
+          name="numbOfParticipants"
+          value={numbOfParticipants}
+          />
+        </div>
+        
         {show &&
         <textarea
         className={style.previewTextarea}
         type="text"
         name="description"
-        value={formDatas.textarea}
+        value={description}
         />
         }
         <button className={style.showHideBtn} type="button" onClick={() => setShow(!show)}>
           {show === true ? 'Stäng' : 'Läs beskrivning'}
         </button>
-                   
+
         <div className={style.previewSubmitBtn}>
-          <button className={style.submitBtn} type="submit"disabled={isLoading}>Publicera evenemang</button>
+        <button className={style.submitBtn} type='submit'>Submit</button>
         </div>
-
-    </div>
-    </form> */
-
+      </form>
+    </div> 
   );
 }
 
