@@ -11,7 +11,7 @@
     flex-wrap: wrap;
 }
 
-.konsertquizuteliv, .matdryck, .kulturlivsstil, .sportfritid, .konsthantverk, .allakategorier{
+.category{
     display: flex;
     width: 140px;
     height: 130px;
@@ -24,27 +24,4 @@
     margin: 18px;
     box-shadow: var(--button-box-shadow);
     text-transform: uppercase;
-}
-
-.konsertquizuteliv {
-    background-color: #C2A7E4;
-}
-
-.matdryck{
-    background-color: #C3D5A5;
-}
-
-.kulturlivsstil{
-    background-color: #F1ACA5;
-}
-
-.sportfritid{
-    background-color: #97BEDD;
-}
-
-.konsthantverk{
-    background-color: #FFDB97;
-}
-.allakategorier{
-    background-color: #D4BBA1;
 }
