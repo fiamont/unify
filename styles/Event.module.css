@@ -1,6 +1,6 @@
 .eventbox{
     width: 100%;
-    height: 420px;
+    height: 400px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -14,7 +14,6 @@
     width: 94%;
     height: 94%;
     margin: 10px;
-    padding: 5px;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
@@ -24,27 +23,38 @@
 }
 
 .eventimg{
-    width: 98%;
-    height: 95%;
-    margin: 8px;
+    width: 100%;
+    height: 100%;
     background: rgb(216, 216, 216);
-    border-radius: 5px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-items:flex-end
+    align-items:flex-end;
+    border: 3px solid green;
+
 }
 
 .event{
     width: 100%;
-    height: 200px;
-    padding: 0 10px;
+    height: 55%;
+    padding: 0 15px;
     background: #FFF;
     color: black;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
     position: relative;
 }
+
+.imgWrapper{
+    width: 100%;
+    height: 45%;
+  }
+
+  .categoryImage{
+    width: 100%;
+    position: relative;
+    bottom: 2.3rem;
+ }
 
 .categoryBox{
     width: 125px;
@@ -56,7 +66,7 @@
     justify-content: center;
     align-items: center;
     font-style: normal;
-    box-shadow: 0px 2.94415px 1.96277px rgba(0, 0, 0, 0.2), 0px 0.981383px 9.81383px rgba(0, 0, 0, 0.12), 0px 3.92553px 4.90692px rgba(0, 0, 0, 0.14), 0px 1.96277px 3.92553px -0.981383px rgba(0, 0, 0, 0.2);    
+    box-shadow: 0px 2.94415px 1.96277px rgba(0, 0, 0, 0.2), 0px 0.981383px 9.81383px rgba(0, 0, 0, 0.12), 0px 3.92553px 4.90692px rgba(0, 0, 0, 0.14), 0px 1.96277px 3.92553px -0.981383px rgba(0, 0, 0, 0.2);
 }
 
 .categoryText{
@@ -77,26 +87,50 @@
     font-size: 16px;
     line-height: 22px;
     text-transform: uppercase;
+    margin: 10px 15px 0 0;
 }
 .description{
     font-family: var(--default-font-family);
     font-style: normal;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 1.1rem;
     line-height: 19px;
+    color: #030303;
+}
+.info{
+    margin: 5px 0;
+    padding: 0;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.readmoreBox{
+    width: 125px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    position: absolute;
+    right: -12px;
+    bottom: -12px;
+    padding: 0 10px;
 }
 
 .readmore{
     position: absolute;
-    right: 1.3rem;
-    bottom: 0.5rem;
-    font-size: 1.1rem;
+    top: 7px;
+    left: 27px;
 }
 
-.categoryImage{
-   width: 100%;
-   position: relative;
-   bottom: 2.3rem;
+.ArrowRight{
+    position: absolute;
+    top: 9px;
+    right: 25px;
+    align-items: center;
 }
 .categoryImageSport{
     width: 100%;
@@ -105,14 +139,9 @@
 }
 
 
-.imgWrapper{
-    width: 100%;
-    height: 46%;
-    overflow: hidden;
-  }
 
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 425px) {
     .container{
         display: flex;
         flex-direction: column;
@@ -121,7 +150,7 @@
     }
 
     .eventbox{
-        width: 460px;
+        width: 425px;
     }
 }
 
