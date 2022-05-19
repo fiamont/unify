@@ -13,6 +13,8 @@ function PreviewInfoForm({ prevStep, values }) {
   const router = useRouter()
 
   const [show, setShow] = useState(false);
+    //PopUp 
+    const [showModalCancel, setShowModalCancel] = useState(false);
 
      //creating error state for validation
   const [error, setError] = useState(false);
@@ -48,6 +50,13 @@ function PreviewInfoForm({ prevStep, values }) {
    })
   };
 
+  const onSubmit = (e) =>{
+    e.preventDefault();
+   
+    setShowModalCancel(true)
+  
+  }
+
 
   //destructuring the object from values
   const { eventName, date, time, category, location, description, price, numbOfParticipants, city } = values;
@@ -59,7 +68,7 @@ function PreviewInfoForm({ prevStep, values }) {
             <button className={style.backBtn} variant="primary" onClick={prevStep}>
               <Arrow />
             </button>
-          <Link href="/"><button className={style.cancelBtn}>Avbryt</button></Link>
+            <button className={style.cancelBtn} onClick={onSubmit}>Avbryt</button>
           </div>
           <h1>Granska evenemang</h1>
         </div>
@@ -73,14 +82,14 @@ function PreviewInfoForm({ prevStep, values }) {
         </div>
         <div className={style.previewBox1}>
           <div className={style.previewDateTime}>
-            <div className={style.date}>
+            <div className={style.previewDate}>
               <p>Datum:</p>
               <input
                 name="date"
                 value={date}
               />
             </div>
-            <div className={style.time}>
+            <div className={style.previewTime}>
               <p>Kl.</p>
                 <input
                 className={style.previeTime}
@@ -152,6 +161,21 @@ function PreviewInfoForm({ prevStep, values }) {
                 <div className={style.solidLinePopUp} />
                 <div className={style.buttonContainer}>
                     <Link href="/" passHref><button className={style.okPopupBtn} >OK</button></Link>
+                  </div>
+                </div>
+            </div>
+
+        ) : null }
+
+{showModalCancel ? (
+            <div className={style.showModal}>
+                <div className={style.showModalInner}>
+                  <div className={style.cancelContainer}>
+                      <h2>AVSLUTA UTAN ATT SLUTFÖRA?</h2>
+                      <p>Om du lämnar nu skapas inte ditt <br/> evenemang och det du hitills har gjort <br/> sparas inte.</p>
+                      <Link href="/" passHref><button className={style.cancelBtnPopup}>AVSLUTA</button></Link>
+                      <div className={style.solidLinePopUp} />
+                      <button className={style.continueEditBtnPopup} onClick={() => setShowModalCancel(false)}>FORTSÄTT+REDIGERA</button>
                   </div>
                 </div>
             </div>

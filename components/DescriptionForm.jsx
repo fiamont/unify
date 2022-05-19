@@ -12,6 +12,9 @@ function DescriptionInfoForm({ formDatas, setFormDatas, nextStep, handleFormData
   //creating error state for validation
   const [error, setError] = useState(false);
 
+  //PopUp 
+  const [showModalCancel, setShowModalCancel] = useState(false);
+
   // after form submit validating the form data using validator
 const submitFormData = (e) => {
   e.preventDefault();
@@ -25,6 +28,14 @@ const submitFormData = (e) => {
     nextStep();
   }
 };
+
+const onSubmit = (e) =>{
+  e.preventDefault();
+ 
+  setShowModalCancel(true)
+
+}
+
   return (
  
     <div className={style.eventInfoContainer}>
@@ -34,7 +45,7 @@ const submitFormData = (e) => {
             <button className={style.backBtn} variant="primary" onClick={prevStep}>
               <Arrow />
             </button>
-          <Link href="/" passHref><button className={style.cancelBtn}>Avbryt</button></Link>
+            <button className={style.cancelBtn} onClick={onSubmit}>Avbryt</button>
           </div>
           <h1>Beskrivning</h1>
         </div>
@@ -60,36 +71,7 @@ const submitFormData = (e) => {
               ""
             )}
           </div>
-
-          <div className={style.solidLine} />
-
-          <div className={style.priceAndParticipants}>
-            <div className={style.priceParticipantsInner}>   
-              <div className={style.priceParticipantsSymbol}><Payments/></div>PRIS  
-            
-                <input
-                  style={{ border: error ? "2px solid red" : "" }}
-                  name="price"
-                  defaultValue={values.price}
-                  type="text"
-                  onChange={handleFormData("price")}
-                />
-            
-              <label className={style.krSt}>KR</label>
-            </div>
-            <div className={style.priceParticipantsInner}>
-              <div className={style.priceParticipantsSymbol}><Participants/></div>ANTAL DELTAGARE
-                <input
-                  style={{ border: error ? "2px solid red" : "" }}
-                  name="price"
-                  defaultValue={values.numbOfParticipants}
-                  type="text"
-                  onChange={handleFormData("numbOfParticipants")}
-                />
-                <label className={style.krSt}>ST</label>
-              </div>
-            </div>
-
+          
           <div style={{ display: "flex", justifyContent: "space-around" }}>
             <button className={style.nextPageBtn} variant="primary" type="submit">
             Continue
@@ -97,6 +79,20 @@ const submitFormData = (e) => {
           </div>
 
         </form>
+        {showModalCancel ? (
+            <div className={style.showModal}>
+                <div className={style.showModalInner}>
+                  <div className={style.cancelContainer}>
+                      <h2>AVSLUTA UTAN ATT SLUTFÖRA?</h2>
+                      <p>Om du lämnar nu skapas inte ditt <br/> evenemang och det du hitills har gjort <br/> sparas inte.</p>
+                      <Link href="/" passHref><button className={style.cancelBtnPopup}>AVSLUTA</button></Link>
+                      <div className={style.solidLinePopUp} />
+                      <button className={style.continueEditBtnPopup} onClick={() => setShowModalCancel(false)}>FORTSÄTT+REDIGERA</button>
+                  </div>
+                </div>
+            </div>
+
+        ) : null }
       </div>
     </div>
   )    

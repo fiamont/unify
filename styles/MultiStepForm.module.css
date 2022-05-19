@@ -135,104 +135,93 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.dateTimeContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 333px;
+}
     
 .inputDateTime {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 333px;
-  gap: 10px;
-  color: black;
-  padding-left: 5px;
+  width: 100%;
   color: #4C2F11;
   margin-bottom: 10px;
 }
-  
-.inputDateTime input {
-  width: 70%;
-  height: 35px;
+
+.dateTimeBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.dateTimeBox p {
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.date input{
+  height: 40px;
+  width: 160px;
+  padding: 8px 8px;
   margin: 0;
   color: #898787;
 }
 
-.locationContainer {
-  border: 2px solid green;
+.time input{
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 135px;
+  padding: 8px 8px;
+  margin: 0;
+  color: #898787;
+}
+
+.adressContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  gap: 20px;
+  justify-content: space-between;
+  width: 333px;
+  margin-top: 10px;
 }
 
-.inputLocation {
-  border: 2px solid gold;
-  display: flex;
-  flex-direction: column;
+.LocationContainer {
+  height: 40px;
 }
-  
-.inputLocation input {
+
+.LocationContainer input {
   width: 160px;
+  padding: 8px 8px;
 }
 
 .cityContainer {
-  border: 2px solid blueviolet;
+  height: 40px;
   display: flex;
-  flex-direction: column;
-  width: 160px;
-  
-}
- 
-.city {
-  padding: 8px 8px;
-  border-radius: 6px;
-  background-color: #FDF0E1;
-  box-shadow: 1px 2px 6px #888888;
-  border: none;
-  margin-bottom: 60px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.solidLine {
-  margin-top: 35px;
-  margin-bottom: 35px;
-  border-bottom: 1px solid #898787;
-  width:100%;
+.city {
+  height: 40px;
+  width: 135px;
+  padding: 8px 8px;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #4C2F11;
 }
-  
- 
-  
-/*Description*/
-.eventInfoContainer {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-  
-.descriptionText {
-  width: 333px;
-  height: auto;
-  padding-left: 5px;
-  font-size: 20px;
-  color: #898787;
-}
-  
-.descriptionArea {
-  padding: 10px;
-  margin: 5px;
-  width: 333px;
-  height: 128px;
-  padding-left: 5px;
-  border-radius: 10px;
-}
-  
+
 .priceAndParticipants {
   display: flex;
   flex-direction: column;
   width: 333px;
+  margin-top: 40px;
 }
   
 .priceAndParticipants input {
@@ -289,6 +278,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.solidLine {
+  margin-top: 35px;
+  margin-bottom: 35px;
+  border-bottom: 1px solid #898787;
+  width:100%;
+}
+  
+ 
+  
+/*Description*/
+.eventInfoContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+  
+.descriptionText {
+  width: 333px;
+  height: auto;
+  padding-left: 5px;
+  font-size: 20px;
+  color: #898787;
+}
+  
+.descriptionArea {
+  padding: 10px;
+  margin: 5px;
+  width: 333px;
+  height: 128px;
+  padding-left: 5px;
+  border-radius: 10px;
 }
       
 /* PROGRESS BAR */
@@ -347,7 +372,7 @@
   height: 30px;
 }
   
-.date {
+.previewDate {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -357,7 +382,7 @@
   font-weight: 500;
 }
   
-.time {
+.previewtime {
   display: flex;
   flex-direction: row;
   align-items: center;
