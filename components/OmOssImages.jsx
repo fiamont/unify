@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from 'next/Image'
 import style from '../styles/OmOss.module.css'
 
 function OmOssImages() {

@@ -83,7 +83,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li >
-            <Link href='/' passHref >
+            <Link href='/kontaktaoss' passHref >
               <div className={style.item}> <ContactIcon/>Kontakta oss</div>
             </Link>
           </li>

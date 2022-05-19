@@ -3,16 +3,16 @@ import styles from '../styles/Home.module.css'
 import BackToTop from '../components/BackToTopButton'
 import OmOssText from '../components/OmOssText'
 import OmOssImages from '../components/OmOssImages'
-import Image from 'next/image'
+import Image from 'next/Image'
 
 import React from 'react'
 
-export default function Home({ allposts, trendingposts }) {
+export default function OmOss() {
   
   return (
     <div className={styles.container}>
       <Head><title>Unify - Om oss</title></Head>
-      <main className={styles.mainOmOss}>
+      <main className={styles.main}>
       <BackToTop />
       <OmOssText/>
       <div className={styles.arrow}>
