@@ -1,6 +1,7 @@
 .rubrik2{
     font-size: 35px;
     margin-top: -1rem;
+    color: var(--heading-color);
 }
 .rubrik, .title{
     font-family: var(--heading-font-family);
@@ -22,6 +23,22 @@
 .mainHome{
     background: url(../public/background.svg) no-repeat;
     background-size: contain;
+}
+
+.arrow{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.unifyP{
+    font-family: var(--heading-font-family);
+    color: var(--heading-color);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 34px;
 }
 
 @media screen and (min-width: 960px){
