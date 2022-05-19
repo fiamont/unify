@@ -13,35 +13,35 @@ function CategorySelector(category) {
         innerBorder = "#C2A7E4";
         categoryBox = "#DACAEF";
         showUpBtn = "#C2A7E4";
-        eventImage = <Image className={style.categoryImage} src="/konsertquizuteliv.png" alt='konsertquizuteliv' width="500" height="334"/>
+        eventImage = "/konsertquizuteliv.png"
     }
     else if(category == "Kultur & Livsstil"){
         outerBorder = "#F7CDC9";
         innerBorder = "#F1ACA5";
         categoryBox = "#F7CDC9";
         showUpBtn = "#F1ACA5";
-        eventImage = <Image className={style.categoryImage} src="/kulturlivsstil.png" alt='kulturlivstil' width="582" height="388"/>
+        eventImage = "/kulturlivsstil.png"
     }
     else if(category == "Sport & Fritid"){
         outerBorder = "#C1D8EB";
         innerBorder = "#97BEDD";
         categoryBox = "#C1D8EB";
         showUpBtn = "#97BEDD";
-        eventImage = <Image className={style.categoryImage} src="/sport.png" alt='sport' width="500" height="333"/>
+        eventImage = "/sport.png"
     }
     else if(category == "Mat & Dryck"){
         outerBorder = "#DBE6C9";
         innerBorder = "#C3D5A5";
         categoryBox = "#DBE6C9";
         showUpBtn = "#C3D5A5";
-        eventImage = <Image className={style.categoryImage} src="/matdryck.png" alt='matdryck' width="500" height="334"/>
+        eventImage = "/matdryck.png"
     }
     else if(category == "Konst & Hantverk"){
         outerBorder = "#FFE9C1";
         innerBorder = "#FFDB97";
         categoryBox = "#FFE9C1";
         showUpBtn = "#FFDB97";
-        eventImage = <Image className={style.categoryImage} src="/konsthantverk.png" alt='konsthantverk' width="500" height="333"/>
+        eventImage = "/konsthantverk.png"
     }
     else{
         outerBorder = "#808080";

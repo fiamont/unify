@@ -29,7 +29,7 @@
     overflow-x: -moz-scrollbars-none;
 }
 
-.eventboxUtelivKonsertQuiz, .eventboxKulturLivstil, .eventboxSportFritid, .eventboxMatDryck, .eventboxKonstHantverk, .eventboxDefault {
+.background {
     display: flex;
     flex-direction: column;
     width: 160px;
@@ -39,28 +39,8 @@
     font-size: 22px;
     line-height: 29px;
     align-items: center;
-    /* justify-content: center; */
     margin: 18px;
     border-radius: 5px;
-}
-
-.eventboxUtelivKonsertQuiz {
-    background: #DACAEF;
-}
-.eventboxKulturLivstil {
-    background:#F7CDC9;
-}
-.eventboxSportFritid{
-    background: #C1D8EB;
-}
-.eventboxMatDryck {
-    background: #DBE6C9;
-}
-.eventboxKonstHantverk{
-    background: #FFE9C1;
-}
-.eventboxDefault{
-    background: gray;
 }
 
 .imgWraper{
