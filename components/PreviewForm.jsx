@@ -19,8 +19,13 @@ function PreviewInfoForm({ prevStep, values }) {
      //creating error state for validation
   const [error, setError] = useState(false);
 
+  //PopUp 
+  const [showModal, setShowModal] = useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault()
+
+    setShowModal(true)
 
     const formData = new FormData(event.target)
     const body = Object.fromEntries(formData.entries())
@@ -35,7 +40,7 @@ function PreviewInfoForm({ prevStep, values }) {
    axios.post('/api/posts', body)
         .then((res) => {
         const postId = res.data.id
-        router.push(`/posts/${postId}`)
+      /*   router.push(`/posts/${postId}`) */
    })
    .catch((err) => {
        setErrors(err.response.data.errors)
@@ -45,19 +50,6 @@ function PreviewInfoForm({ prevStep, values }) {
    })
   };
 
-  const submitFormData = (e) => {
-    e.preventDefault();
-  
-     // checking if value of first name and last name is empty show error else take to next step
-    if (
-      validator.isEmpty(values.eventName)) 
-      {
-      setError(true);
-    } else {
-      console.log(values);
-    }
-  
-}
 
   //destructuring the object from values
   const { eventName, date, time, category, location, description, price, numbOfParticipants, city } = values;
@@ -122,22 +114,40 @@ function PreviewInfoForm({ prevStep, values }) {
           />
         </div>
         
-        {show &&
+        <div className={style.textareaBack}>
+        <p>BESKRIVNING</p>
+        
+         <button className={style.backBtn} variant="primary" onClick={prevStep}>
+              <Arrow />
+        </button>
+        </div>
         <textarea
         className={style.previewTextarea}
         type="text"
         name="description"
         value={description}
+        cols={1}
+        rows={1}
         />
-        }
-        <button className={style.showHideBtn} type="button" onClick={() => setShow(!show)}>
-          {show === true ? 'Stäng' : 'Läs beskrivning'}
-        </button>
-
         <div className={style.previewSubmitBtn}>
         <button className={style.submitBtn} type='submit'>Submit</button>
         </div>
       </form>
+
+      {showModal ? (
+            <div className={style.showModal}>
+                <div className={style.showModalInner}>
+                <div className={style.partyImg}></div>
+                <h2>BINGOOO! <br/> DIT EVENEMANG HAR SKAPATS</h2>
+                <p>Grymt Jobbat! Du har puplicerat ditt <br/> första evenemang!</p>
+                <div className={style.solidLinePopUp} />
+                <div className={style.buttonContainer}>
+                    <Link href="/" passHref><button className={style.okPopupBtn} >OK</button></Link>
+                  </div>
+                </div>
+            </div>
+
+        ) : null }
     </div> 
   );
 }
