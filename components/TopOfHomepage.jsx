@@ -2,7 +2,7 @@ import React from 'react'
 import HanderIdagButton from './HanderIdagButton'
 import style from '../styles/TopOfHomepage.module.css'
 import Image from 'next/image'
-import HomepageImg from '../public/homepageImg.svg'
+import HomepageImg from '../public/homepageImg.png'
 
 function TopOfHomepage({events}) {
   return (

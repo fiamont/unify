@@ -39,7 +39,7 @@
     font-size: 22px;
     line-height: 29px;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     margin: 18px;
     border-radius: 5px;
 }
@@ -63,12 +63,7 @@
     background: gray;
 }
 
-.imgWrapper{
-    width: 100%;
+.imgWraper{
     height: auto;
-    padding: 1rem;
+    padding: 0.8rem;
   }
-  .categoryImage{
-    width: 90%;
-    position: relative;
- }

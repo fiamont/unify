@@ -13,24 +13,24 @@ const Trending = ({events}) =>{
 
         if(category == "Konsert, Quiz & Uteliv") {
             background= style.eventboxUtelivKonsertQuiz;
-            eventImage = <Image className={style.categoryImage} src="/konsertquizuteliv.svg" alt='konsertquizuteliv' width="500" height="334"/>
+            eventImage = <Image className={style.categoryImage} src="/konsertquizuteliv.png" alt='konsertquizuteliv' width="500" height="334"/>
         }
         else if(category == "Kultur & Livsstil"){
             background = style.eventboxKulturLivstil;
-            eventImage = <Image className={style.categoryImage} src="/kulturlivstil.svg" alt='kulturlivstil' width="582" height="388"/>
+            eventImage = <Image className={style.categoryImage} src="/kulturlivsstil.png" alt='kulturlivstil' width="582" height="388"/>
         }
         else if(category == "Sport & Fritid"){
             background = style.eventboxSportFritid;
-            eventImage = <Image className={style.categoryImage} src="/sport.svg" alt='sport' width="500" height="333"/>
+            eventImage = <Image className={style.categoryImage} src="/sport.png" alt='sport' width="500" height="333"/>
         }
         else if(category == "Mat & Dryck"){
             background = style.eventboxMatDryck;
-            eventImage = <Image className={style.categoryImage} src="/matdryck.svg" alt='matdryck' width="500" height="334"/>
+            eventImage = <Image className={style.categoryImage} src="/matdryck.png" alt='matdryck' width="500" height="334"/>
 
         }
         else if(category == "Konst & Hantverk"){
             background = style.eventboxKonstHantverk;
-            eventImage = <Image className={style.categoryImage} src="/konsthantverk.svg" alt='konsthantverk' width="500" height="333"/>
+            eventImage = <Image className={style.categoryImage} src="/konsthantverk.png" alt='konsthantverk' width="500" height="333"/>
 
         }
         else{
