@@ -3,6 +3,7 @@ import React from 'react'
 import style from '../styles/Event.module.css'
 import ShowUpBtn from './ShowUp';
 import Image from 'next/dist/client/image';
+import CategorySelector from './CategorySelector';
 
 
 const Event = ({events}) =>{
@@ -79,7 +80,7 @@ const Event = ({events}) =>{
                                 <p className={style.title}>{events.eventName}</p>
                                 <p className={style.description}>{events.date} kl {events.time} </p>
                                 <p className={style.description}>{events.description}</p>
-                               <ShowUpBtn color={categoryColors(events.category).showUpBtn}/>
+                               <ShowUpBtn color={CategorySelector(events.category).showUpBtn}/>
                                <Link href={`/posts/${events.id}`}>
                                 <a className={style.readmore}>Läs mer...</a>
                                 </Link>
