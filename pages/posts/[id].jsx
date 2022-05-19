@@ -11,6 +11,8 @@ export default function Post({ post }) {
         <p>Tid: {post.time}</p>
         <p>Pris: {post.price}</p>
         <p>Antal deltagare: {post.numbOfParticipants}</p>
+        <p>Adress: {post.location}</p>
+        <p>Stad: {post.city}</p>
         </div>
     )
 }

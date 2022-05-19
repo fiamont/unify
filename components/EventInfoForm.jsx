@@ -1,6 +1,6 @@
 import React, { useState} from 'react'
 import style from './../styles/MultiStepForm.module.css'
-import { Form, Card, Button, ListGroup, Dropdown, DropdownButton } from "react-bootstrap"
+import { Form } from "react-bootstrap"
 import validator from "validator"
 import Link from 'next/link';
 
@@ -120,14 +120,16 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
               )}
 
           </div>
-
-          <div className={style.title}>
-            <p>Plats</p>
+          
+          <div className={style.locationContainer}>
+          <div className={style.inputLocation}>
+            <p className={style.title}>Adress</p>
             <input
               style={{ border: error ? "2px solid red" : "" }}
               name="location"
               defaultValue={values.location}
               type="text"
+              placeholder='Valfritt'
               onChange={handleFormData("location")}
             />
             {error ? (
@@ -136,9 +138,10 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
               </Form.Text>
             ) : (
               ""
-            )}
+              )}
           </div>
 
+          <div className={style.cityContainer}>
           <select
             className={style.city} 
             name="city"
@@ -163,6 +166,10 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
             ) : (
               ""
           )}
+          </div>
+          </div>
+
+          
 
           <button className={style.nextPageBtn} variant="primary" type="submit">
             Continue
@@ -171,10 +178,12 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
         {showModal ? (
             <div className={style.showModal}>
                 <div className={style.showModalInner}>
-                  <div className={style.buttonContainer}>
+                  <div className={style.cancelContainer}>
+                      <h2>AVSLUTA UTAN ATT SLUTFÖRA?</h2>
+                      <p>Om du lämnar nu skapas inte ditt <br/> evenemang och det du hitills har gjort <br/> sparas inte.</p>
                       <Link href="/" passHref><button className={style.cancelBtnPopup}>AVSLUTA</button></Link>
-
-                      <button className={style.continueEditBtnPopup} onClick={() => setShowModal(false)}>FORTSÄTT REDIGERA</button>
+                      <div className={style.solidLinePopUp} />
+                      <button className={style.continueEditBtnPopup} onClick={() => setShowModal(false)}>FORTSÄTT+REDIGERA</button>
                   </div>
                 </div>
             </div>

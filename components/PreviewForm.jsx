@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import style from './../styles/MultiStepForm.module.css'
 import axios from 'axios'
 import { useRouter } from 'next/router'
+
 import Arrow from './Icons/arrow';
 import Link from 'next/link';
 
@@ -94,6 +95,17 @@ function PreviewInfoForm({ prevStep, values }) {
           value={eventName}
           />
         </div>
+        <input
+          className={style.previewEventName}
+          name="location"
+          value={location}
+        />
+        <input
+          className={style.previewEventName}
+          name="city"
+          value={city}
+        />
+        
         <div className={style.previewPriceBox}>
           <p>Pris</p>
             <input
