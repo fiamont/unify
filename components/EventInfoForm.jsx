@@ -31,7 +31,7 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
       <div className={style.form}>
         <div className={style.header}>
           <div className={style.headerBtn}>
-            <Link href="/"><button className={style.cancelBtn}>Avbryt</button></Link>
+            <Link href="/" passHref><button className={style.cancelBtn}>Avbryt</button></Link>
           </div>
           <h1>EvenemangInfo</h1>
         </div>

@@ -19,9 +19,12 @@ function PreviewInfoForm({ prevStep, values }) {
      //creating error state for validation
   const [error, setError] = useState(false);
 
+  //PopUp 
+  const [showModal, setShowModal] = useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault()
-
+    setShowModal(true)
     const formData = new FormData(event.target)
     const body = Object.fromEntries(formData.entries())
    
@@ -35,7 +38,8 @@ function PreviewInfoForm({ prevStep, values }) {
    axios.post('/api/posts', body)
         .then((res) => {
         const postId = res.data.id
-        router.push(`/posts/${postId}`)
+        /* router.push(`/posts/${postId}`) */
+        router.push(showModal()) 
    })
    .catch((err) => {
        setErrors(err.response.data.errors)
@@ -45,9 +49,28 @@ function PreviewInfoForm({ prevStep, values }) {
    })
   };
 
+  const onSubmit = (e) =>{
+    e.preventDefault();
+     setShowModal(true)
+
+}
+
+const handleClick = () => {
+  /*  addDoc(dbInstance, {
+       title: title,
+       category: category,
+       body: body,
+       time: time,
+       date: date
+   }) */
+   setTimeout(() => { 
+       router.push('/');
+   }, 500)
+}
+
   const submitFormData = (e) => {
     e.preventDefault();
-  
+    setShowModal(true)
      // checking if value of first name and last name is empty show error else take to next step
     if (
       validator.isEmpty(values.eventName)) 
@@ -69,7 +92,7 @@ function PreviewInfoForm({ prevStep, values }) {
             <button className={style.backBtn} variant="primary" onClick={prevStep}>
               <Arrow />
             </button>
-          <Link href="/"><button className={style.cancelBtn}>Avbryt</button></Link>
+          <Link href="/" passHref><button className={style.cancelBtn}>Avbryt</button></Link>
           </div>
           <h1>Granska evenemang</h1>
         </div>
@@ -135,10 +158,26 @@ function PreviewInfoForm({ prevStep, values }) {
         </button>
 
         <div className={style.previewSubmitBtn}>
-        <button className={style.submitBtn} type='submit'>Submit</button>
+        <button 
+          className={style.submitBtn} 
+          >Skapa event
+          </button>
         </div>
       </form>
+
+      {showModal ? (
+      <div className={style.showModal}>
+          <div className={style.showModalInner}>
+            <div className={style.buttonContainer}>
+             {/*  <button className={style.cancelPopupBtn} onClick={() => setShowModal(false)}>Ändra</button> */}
+             <button className={style.submitBtn} onClick={handleClick} type="submit">Ok</button>
+            </div>
+          </div>
+      </div>
+
+      ) : null }
     </div> 
+
   );
 }
 

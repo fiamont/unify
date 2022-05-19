@@ -34,7 +34,7 @@ const submitFormData = (e) => {
             <button className={style.backBtn} variant="primary" onClick={prevStep}>
               <Arrow />
             </button>
-          <Link href="/"><button className={style.cancelBtn}>Avbryt</button></Link>
+          <Link href="/" passHref><button className={style.cancelBtn}>Avbryt</button></Link>
           </div>
           <h1>Beskrivning</h1>
         </div>
