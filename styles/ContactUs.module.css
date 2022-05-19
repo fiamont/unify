@@ -3,10 +3,10 @@
     flex-direction: column;
     justify-content: flex-start;
     padding: 0 1.5rem;
-
 }
 
 .kontaktaOssRubrik{
+    margin: 0;
     padding: 0;
     padding-bottom: 1rem;
     text-align: center;

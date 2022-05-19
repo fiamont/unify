@@ -4,6 +4,7 @@ import BackToTop from '../components/BackToTopButton'
 import OmOssText from '../components/OmOssText'
 import OmOssImages from '../components/OmOssImages'
 import Image from 'next/dist/client/image';
+import BackToHomepage from '../components/BackToHomepage'
 
 import React from 'react'
 
@@ -13,6 +14,9 @@ export default function OmOss() {
     <div className={styles.container}>
       <Head><title>Unify - Om oss</title></Head>
       <main className={styles.main}>
+      <div className={styles.back}>
+          <BackToHomepage/>
+        </div>
       <BackToTop />
       <OmOssText/>
       <div className={styles.arrow}>
