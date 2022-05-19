@@ -1,21 +1,23 @@
-.title, .insidetitle{
+.title{
     font-size: 24px;
     font-weight: 500;
     line-height: 29px;
     margin: 18px;
+    
 }
-
 .insidetitle{
-    background-color: rgba(255, 255, 255, 0.505);
-    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 15px;
+    font-family: var(--heading-font-family);
 }
 
 .events{
     display: grid;
-    grid-gap: 6px;
-    grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+    grid-gap: 7px;
+    grid-template-columns: repeat(auto-fill,minmax(165px,1fr));
     grid-auto-flow: column;
-    grid-auto-columns: minmax(160px,1fr);
+    grid-auto-columns: minmax(165px,1fr);
     overflow-x: auto;
 }
 
@@ -29,8 +31,9 @@
 
 .eventboxUtelivKonsertQuiz, .eventboxKulturLivstil, .eventboxSportFritid, .eventboxMatDryck, .eventboxKonstHantverk, .eventboxDefault {
     display: flex;
-    width: 140px;
-    height: 130px;
+    flex-direction: column;
+    width: 160px;
+    height: 160px;
     text-align: center;
     font-weight: 500;
     font-size: 22px;
@@ -42,30 +45,30 @@
 }
 
 .eventboxUtelivKonsertQuiz {
-    /* background: url(../public/konsertquizuteliv.svg) no-repeat center; */
-    background-size: cover;
-    background: #FCD46C;
+    background: #DACAEF;
 }
 .eventboxKulturLivstil {
-    /* background: url(../public/kulturlivstil.svg) no-repeat center; */
-    background-size: cover;
-    background:#7299E6;
+    background:#F7CDC9;
 }
 .eventboxSportFritid{
-    /* background: url(../public/sportfritid.svg) no-repeat center; */
-    background-size: cover;
-    background: #E67372;
+    background: #C1D8EB;
 }
 .eventboxMatDryck {
-    /* background: url(../public/matdryck.svg) no-repeat center; */
-    background-size: cover;
-    background: #E196BB;
+    background: #DBE6C9;
 }
 .eventboxKonstHantverk{
-    /* background: url(../public/konsthantverk.svg) no-repeat center; */
-    background-size: cover;
-    background: #FFBD59;
+    background: #FFE9C1;
 }
 .eventboxDefault{
     background: gray;
 }
+
+.imgWrapper{
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+  .categoryImage{
+    width: 90%;
+    position: relative;
+ }

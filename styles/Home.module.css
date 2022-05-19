@@ -2,19 +2,6 @@
     font-size: 35px;
     margin-top: -1rem;
 }
-
-.topPart{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    padding-left: 6rem;
-}
-.nummer{
-    margin: 0;
-    margin-top: 2rem;
-    padding: 0;
-}
 .rubrik, .title{
     font-family: var(--heading-font-family);
     color: var(--heading-color);
@@ -32,8 +19,13 @@
     margin: 18px;
 }
 
+.mainHome{
+    background: url(../public/background.svg) no-repeat;
+    background-size: contain;
+}
+
 @media screen and (min-width: 960px){
-    .main{
+    .main, .mainHome{
         padding-top: 5.5rem;
     }
     .rubrik{

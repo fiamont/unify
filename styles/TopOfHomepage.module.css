@@ -1,0 +1,50 @@
+.container {
+    position: relative;
+    margin: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.textPart{
+    margin: 0;
+    padding: 0;
+}
+
+.nummer{
+    margin: 0;
+    padding: 0;
+    padding-left: 0.5rem;
+    font-size: 50px;
+}
+
+.title{
+    margin: 0;
+    padding: 0;
+    padding-bottom: 4rem;
+    font-size: 25px;
+}
+
+.greySquare{
+    position: absolute;
+    width: 100%;
+    background-color: #DBD4E4B0;
+    width: 130px;
+    height: 137px;
+    padding: 1rem;
+    top: 3rem;
+    right: 3rem;
+}
+
+.homepageImg{
+    position: absolute;
+    width: 120%;
+    height: 120%;
+}
+
+@media screen and (min-width: 860px){
+    /* .container{
+        margin-left: 10rem;
+        margin-right: 10rem;
+    } */
+
+}
