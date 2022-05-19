@@ -77,7 +77,7 @@
     to {transform: translateX(0px);}
 }
 
-.item, .konsertquizuteliv, .matdryck, .kulturlivsstil, .sportfritid, .konsthantverk {
+.item{
     font-size: 1.2rem;
     color: var(--heading-color);
     padding: 0.4em;
@@ -92,35 +92,10 @@
     align-items: center;
 }
 
-.item{
-    margin: 0em;
-}
-
-.konsertquizuteliv {
-    background-color: #FCD46C;
-}
-
-.matdryck{
-    background-color: #E196BB;
-}
-
-.kulturlivsstil{
-    background-color: #7299E6;
-}
-
-.sportfritid{
-    background-color: #E67372;
-}
-
-.konsthantverk{
-    background-color: #FCAE38;
-}
-
-
 
 
 .navmenu .item :hover {
-    background-color: rgb(165, 164, 164);
+    background: rgb(165, 164, 164);
     color: #fff;
 }
 
@@ -139,9 +114,7 @@
     right: 4%;     
  }
 
- #konsertquizuteliv {
-     background: #FCD46C;
- }
+
 
 @media screen and (min-width: 960px){
     .hamburger {
