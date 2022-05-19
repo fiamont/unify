@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css'
 import BackToTop from '../components/BackToTopButton'
 import OmOssText from '../components/OmOssText'
 import OmOssImages from '../components/OmOssImages'
-import Image from 'next/Image'
+import Image from 'next/dist/client/image';
 
 import React from 'react'
 

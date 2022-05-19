@@ -1,6 +1,6 @@
 import React from 'react'
 import style from '../styles/ContactUs.module.css'
-import Image from 'next/Image'
+import Image from 'next/dist/client/image';
 
 function ContactUs() {
   return (
