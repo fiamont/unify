@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgb(146, 146, 146);
+    width: 135px;
+    height: 28px;
+    align-items: center;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.select {
+    border: none;
+}
