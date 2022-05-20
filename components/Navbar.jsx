@@ -79,17 +79,17 @@ export default function Navbar() {
           </li>
           <li >
             <Link href='/profile' passHref >
-              <div className={style.item}> <ProfileIcon2/>Mina event</div>
+              <div className={style.item2}> <ProfileIcon2/>Mina event</div>
             </Link>
           </li>
           <li >
             <Link href='/kontaktaoss' passHref >
-              <div className={style.item}> <ContactIcon/>Kontakta oss</div>
+              <div className={style.item2}> <ContactIcon/>Kontakta oss</div>
             </Link>
           </li>
           <li >
             <Link href='/omoss' passHref >
-              <div className={style.item}><AboutIcon/>Om oss</div>
+              <div className={style.item2}><AboutIcon/>Om oss</div>
             </Link>
           </li>
         </ul> )}

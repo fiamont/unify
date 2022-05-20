@@ -48,3 +48,8 @@
     height: auto;
     padding: 0.8rem;
   }
+
+.eventImage{
+    cursor: pointer;
+    border-radius: 5px;
+}
