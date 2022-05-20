@@ -47,8 +47,7 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
           </div>
           <h1>EvenemangInfo</h1>
         </div>
-
-        <form onSubmit={submitFormData}>  
+        <form className={style.formTag} onSubmit={submitFormData}>  
         <div className={style.categoryDiv}>
         <select 
           className={style.category}
@@ -212,9 +211,9 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
             </div>
 
             <div className={style.progressDots}>
-                        <div className={style.progressDot}/>
-                        <div className={style.progressDot} style={{background: '#dc51275d'}}/>
-                        <div className={style.progressDot} style={{background:'#dc51275d'}}/>
+                        <div className={style.progressDotFilled}/>
+                        <div className={style.progressDotEmpty}/>
+                        <div className={style.progressDotEmpty}/>
                     </div>
 
           <button className={style.nextPageBtn} variant="primary" type="submit">

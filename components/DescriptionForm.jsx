@@ -53,7 +53,7 @@ const onSubmit = (e) =>{
           <p>Ange mer information om ditt evenemang så att gästerna vet vad de ska vänta sig</p>
         </div>
   
-        <form onSubmit={submitFormData}>
+        <form className={style.formTag} onSubmit={submitFormData}>
           <div className={style.descriptionDiv}>
             <textarea 
             className={style.descriptionArea}
@@ -73,16 +73,16 @@ const onSubmit = (e) =>{
           </div>
           
           <div className={style.progressDots}>
-                        <div className={style.progressDot}/>
-                        <div className={style.progressDot} />
-                        <div className={style.progressDot} style={{background:'#dc51275d'}}/>
+                        <div className={style.progressDotFilled}/>
+                        <div className={style.progressDotFilled}/>
+                        <div className={style.progressDotEmpty}/>
                     </div>
 
-          <div style={{ display: "flex", justifyContent: "space-around" }}>
-            <button className={style.nextPageBtn} variant="primary" type="submit">
-            Nästa
-            </button>
-          </div>
+         
+          <button className={style.nextPageBtn} variant="primary" type="submit">
+          Nästa
+          </button>
+          
 
         </form>
         {showModalCancel ? (

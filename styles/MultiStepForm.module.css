@@ -1,5 +1,4 @@
 .flexContainer {
-  border: 2px solid gold;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,6 +32,7 @@
   margin-top: 20px;
   margin-bottom: 0;
 }
+
 
 .headerBtn {
   display: flex;
@@ -98,6 +98,13 @@
   position: absolute;
   bottom: 1rem;
 }
+
+.formTag{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
     
 .eventInfoContainer {
   height: 100%;
@@ -121,7 +128,6 @@
 .titleDiv, .categoryDiv{
   display: flex;
   flex-direction: column;
-  /* margin-bottom: 30px; */
 }
 
 .titleDiv{
@@ -129,6 +135,7 @@
 }
 
 .categoryDiv{
+  width: 94%;
   margin-bottom: 16px;
 }
 
@@ -354,11 +361,15 @@
   left: 9rem;
 }
 
-.progressDot{
+.progressDotFilled, .progressDotEmpty{
   background: #DC5027;
   width: 12px;
   height: 12px;
   border-radius: 50%;
+}
+
+.progressDotEmpty{
+  background: #dc51275d;
 }
 
 /* PREVIEW */
@@ -478,11 +489,13 @@
 .previewDateTime {
   display: flex;
   flex-direction: row;
-  color: orange;
-  gap: 5px;
+  color: #DC5027;
+  font-size: 16px;
+  /* gap: 5px; */
   margin: none;
   padding: none;
   height: 30px;
+  border: 1px solid teal;
 }
   
 .previewDate {
@@ -490,29 +503,30 @@
   flex-direction: row;
   align-items: center;
   margin: none;
-  gap: 2px;
-  width: 130px;
+  width: 85px;
   font-weight: 500;
 }
   
-.previewtime {
+.previewTime {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: none;
-  width: 60px;
+
 }
-  
+
+
 .previewDateTime input {
   width: 100%;
   border: none;
-  color: orange;
+  color: #DC5027;
   margin-top: 3px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
 }
   
 .previewEventName {
+  text-transform: uppercase;
   font-size: 20px;
   font-weight: 600;
   color: black;

@@ -90,7 +90,6 @@ function PreviewInfoForm({ prevStep, values }) {
         <div className={style.previewBox1}>
           <div className={style.previewDateTime}>
             <div className={style.previewDate}>
-              <p>Datum:</p>
               <input
                 name="date"
                 value={date}
@@ -99,7 +98,6 @@ function PreviewInfoForm({ prevStep, values }) {
             <div className={style.previewTime}>
               <p>Kl.</p>
                 <input
-                className={style.previeTime}
                 name="time"
                 value={time}
                 />
@@ -157,9 +155,9 @@ function PreviewInfoForm({ prevStep, values }) {
         </div>
 
         <div className={style.progressDots}>
-                        <div className={style.progressDot}/>
-                        <div className={style.progressDot} />
-                        <div className={style.progressDot}/>
+                        <div className={style.progressDotFilled}/>
+                        <div className={style.progressDotFilled} />
+                        <div className={style.progressDotFilled}/>
                     </div>
 
         <div className={style.previewSubmitBtn}>
