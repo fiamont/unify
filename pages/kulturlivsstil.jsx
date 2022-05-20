@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Eventbutton from '../components/Eventbutton'
 import Event from '../components/Event' 
 import BackToTop from '../components/BackToTopButton'
+import Image from 'next/image'
 
 import React from 'react'
 import { db } from '../utils/firebase'
@@ -13,10 +13,12 @@ export default function KulturLivsstil({ events }) {
     <div className={styles.container}>
       <Head><title>Unify - Kultur & Livsstil</title></Head>
       <main className={styles.main}>
-      <Eventbutton/>  
-      <h1 className={styles.rubrik2}>Kultur & Livsstil</h1>
-      <BackToTop />
-      <Event events={events} eventsKey={events.id}/> 
+        <div className={styles.titleDiv}>
+        <h1 className={styles.rubrik2}>Kultur & Livsstil</h1>
+          <Image className={styles.cross} src="/kulturlivsstilIcon.png" alt='kulturlivsstilIcon' width={30} height={30}/>
+        </div> 
+        <BackToTop />
+        <Event events={events} eventsKey={events.id}/> 
       </main>
     </div> 
   )

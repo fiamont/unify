@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Eventbutton from '../components/Eventbutton'
 import Event from '../components/Event' 
 import BackToTop from '../components/BackToTopButton'
+import Image from 'next/image'
 
 import React from 'react'
 import { db } from '../utils/firebase'
@@ -13,10 +13,12 @@ export default function Nojeuteliv({ events }) {
     <div className={styles.container}>
       <Head><title>Unify - Nöje & Uteliv</title></Head>
       <main className={styles.main}>
-      <Eventbutton/>  
-      <h1 className={styles.rubrik2}>Nöje & Uteliv</h1>
-      <BackToTop />
-      <Event events={events} eventsKey={events.id}/> 
+        <div className={styles.titleDiv}>
+          <h1 className={styles.rubrik2}>Nöje & Uteliv</h1>
+          <Image className={styles.cross} src="/nojeutelivIcon.png" alt='nojeutelivIcon' width={30} height={30}/>
+        </div> 
+        <BackToTop />
+        <Event events={events} eventsKey={events.id}/> 
       </main>
     </div> 
   )

@@ -1,6 +1,5 @@
 .rubrik2{
     font-size: 35px;
-    margin-top: -1rem;
     color: var(--heading-color);
 }
 .rubrik, .title{
@@ -11,6 +10,12 @@
 }
 .title{
     padding: 0;
+}
+
+.titleDiv{
+    margin-top: -2rem;
+    display: flex;
+    align-items: center;
 }
 
 .insidetitle{

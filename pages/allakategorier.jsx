@@ -1,9 +1,8 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Eventbutton from '../components/Eventbutton'
 import Event from '../components/Event' 
 import BackToTop from '../components/BackToTopButton'
-
+import Image from 'next/image'
 import React from 'react'
 import { db } from '../utils/firebase'
 
@@ -12,11 +11,13 @@ export default function AllaKategorier({ posts }) {
   return (
     <div className={styles.container}>
       <Head><title>Unify - Alla kategorier</title></Head>
-      <Eventbutton/> 
       <main className={styles.main}>
-      <h1 className={styles.rubrik}>Alla kategorier</h1>
-      <BackToTop />
-      <Event events={posts}/> 
+        <div className={styles.titleDiv}>
+          <h1 className={styles.rubrik2}>Alla kategorier</h1>
+          <Image className={styles.cross} src="/allakategorierIcon.png" alt='allakategorierIcon' width={30} height={30}/>
+        </div> 
+        <BackToTop />
+        <Event events={posts}/> 
       </main>
     </div> 
      
