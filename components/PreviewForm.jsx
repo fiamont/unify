@@ -4,12 +4,12 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 import CategorySelector from '../components/CategorySelector'
 import Image from 'next/image'
-import Location from './Icons/Location'
 import Arrow from './Icons/arrow';
 import Link from 'next/link';
 import ArrowRight from './Icons/arrowRight'
 import Description from './Icons/Description'
 import EventInfo from './Icons/EventInfo'
+import Adress from './Icons/Adress'
 
 
 function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
@@ -113,7 +113,7 @@ function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
           />
 
         <div className={style.previewAdressContainer}>
-          <div className={style.previewLocationIcon}><Location /></div>
+          <div className={style.previewLocationIcon}><Adress /></div>
           <div className={style.previewLocation}>
             <input
               name="location"
