@@ -31,7 +31,7 @@ function OmOssImages() {
             <p className={style.roll}>Utvecklare <Image src="/JulioIcon.png" alt='JulioIcon' width={12} height={12}/></p>
         </div>
         <div className={style.imgDiv}>
-            <Image src="/random.png" alt='SofiaM' width={160} height={160}/>
+            <Image className={style.sofiaM} src="/SofiaM.png" alt='SofiaM' width={160} height={160}/>
             <p className={style.name}>Sofia Montgomery</p>
             <p className={style.roll}>Utvecklare <Image src="/SofiaMIcon.png" alt='SofiaMIcon' width={13} height={13}/></p>
         </div>
