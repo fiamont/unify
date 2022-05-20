@@ -1,5 +1,4 @@
 .flexContainer {
-  border: 2px solid gold;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +30,9 @@
   color: #4C2F11;
   padding: 0;
   margin-top: 20px;
+  margin-bottom: 0;
 }
+
 
 .headerBtn {
   display: flex;
@@ -97,6 +98,13 @@
   position: absolute;
   bottom: 1rem;
 }
+
+.formTag{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
     
 .eventInfoContainer {
   height: 100%;
@@ -108,7 +116,7 @@
 }
     
 .eventInfoContainer input {
-  margin-bottom: 30px;
+  
   width: 333px;
   height: 40px;
   padding-left: 5px;
@@ -117,8 +125,21 @@
   border: 1px solid #898787;
 }
 
+.titleDiv, .categoryDiv{
+  display: flex;
+  flex-direction: column;
+}
+
+.titleDiv{
+  margin-bottom: 25px;
+}
+
+.categoryDiv{
+  width: 94%;
+  margin-bottom: 16px;
+}
+
 .title p{
-  margin-bottom: px;
   color: #4C2F11;
   font-weight: 400;
   font-size: 16px;
@@ -132,107 +153,100 @@
   background-color: #FDF0E1;
   box-shadow: 1px 2px 6px #888888;
   border: none;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+.dateTimeContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 333px;
 }
     
 .inputDateTime {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 333px;
-  gap: 10px;
-  color: black;
-  padding-left: 5px;
+  width: 100%;
   color: #4C2F11;
   margin-bottom: 10px;
 }
-  
-.inputDateTime input {
-  width: 70%;
-  height: 35px;
+
+.dateTimeBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.dateTimeBox p {
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.date, .time{
+  display: flex;
+  flex-direction: column;
+}
+
+.date input{
+  height: 40px;
+  width: 160px;
+  padding: 8px 8px;
   margin: 0;
   color: #898787;
 }
 
-.locationContainer {
-  border: 2px solid green;
+.time input{
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 135px;
+  padding: 8px 8px;
+  margin: 0;
+  color: #898787;
+}
+
+.adressContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  gap: 20px;
+  justify-content: space-between;
+  width: 333px;
+  margin-top: 10px;
 }
 
-.inputLocation {
-  border: 2px solid gold;
+.LocationContainer {
   display: flex;
   flex-direction: column;
+  height: 40px;
 }
-  
-.inputLocation input {
+
+.LocationContainer input {
   width: 160px;
+  padding: 8px 8px;
 }
 
 .cityContainer {
-  border: 2px solid blueviolet;
+  height: 40px;
   display: flex;
   flex-direction: column;
-  width: 160px;
-  
-}
- 
-.city {
-  padding: 8px 8px;
-  border-radius: 6px;
-  background-color: #FDF0E1;
-  box-shadow: 1px 2px 6px #888888;
-  border: none;
-  margin-bottom: 60px;
 }
 
-.solidLine {
-  margin-top: 35px;
-  margin-bottom: 35px;
-  border-bottom: 1px solid #898787;
-  width:100%;
+.city {
+  height: 40px;
+  width: 135px;
+  padding: 8px 8px;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #4C2F11;
 }
-  
- 
-  
-/*Description*/
-.eventInfoContainer {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-  
-.descriptionText {
-  width: 333px;
-  height: auto;
-  padding-left: 5px;
-  font-size: 20px;
-  color: #898787;
-}
-  
-.descriptionArea {
-  padding: 10px;
-  margin: 5px;
-  width: 333px;
-  height: 128px;
-  padding-left: 5px;
-  border-radius: 10px;
-}
-  
+
 .priceAndParticipants {
   display: flex;
   flex-direction: column;
   width: 333px;
+  margin-top: 40px;
 }
   
 .priceAndParticipants input {
@@ -290,6 +304,51 @@
   align-items: center;
   justify-content: center;
 }
+
+.solidLine {
+  margin-top: 35px;
+  margin-bottom: 35px;
+  border-bottom: 1px solid #898787;
+  width:100%;
+}
+  
+ 
+  
+/*Description*/
+.eventInfoContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+  
+.descriptionText {
+  width: 333px;
+  height: auto;
+  padding-left: 5px;
+  font-size: 20px;
+  color: #898787;
+}
+  
+.descriptionArea {
+  padding: 10px;
+  margin: 5px;
+  width: 333px;
+  height: 128px;
+  padding-left: 5px;
+  border-radius: 10px;
+}
+
+.descriptionDiv{
+  display: flex;
+  flex-direction: column;
+}
+
+.error{
+  padding-left: 0.3rem;
+}
       
 /* PROGRESS BAR */
 
@@ -299,17 +358,115 @@
   gap: 25px;
   position: absolute;
   bottom: 5rem;
+  left: 9rem;
 }
 
-.progressDot{
+.progressDotFilled, .progressDotEmpty{
   background: #DC5027;
   width: 12px;
   height: 12px;
   border-radius: 50%;
 }
 
+.progressDotEmpty{
+  background: #dc51275d;
+}
+
 /* PREVIEW */
-    
+.eventName {
+  font-family: var(--heading-font-family);
+  color: var(--heading-color);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  padding: 0;
+}
+
+.outerborder{
+  width: 100%;
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:25px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.innerBorder{
+  width: 96%;
+  height: 93%;
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items:center;
+  position: absolute;
+}
+
+.eventimg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(216, 216, 216);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items:flex-end;
+  border: 3px solid green;
+
+}
+
+.imgWrapper{
+  display: flex;
+  width: 96%;
+  height: 94%;
+  justify-content: center;
+}
+
+.eventimg{
+  border-radius: 10px;
+}
+
+.categoryBox{
+  width: 125px;
+  height: 25px;
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 23px;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  box-shadow: 0px 2.94415px 1.96277px rgba(0, 0, 0, 0.2), 0px 0.981383px 9.81383px rgba(0, 0, 0, 0.12), 0px 3.92553px 4.90692px rgba(0, 0, 0, 0.14), 0px 1.96277px 3.92553px -0.981383px rgba(0, 0, 0, 0.2);
+}
+
+.categoryText{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 320px) {
+  .container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .outerborder{
+      width: 320px;
+  }
+}
 .previewInfoContainer {
   height: 100%;
   width: 100%;
@@ -318,132 +475,160 @@
   justify-content: center;
   align-items: center;
 }
-  
-.eventPic {
-  border: 10px solid slateblue;
-  background-color: #157C79;
-  height: 170px;
-  width: 100%;
-  margin-bottom: 20px;
-}
-  
-.previewBox1 {
-  margin-bottom: 15px;
-  width: 100%;
-}
 
-.previewBox1 input {
-  margin: 0px;
-  padding: 0px;
-}
-  
 .previewDateTime {
   display: flex;
   flex-direction: row;
-  color: orange;
+  color: #DC5027;
+  font-size: 16px;
+  font-weight: 600;
   gap: 5px;
   margin: none;
   padding: none;
-  height: 30px;
+  height: 26px;
+
 }
-  
-.date {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: none;
-  gap: 2px;
-  width: 130px;
-  font-weight: 500;
-}
-  
-.time {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: none;
-  width: 60px;
-}
-  
+
 .previewDateTime input {
   width: 100%;
   border: none;
-  color: orange;
+  color: #DC5027;
   margin-top: 3px;
-  font-size: 15px;
-  font-weight: 500;
-}
-  
-.previewEventName {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
-  color: black;
-  border: none;
-}
-    
-.previewUserName {
-  display: flex;
-  flex-direction: row;
-  align-items: center; 
-  width: 100%;
-  height: 20px;
-  font-size: 12px;
-  color: #898787;
-  gap: 2px;
 }
 
-.previewUserName input{
-  font-size: 12px;
-  color: #898787;
-  border: none;
-  margin-top: 1px;
-}
-  
-.previewPriceBox {
+.previewDate {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 30px;
-  width: 100%;
-  font-size: 15px;
+  margin: none;
+  width: 85px;
 }
 
-.previewPrice {
+.previewTime {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: none;
+}
+
+.previewEventName {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 600;
+  color: #222222;
   border: none;
-  font-size: 13px;
-  width: 40px;
-  margin-top: 4px;
-  padding-left: 6px;
+  font-family: var(--default-font-family);
+}
+    
+.previewAdressContainer {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: auto;
+  margin-top: 6px;
 }
 
-.previewPrice input {
-  font-size: 15px;
+.previewLocationIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.previewNumbOfParticipants {
+.previewLocation input {
+  font-size: 16px;
+  min-width: 120px;
+  padding-left: 12px;
+  font-family: var(--default-font-family);
   border: none;
-  font-size: 13px;
-  width: 40px;
-  margin-top: 3px;
-  padding-left: 6px;
 }
 
-.previewNumbOfParticipants input {
-  font-size: 15px;
+.previewCity {
+  font-size: 16px;
+  padding-left: 27px;
+  font-family: var(--default-font-family);
+  border: none;
 }
 
-.textareaBack {
+.previewHide {
+  visibility: hidden;
+}
+
+.previewEventInfoContiner {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.previewEventInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.previewEventInfo p {
+  display: flex;
+  align-items: center;
+  color: #222222;
+  margin: 0px;
+  font-size: 16px;
+  font-family: var(--default-font-family);
+  font-weight: 500;
+}
+
+.previewEventInfoIcon {
+  background-color: #F9C4B6;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.previewTextareaContainer {
   display: flex;
   justify-content: space-between;
   margin: 0px;
+  margin-top: 30px;
+}
+
+.previewDescription {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.previewDescription p{
+  display: flex;
+  align-items: center;
+  color: #222222;
+  margin: 0px;
+  font-size: 16px;
+  font-family: var(--default-font-family);
+  font-weight: 500;
 }
 
 .previewTextarea {
-  padding: 10px;
-  width: 300px;
-  height: 26px;
-  font-size: 15px;
+  display: flex;
+  text-align: center;
+  width: 100%;
+}
+
+.previewTextarea textarea{
+  font-size: 14px;
+  width: 100%;
+  height: 20px;
+  padding: 0px;
+  padding-left: 42px;
+  overflow: hidden;
   border: none;
+  border-style: none;
+  border-color: Transparent;
+  resize: none;
+  color: #898787;
+  font-family: var(--default-font-family);
 }
 
 .previewCategory {
@@ -453,8 +638,7 @@
   width: 100%;
 }
 
-    
-
+/*BUTTONS*/
 
 .nextPageBtn {
   display: flex;
@@ -513,6 +697,7 @@
   position: absolute;
   bottom: 1rem;
 }
+
 .previewSubmitBtn{
   flex: 20%;
   display: flex;

@@ -38,6 +38,10 @@ export default function NewPost() {
     setstep(step - 1);
   };
 
+  const prevTwoStep = () => {
+    setstep(step - 2);
+  };
+
   // handling form input data by taking onchange value and updating our previous form data state
   const handleInputData = input => e => {
     // input value from the form
@@ -74,6 +78,7 @@ export default function NewPost() {
             </Col>
           </Row>
         </Container>
+        
     
       );
     // case 2 to show stepTwo form passing nextStep, prevStep, and handleInputData as handleFormData method as prop and also formData as value to the fprm
@@ -96,7 +101,7 @@ export default function NewPost() {
           <Container>
             <Row>
               <Col  md={{ span: 6, offset: 3 }} className="custom-margin">
-                <PreviewInfoForm prevStep={prevStep} handleFormData={handleInputData} values={formDatas} />
+                <PreviewInfoForm prevStep={prevStep} prevTwoStep={prevTwoStep} handleFormData={handleInputData} values={formDatas} />
               </Col>
             </Row>
           </Container>
