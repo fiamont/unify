@@ -1,5 +1,8 @@
 .container {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1rem;
     margin: 1rem;
     padding-top: 1rem;
     padding-bottom: 2rem;
@@ -25,26 +28,19 @@
 }
 
 .greySquare{
-    position: absolute;
-    width: 100%;
     background-color: #DBD4E4B0;
     width: 130px;
     height: 137px;
     padding: 1rem;
-    top: 3rem;
-    right: 3rem;
 }
 
 .homepageImg{
-    position: absolute;
-    width: 120%;
+    width: 150%;
     height: 120%;
 }
 
-@media screen and (min-width: 860px){
-    /* .container{
-        margin-left: 10rem;
-        margin-right: 10rem;
-    } */
-
-}
+@media screen and (min-width: 660px){
+    .container{
+        gap: 8rem;
+    }
+    }

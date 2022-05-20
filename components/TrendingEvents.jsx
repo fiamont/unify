@@ -10,7 +10,6 @@ const Trending = ({events}) =>{
     return(
         
         <div className={style.container}>
-            <p className={style.title}>POPULÄRT</p>
             <div className={style.events}>
                 {events.map((events) =>(
                 <div key={events.id} className={style.background} style={{background: CategorySelector(events.category).lightColor}}>
