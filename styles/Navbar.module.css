@@ -77,7 +77,7 @@
     to {transform: translateX(0px);}
 }
 
-.item{
+.item, .item2{
     font-size: 1.2rem;
     color: var(--heading-color);
     padding: 0.4em;
@@ -94,7 +94,7 @@
 
 
 
-.navmenu .item :hover {
+.item:hover, .item2:hover {
     background: rgb(165, 164, 164);
     color: #fff;
 }
@@ -136,8 +136,14 @@
         animation-name: none;
 
     }
-    .item, .konsertquizuteliv, .matdryck, .kulturlivsstil, .sportfritid, .konsthantverk {
-        width: 100%;
+    .item{
+        display: flex;
+        justify-content: center;
+        width: 140px;
+    }
+
+    .item2 {
+        display: none;
     }
 
     .buttons {
