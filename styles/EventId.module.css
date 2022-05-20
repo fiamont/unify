@@ -142,7 +142,7 @@
 }
 
 @media screen and (min-width: 960px){
-    .event{
-        padding-top: 5rem;
+    .wholeEvent{
+        padding-top: 6rem;
     }
 }

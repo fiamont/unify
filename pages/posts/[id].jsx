@@ -7,7 +7,7 @@ import BackToHomepage from '../../components/BackToHomepage'
 
 export default function Post({ post }) {
     return (
-        <div >
+        <div className={style.wholeEvent}>
             <BackToHomepage className={style.arrow}/>
             <div className={style.event}>
                 <div>
