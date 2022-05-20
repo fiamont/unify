@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import style from './../styles/MultiStepForm.module.css'
 import axios from 'axios'
 import { useRouter } from 'next/router'
+import CategorySelector from '../components/CategorySelector'
+import Image from 'next/image'
 
 import Arrow from './Icons/arrow';
 import Link from 'next/link';
@@ -73,13 +75,17 @@ function PreviewInfoForm({ prevStep, values }) {
           </div>
           <h1>Granska evenemang</h1>
         </div>
-       
-        <div className={style.eventPic}>
-          <input
-          className={style.previewCategory}
-          name="category"
-          value={category}
-          />
+        <div className={style.container}>
+            <div className={style.outerborder} style={{background: CategorySelector(values.category).lightColor}}>
+                <div className={style.innerBorder} style={{background: CategorySelector(values.category).darkColor}}>
+                    <div className={style.imgWrapper}>
+                        <Image className={style.eventimg} src={CategorySelector(values.category).eventImage} alt='eventbild' width="500" height="333"/>
+                    </div>
+                    <div className={style.categoryBox} style={{background: CategorySelector(values.category).categoryBox}}>
+                        <p className={style.categoryText}>{values.category}</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div className={style.previewBox1}>
           <div className={style.previewDateTime}>
