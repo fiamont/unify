@@ -7,14 +7,14 @@ import BackToTop from '../components/BackToTopButton'
 import React from 'react'
 import { db } from '../utils/firebase'
 
-export default function Konsertquizuteliv({ events }) {
+export default function Nojeuteliv({ events }) {
 
   return (
     <div className={styles.container}>
-      <Head><title>Unify - Konsert, Quiz & Uteliv</title></Head>
+      <Head><title>Unify - Nöje & Uteliv</title></Head>
       <main className={styles.main}>
       <Eventbutton/>  
-      <h1 className={styles.rubrik2}>Konsert, Quiz & Uteliv</h1>
+      <h1 className={styles.rubrik2}>Nöje & Uteliv</h1>
       <BackToTop />
       <Event events={events} eventsKey={events.id}/> 
       </main>

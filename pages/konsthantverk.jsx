@@ -11,10 +11,10 @@ export default function KonstHantverk({ events }) {
 
   return (
     <div className={styles.container}>
-      <Head><title>Unify - Konst & Hantverk</title></Head>
+      <Head><title>Unify - Hantverk & Konst</title></Head>
       <main className={styles.main}>
       <Eventbutton/>  
-      <h1 className={styles.rubrik2}>Konst & Hantverk</h1>
+      <h1 className={styles.rubrik2}>Hantverk & Konst</h1>
       <BackToTop />
       <Event events={events} eventsKey={events.id}/> 
       </main>

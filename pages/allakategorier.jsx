@@ -7,7 +7,7 @@ import BackToTop from '../components/BackToTopButton'
 import React from 'react'
 import { db } from '../utils/firebase'
 
-export default function HanderIdag({ posts }) {
+export default function AllaKategorier({ posts }) {
   
   return (
     <div className={styles.container}>

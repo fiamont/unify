@@ -79,7 +79,7 @@ export default function Navbar() {
           </li>
           <li >
             <Link href='/profile' passHref >
-              <div className={style.item2}> <ProfileIcon2/>Mina event</div>
+              <div className={style.item2}> <ProfileIcon2/>Min Profil</div>
             </Link>
           </li>
           <li >
