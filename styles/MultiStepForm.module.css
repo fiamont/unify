@@ -31,6 +31,7 @@
   color: #4C2F11;
   padding: 0;
   margin-top: 20px;
+  margin-bottom: 0;
 }
 
 .headerBtn {
@@ -108,7 +109,7 @@
 }
     
 .eventInfoContainer input {
-  margin-bottom: 30px;
+  
   width: 333px;
   height: 40px;
   padding-left: 5px;
@@ -117,8 +118,21 @@
   border: 1px solid #898787;
 }
 
+.titleDiv, .categoryDiv{
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom: 30px; */
+}
+
+.titleDiv{
+  margin-bottom: 25px;
+}
+
+.categoryDiv{
+  margin-bottom: 16px;
+}
+
 .title p{
-  margin-bottom: px;
   color: #4C2F11;
   font-weight: 400;
   font-size: 16px;
@@ -132,8 +146,7 @@
   background-color: #FDF0E1;
   box-shadow: 1px 2px 6px #888888;
   border: none;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 0px;
 }
 
 .dateTimeContainer {
@@ -164,6 +177,11 @@
   margin-bottom: 10px;
 }
 
+.date, .time{
+  display: flex;
+  flex-direction: column;
+}
+
 .date input{
   height: 40px;
   width: 160px;
@@ -192,6 +210,8 @@
 }
 
 .LocationContainer {
+  display: flex;
+  flex-direction: column;
   height: 40px;
 }
 
@@ -203,6 +223,7 @@
 .cityContainer {
   height: 40px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -324,6 +345,7 @@
   gap: 25px;
   position: absolute;
   bottom: 5rem;
+  left: 9rem;
 }
 
 .progressDot{

@@ -72,9 +72,15 @@ const onSubmit = (e) =>{
             )}
           </div>
           
+          <div className={style.progressDots}>
+                        <div className={style.progressDot}/>
+                        <div className={style.progressDot} />
+                        <div className={style.progressDot} style={{background:'#dc51275d'}}/>
+                    </div>
+
           <div style={{ display: "flex", justifyContent: "space-around" }}>
             <button className={style.nextPageBtn} variant="primary" type="submit">
-            Continue
+            Nästa
             </button>
           </div>
 

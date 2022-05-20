@@ -48,11 +48,13 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
           <h1>EvenemangInfo</h1>
         </div>
 
-        <form onSubmit={submitFormData}>        
-          <select 
+        <form onSubmit={submitFormData}>  
+        <div className={style.categoryDiv}>
+        <select 
           className={style.category}
           name="category"
           defaultValue={values.category}
+          style={{ border: error ? "2px solid red" : "" }}
           onChange={handleFormData("category")}
           >
           <option label="Välj kategori"></option>
@@ -69,8 +71,9 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
           ) : (
             ""
           )}
+        </div>      
 
-          <div className={style.title}>
+          <div className={style.titleDiv}>
             <p>Evenemangets namn</p>
             <input
               style={{ border: error ? "2px solid red" : "" }}
@@ -142,7 +145,6 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
                   name="location"
                   defaultValue={values.location}
                   type="text"
-                  placeholder='Valfritt'
                   onChange={handleFormData("location")}
                 />
                 {error ? (
@@ -159,6 +161,7 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
                   className={style.city} 
                   name="city"
                   defaultValue={values.city}
+                  style={{ border: error ? "2px solid red" : "" }}
                   onChange={handleFormData("city")}>
                 <option>Välj stad</option>
                 <option value="Stockholm">Stockholm</option>
@@ -208,10 +211,14 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
               </div>
             </div>
 
-          
+            <div className={style.progressDots}>
+                        <div className={style.progressDot}/>
+                        <div className={style.progressDot} style={{background: '#dc51275d'}}/>
+                        <div className={style.progressDot} style={{background:'#dc51275d'}}/>
+                    </div>
 
           <button className={style.nextPageBtn} variant="primary" type="submit">
-            Continue
+            Nästa
           </button>
         </form>
         {showModalCancel ? (

@@ -150,6 +150,12 @@ function PreviewInfoForm({ prevStep, values }) {
           />
         </div>
 
+        <div className={style.progressDots}>
+                        <div className={style.progressDot}/>
+                        <div className={style.progressDot} />
+                        <div className={style.progressDot}/>
+                    </div>
+
         <div className={style.previewSubmitBtn}>
           <button className={style.submitBtn} type='submit'>Submit</button>
         </div>
