@@ -188,7 +188,6 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
               <div className={style.priceParticipantsSymbol}><Payments/></div>PRIS  
             
                 <input
-                  style={{ border: error ? "2px solid red" : "" }}
                   name="price"
                   defaultValue={values.price}
                   type="text"
@@ -200,7 +199,6 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
             <div className={style.priceParticipantsInner}>
               <div className={style.priceParticipantsSymbol}><Participants/></div>ANTAL DELTAGARE
                 <input
-                  style={{ border: error ? "2px solid red" : "" }}
                   name="price"
                   defaultValue={values.numbOfParticipants}
                   type="text"

@@ -457,18 +457,34 @@
   font-size: 15px;
 }
 
-.textareaBack {
+.previewTextareaContainer {
+  border: 1px solid gold;
   display: flex;
   justify-content: space-between;
   margin: 0px;
 }
 
 .previewTextarea {
-  padding: 10px;
-  width: 300px;
-  height: 26px;
-  font-size: 15px;
+  border: 1px solid green;
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.previewTextarea textarea{
+  font-size: 14px;
+  width: 246px;
+  height: 20px;
+  overflow: hidden;
   border: none;
+  border-style: none;
+  border-color: Transparent;
+  resize: none;
+  color: #898787;
+  border: 1px solid blue;
 }
 
 .previewCategory {
@@ -478,8 +494,7 @@
   width: 100%;
 }
 
-    
-
+/*BUTTONS*/
 
 .nextPageBtn {
   display: flex;

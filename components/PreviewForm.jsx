@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 
 import Arrow from './Icons/arrow';
 import Link from 'next/link';
+import Participants from './Icons/Participants';
 
 
 function PreviewInfoForm({ prevStep, values }) {
@@ -132,23 +133,25 @@ function PreviewInfoForm({ prevStep, values }) {
           />
         </div>
         
-        <div className={style.textareaBack}>
-        <p>BESKRIVNING</p>
+        <div className={style.previewTextareaContainer}>
+          <div className={style.priceParticipantsSymbol}><Participants/></div>Beskrivning
         
-         <button className={style.backBtn} variant="primary" onClick={prevStep}>
-              <Arrow />
-        </button>
+          <button className={style.backBtn} variant="primary" onClick={prevStep}>
+            <Arrow />
+          </button>
         </div>
-        <textarea
-        className={style.previewTextarea}
-        type="text"
-        name="description"
-        value={description}
-        cols={1}
-        rows={1}
-        />
+        <div className={style.previewTextarea}>
+          <textarea
+          type="text"
+          name="description"
+          value={description}
+          cols={1}
+          rows={1}
+          />
+        </div>
+
         <div className={style.previewSubmitBtn}>
-        <button className={style.submitBtn} type='submit'>Submit</button>
+          <button className={style.submitBtn} type='submit'>Submit</button>
         </div>
       </form>
 

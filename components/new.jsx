@@ -74,6 +74,7 @@ export default function NewPost() {
             </Col>
           </Row>
         </Container>
+        
     
       );
     // case 2 to show stepTwo form passing nextStep, prevStep, and handleInputData as handleFormData method as prop and also formData as value to the fprm
