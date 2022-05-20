@@ -54,7 +54,7 @@ const onSubmit = (e) =>{
         </div>
   
         <form onSubmit={submitFormData}>
-          <div className={style.title}>
+          <div className={style.descriptionDiv}>
             <textarea 
             className={style.descriptionArea}
             style={{ border: error ? "2px solid red" : "" }}
@@ -64,8 +64,8 @@ const onSubmit = (e) =>{
             defaultValue={values.description}
             onChange={handleFormData("description")}/>
             {error ? (
-              <Form.Text style={{ color: "red" }}>
-                This is a required field
+              <Form.Text className={style.error} style={{ color: "red" }}>
+                Du måste beskriva ditt evenemang
               </Form.Text>
             ) : (
               ""

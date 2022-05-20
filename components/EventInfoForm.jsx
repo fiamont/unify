@@ -66,7 +66,7 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
           </select>
           {error ? (
             <Form.Text style={{ color: "red" }}>
-              This is a required field
+              Du måste välja en kategori
             </Form.Text>
           ) : (
             ""
@@ -84,7 +84,7 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
             />
             {error ? (
               <Form.Text style={{ color: "red" }}>
-                This is a required field
+                Du måste ange ett namn på ditt evenemang
               </Form.Text>
             ) : (
               ""
@@ -106,7 +106,7 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
               />
               {error ? (
                 <Form.Text style={{ color: "red" }}>
-                  This is a required field
+                  Du måste välja ett datum
                 </Form.Text>
               ) : (
                 ""
@@ -126,7 +126,7 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
               />
               {error ? (
                 <Form.Text style={{ color: "red" }}>
-                  This is a required field
+                  Du måste välja en tid
                 </Form.Text>
               ) : (
                 ""
@@ -149,7 +149,7 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
                 />
                 {error ? (
                   <Form.Text style={{ color: "red" }}>
-                    This is a required field
+                    Du måste välja en plats
                   </Form.Text>
                 ) : (
                   ""
@@ -177,7 +177,7 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
                 </select>
                 {error ? (
                     <Form.Text style={{ color: "red" }}>
-                      This is a required field
+                      Du måste välja en stad
                     </Form.Text>
                   ) : (
                     ""
