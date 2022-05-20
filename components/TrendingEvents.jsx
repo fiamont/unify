@@ -15,7 +15,7 @@ const Trending = ({events}) =>{
                 <div key={events.id} className={style.background} style={{background: CategorySelector(events.category).lightColor}}>
                     <div className={style.imgWraper}>
                     <Link href={`/posts/${events.id}`}>
-                        <Image src={CategorySelector(events.category).eventImage} alt='eventbild' width="500" height="333"/>
+                        <Image className={style.eventImage} src={CategorySelector(events.category).eventImage} alt='eventbild' width="500" height="333"/>
                     </Link>
                     </div>
                     <Link href={`/posts/${events.id}`}>
