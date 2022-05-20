@@ -475,46 +475,19 @@
   justify-content: center;
   align-items: center;
 }
-  
-.previewBox1 {
-  margin-bottom: 15px;
-  width: 100%;
-}
 
-.previewBox1 input {
-  margin: 0px;
-  padding: 0px;
-}
-  
 .previewDateTime {
   display: flex;
   flex-direction: row;
   color: #DC5027;
   font-size: 16px;
-  /* gap: 5px; */
+  font-weight: 600;
+  gap: 5px;
   margin: none;
   padding: none;
-  height: 30px;
-  border: 1px solid teal;
-}
-  
-.previewDate {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: none;
-  width: 85px;
-  font-weight: 500;
-}
-  
-.previewTime {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: none;
+  height: 26px;
 
 }
-
 
 .previewDateTime input {
   width: 100%;
@@ -522,96 +495,140 @@
   color: #DC5027;
   margin-top: 3px;
   font-size: 16px;
-  font-weight: 500;
-}
-  
-.previewEventName {
-  text-transform: uppercase;
-  font-size: 20px;
   font-weight: 600;
-  color: black;
-  border: none;
-}
-    
-.previewUserName {
-  display: flex;
-  flex-direction: row;
-  align-items: center; 
-  width: 100%;
-  height: 20px;
-  font-size: 12px;
-  color: #898787;
-  gap: 2px;
 }
 
-.previewUserName input{
-  font-size: 12px;
-  color: #898787;
-  border: none;
-  margin-top: 1px;
-}
-  
-.previewPriceBox {
+.previewDate {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 30px;
-  width: 100%;
-  font-size: 15px;
+  margin: none;
+  width: 85px;
 }
 
-.previewPrice {
+.previewTime {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: none;
+}
+
+.previewEventName {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 600;
+  color: #222222;
   border: none;
-  font-size: 13px;
-  width: 40px;
-  margin-top: 4px;
-  padding-left: 6px;
+  font-family: var(--default-font-family);
+}
+    
+.previewAdressContainer {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: auto;
+  margin-top: 6px;
 }
 
-.previewPrice input {
-  font-size: 15px;
+.previewLocationIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.previewNumbOfParticipants {
+.previewLocation input {
+  font-size: 16px;
+  min-width: 120px;
+  padding-left: 12px;
+  font-family: var(--default-font-family);
   border: none;
-  font-size: 13px;
-  width: 40px;
-  margin-top: 3px;
-  padding-left: 6px;
 }
 
-.previewNumbOfParticipants input {
-  font-size: 15px;
+.previewCity {
+  font-size: 16px;
+  padding-left: 27px;
+  font-family: var(--default-font-family);
+  border: none;
+}
+
+.previewHide {
+  visibility: hidden;
+}
+
+.previewEventInfoContiner {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.previewEventInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.previewEventInfo p {
+  display: flex;
+  align-items: center;
+  color: #222222;
+  margin: 0px;
+  font-size: 16px;
+  font-family: var(--default-font-family);
+  font-weight: 500;
+}
+
+.previewEventInfoIcon {
+  background-color: #F9C4B6;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .previewTextareaContainer {
-  border: 1px solid gold;
   display: flex;
   justify-content: space-between;
   margin: 0px;
+  margin-top: 30px;
+}
+
+.previewDescription {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.previewDescription p{
+  display: flex;
+  align-items: center;
+  color: #222222;
+  margin: 0px;
+  font-size: 16px;
+  font-family: var(--default-font-family);
+  font-weight: 500;
 }
 
 .previewTextarea {
-  border: 1px solid green;
   display: flex;
-  text-align: center;
-  flex-direction: row;
-  justify-content: center;
   text-align: center;
   width: 100%;
 }
 
 .previewTextarea textarea{
   font-size: 14px;
-  width: 246px;
+  width: 100%;
   height: 20px;
+  padding: 0px;
+  padding-left: 42px;
   overflow: hidden;
   border: none;
   border-style: none;
   border-color: Transparent;
   resize: none;
   color: #898787;
-  border: 1px solid blue;
+  font-family: var(--default-font-family);
 }
 
 .previewCategory {
@@ -680,6 +697,7 @@
   position: absolute;
   bottom: 1rem;
 }
+
 .previewSubmitBtn{
   flex: 20%;
   display: flex;

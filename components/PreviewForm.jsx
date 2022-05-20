@@ -4,13 +4,15 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 import CategorySelector from '../components/CategorySelector'
 import Image from 'next/image'
-
+import Location from './Icons/Location'
 import Arrow from './Icons/arrow';
 import Link from 'next/link';
-import Participants from './Icons/Participants';
+import ArrowRight from './Icons/arrowRight'
+import Description from './Icons/Description'
+import EventInfo from './Icons/EventInfo'
 
 
-function PreviewInfoForm({ prevStep, values }) {
+function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState([]) //Array of string 
   const router = useRouter()
@@ -87,7 +89,7 @@ function PreviewInfoForm({ prevStep, values }) {
                 </div>
             </div>
         </div>
-        <div className={style.previewBox1}>
+        
           <div className={style.previewDateTime}>
             <div className={style.previewDate}>
               <input
@@ -96,52 +98,53 @@ function PreviewInfoForm({ prevStep, values }) {
               />
             </div>
             <div className={style.previewTime}>
-              <p>Kl.</p>
+              <p className={style. previewTimeP}>KL.</p>
                 <input
                 name="time"
                 value={time}
                 />
             </div>
           </div>
-          <input
+
+        <input
           className={style.previewEventName}
           name="eventName"
           value={eventName}
           />
+
+        <div className={style.previewAdressContainer}>
+          <div className={style.previewLocationIcon}><Location /></div>
+          <div className={style.previewLocation}>
+            <input
+              name="location"
+              value={location}
+            />
+          </div>
         </div>
+
         <input
-          className={style.previewEventName}
-          name="location"
-          value={location}
-        />
-        <input
-          className={style.previewEventName}
+          className={style.previewCity}
           name="city"
           value={city}
         />
         
-        <div className={style.previewPriceBox}>
-          <p>Pris</p>
-            <input
-            className={style.previewPrice}
-            name="price"
-            value={price}
-            />
-        </div>
-        <div className={style.previewPriceBox}>
-          <p>Antal deltagare</p>
-          <input
-          className={style.previewNumbOfParticipants}
-          name="numbOfParticipants"
-          value={numbOfParticipants}
-          />
+        <div className={style.previewEventInfoContiner}>
+          <div className={style.previewEventInfo}>
+            <div className={style.previewEventInfoIcon}><EventInfo /></div>
+            <p>EVENEMANGINFO</p>
+          </div>
+          <button className={style.backBtn} variant="primary" onClick={prevTwoStep}>
+            <ArrowRight />
+          </button>
         </div>
         
         <div className={style.previewTextareaContainer}>
-          <div className={style.priceParticipantsSymbol}><Participants/></div>Beskrivning
-        
+          <div className={style.previewDescription}>
+            <div className={style.priceParticipantsSymbol}><Description/></div>
+            <p>BESKRIVNING</p>
+          </div>
           <button className={style.backBtn} variant="primary" onClick={prevStep}>
-            <Arrow />
+            <ArrowRight />
           </button>
         </div>
         <div className={style.previewTextarea}>
@@ -161,8 +164,25 @@ function PreviewInfoForm({ prevStep, values }) {
                     </div>
 
         <div className={style.previewSubmitBtn}>
-          <button className={style.submitBtn} type='submit'>Submit</button>
+          <button className={style.submitBtn} type='submit'>Publicera evenemang</button>
         </div>
+
+        {/* Hidden inputs */}
+        <input
+        className={style.previewHide}
+        name="price"
+        value={price}
+        />
+        <input
+        className={style.previewHide}
+        name="numbOfParticipants"
+        value={numbOfParticipants}
+        />
+        <input
+          className={style.previewHide}
+          name="category"
+          value={category}
+        />
       </form>
 
       {showModal ? (
