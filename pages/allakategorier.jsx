@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import Eventbutton from '../components/Eventbutton'
 import Event from '../components/Event' 
 import BackToTop from '../components/BackToTopButton'
+import ChooseCity from '../components/ChooseCity'
 
 import React from 'react'
 import { db } from '../utils/firebase'
@@ -15,6 +16,7 @@ export default function HanderIdag({ posts }) {
       <Eventbutton/> 
       <main className={styles.main}>
       <h1 className={styles.rubrik}>Alla kategorier</h1>
+      <ChooseCity/>
       <BackToTop />
       <Event events={posts}/> 
       </main>
@@ -25,8 +27,11 @@ export default function HanderIdag({ posts }) {
 
 //Server side code
 export async function getServerSideProps(){
+const valdstad = "Stockholm";
+
 	const snapshot = await db
         .collection('posts')
+        // .where('city', '==', valdstad)
         .get()
 
   const posts = snapshot.docs.map((doc) => {

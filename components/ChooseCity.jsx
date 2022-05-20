@@ -6,6 +6,8 @@ import { useState } from "react";
 const ChooseCity = () => {
 
     const [chosenCity, setChosenCity] = useState('');
+
+    console.log(chosenCity)
     
     return (
         <div>
