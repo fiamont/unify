@@ -164,7 +164,7 @@ function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
                     </div>
 
         <div className={style.previewSubmitBtn}>
-          <button className={style.submitBtn} type='submit'>Publicera evenemang</button>
+          <button className={style.submitBtn} type='submit' disabled={isLoading}>Publicera evenemang</button>
         </div>
 
         {/* Hidden inputs */}

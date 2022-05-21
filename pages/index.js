@@ -38,6 +38,8 @@ export async function getServerSideProps(){
       id: doc.id
     }
   })
+  
+  
 
   const snapshot2 = await db
   .collection('posts')
@@ -50,6 +52,7 @@ export async function getServerSideProps(){
       id: doc.id,
       ...doc.data(),
     }
+    
   })
 
   return {
