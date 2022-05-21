@@ -188,7 +188,9 @@ function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
       {showModal ? (
             <div className={style.showModal}>
                 <div className={style.showModalInner}>
-                <div className={style.partyImg}></div>
+                <div className={style.partyImg}>
+                  <Image src="/PartyingFace.png" alt='PartyingFace' width={38} height={38}/>
+                </div>
                 <h2>BINGOOO! <br/> DIT EVENEMANG HAR SKAPATS</h2>
                 <p>Grymt Jobbat! Du har puplicerat ditt <br/> första evenemang!</p>
                 <div className={style.solidLinePopUp} />
