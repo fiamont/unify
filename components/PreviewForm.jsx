@@ -45,7 +45,7 @@ function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
    axios.post('/api/posts', body)
         .then((res) => {
         const postId = res.data.id
-      /*   router.push(`/posts/${postId}`) */
+        router.push(`/posts/${postId}`) 
    })
    .catch((err) => {
        setErrors(err.response.data.errors)
