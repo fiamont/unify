@@ -250,8 +250,10 @@
 }
   
 .priceAndParticipants input {
+  margin-top: 4px;
   width: 100px;   
   height: 30px; 
+  color: #898787;
 }
    
 .priceParticipantsInner {
@@ -263,6 +265,25 @@
   gap: 8px;
   margin-bottom: 1.5rem;
 }
+
+.priceAndParticipantsBox {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+}
+
+.textPriceAndParticipants {
+  font-size: 16px;
+  margin: 0px;
+  color: #222222;
+}
+
+.textOptionally {
+  font-size: 14px;
+  margin: 0px;
+  color: #898787;
+}
+
 .krSt{
   position: absolute;
   right: 0;
@@ -283,18 +304,6 @@
  padding-top: 4px;
 }
 
-.participantsInner {
-  padding-left: 5px;
-  border: 1px solid blue;
-
-}
-  
-.participantsInner input {
-  position: relative;
-  right: -128px;
-}
-
-
 .priceParticipantsSymbol{
   background-color: #F9C4B6;
   width: 32px;
@@ -311,8 +320,6 @@
   border-bottom: 1px solid #898787;
   width:100%;
 }
-  
- 
   
 /*Description*/
 .eventInfoContainer {
@@ -346,9 +353,12 @@
   flex-direction: column;
 }
 
-.error{
-  padding-left: 0.3rem;
+.descriptionErrorMessage {
+  display: flex;
+  justify-content: center;
 }
+
+
       
 /* PROGRESS BAR */
 
