@@ -38,8 +38,8 @@ export async function getServerSideProps(){
 	const snapshots = await db
     .collection('posts')
     .where("category", "==", "Konsert, Quiz & Uteliv")
-    .orderBy('date')
-    .startAt(today)
+    // .orderBy('date')
+    // .startAt(today)
     .get()
   
 	const events = snapshots.docs.map((doc) => {
