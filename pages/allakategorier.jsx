@@ -26,8 +26,19 @@ export default function AllaKategorier({ posts }) {
 
 //Server side code
 export async function getServerSideProps(){
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth()+1;
+  let today = '';
+  if(currentMonth<10){
+    today = currentDate.getFullYear() + '-0' + currentMonth + '-' + (currentDate.getDate());
+  }else{
+    today = currentDate.getFullYear() + '-' + currentMonth + '-' + (currentDate.getDate());
+  }
+
 	const snapshot = await db
         .collection('posts')
+        .orderBy('date')
+        .startAt(today)
         .get()
 
   const posts = snapshot.docs.map((doc) => {

@@ -26,9 +26,20 @@ export default function KonstHantverk({ events }) {
 
 //Server side code
 export async function getServerSideProps(){
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth()+1;
+  let today = '';
+  if(currentMonth<10){
+    today = currentDate.getFullYear() + '-0' + currentMonth + '-' + (currentDate.getDate());
+  }else{
+    today = currentDate.getFullYear() + '-' + currentMonth + '-' + (currentDate.getDate());
+  }
+
 	const snapshots = await db
     .collection('posts')
     .where("category", "==", "Konst & Hantverk")
+    .orderBy('date')
+    .startAt(today)
     .get()
   
 	const events = snapshots.docs.map((doc) => {

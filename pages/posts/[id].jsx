@@ -35,8 +35,8 @@ export default function Post({ post }) {
                     </div>
                     <div className={style.rowDiv}>
                         <Image src="/locationBlack.png" alt='locationBlack' width={24} height={24}/>
-                        <p className={style.p}>Adress {post.location}</p>
-                        <p className={style.p}>Stad {post.city}</p>
+                        <p className={style.p}>{post.location}</p>
+                        <p className={style.p}>{post.city}</p>
                     </div>
                     <p className={style.description}>{post.description}</p>
                 </div>
