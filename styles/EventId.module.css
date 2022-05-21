@@ -117,15 +117,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
     border-radius: 10px;
     width: 332px;
     height: 48px;
     position: relative;
-}
-
-.showUpBtn{
-    position: absolute;
 }
 
 @media screen and (min-width: 320px) {
@@ -144,5 +139,6 @@
 @media screen and (min-width: 960px){
     .wholeEvent{
         padding-top: 6rem;
+        padding-bottom: 2rem;
     }
 }

@@ -31,7 +31,9 @@ const Event = ({events}) =>{
                                 <Watch/>
                                 <p className={style.description}>{events.date} Kl. {events.time} </p>
                             </div>
+                            <div className={style.showUpBtnDiv}>
                             <ShowUpBtn color={CategorySelector(events.category).showUpBtn}/>
+                            </div>
                             <Link href={`/posts/${events.id}`}>
                             <a className={style.readmoreBox} style={{background: CategorySelector(events.category).darkColor}}>
                                 <div className={style.readmore}>

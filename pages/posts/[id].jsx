@@ -42,7 +42,7 @@ export default function Post({ post }) {
                 </div>
             
                 <div className={style.showUpBtnDiv}>
-                    <ShowUpBtn className={style.showUpBtn} color={CategorySelector(post.category).showUpBtn} style={{width: '332px'}}/>
+                    <ShowUpBtn className={style.showUpBtn} color={CategorySelector(post.category).showUpBtn}/>
                 </div>
         
             </div>
