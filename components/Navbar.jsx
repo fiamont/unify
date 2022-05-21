@@ -7,6 +7,8 @@ import ProfileIcon2 from './Icons/ProfileIcon2'
 import ContactIcon from './Icons/ContactIcon'
 import AboutIcon from './Icons/AboutIcon'
 import CategorySelector from './CategorySelector'
+import Eventbutton from './Eventbutton'
+import Image from 'next/image'
 
 
 
@@ -47,6 +49,10 @@ export default function Navbar() {
         <hr className={style.hr}></hr>
         {(toggleMenu || screenWidth > 960) && (
         <ul onClick={toggleNav} className={style.navmenu}>
+          <li className={style.eventbutton}>
+            <Eventbutton />
+            <Image className={style.cross} onClick={toggleNav} src="/cross.png" alt='cross' width={25} height={24}/>
+          </li>
           <li  id="konsertquizuteliv">
             <Link href='/konsertquizuteliv' passHref>
               <div className={style.item} style={{background: CategorySelector("Konsert, Quiz & Uteliv").darkColor}}>Nöje & Uteliv</div>
@@ -77,19 +83,19 @@ export default function Navbar() {
               <div className={style.item} style={{background: CategorySelector("Alla kategorier").darkColor}}>Alla kategorier</div>
             </Link>
           </li>
-          <li >
+          <li className={style.minaevent} >
             <Link href='/profile' passHref >
-              <div className={style.item2}> <ProfileIcon2/>Mina event</div>
+              <div className={style.item2}> <div className={style.hbIcon}><ProfileIcon2/></div>Mina event</div>
             </Link>
           </li>
           <li >
             <Link href='/kontaktaoss' passHref >
-              <div className={style.item2}> <ContactIcon/>Kontakta oss</div>
+              <div className={style.item2}> <div className={style.hbIcon}><ContactIcon/></div>Kontakta oss</div>
             </Link>
           </li>
           <li >
             <Link href='/omoss' passHref >
-              <div className={style.item2}><AboutIcon/>Om oss</div>
+              <div className={style.item2}><div className={style.hbIcon}><AboutIcon/></div>Om oss</div>
             </Link>
           </li>
         </ul> )}

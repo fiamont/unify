@@ -29,9 +29,20 @@ export default function Home({ allposts, trendingposts }) {
 
 //Server side code
 export async function getServerSideProps(){
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth()+1;
+  let today = '';
+  if(currentMonth<10){
+    today = currentDate.getFullYear() + '-0' + currentMonth + '-' + (currentDate.getDate());
+  }else{
+    today = currentDate.getFullYear() + '-' + currentMonth + '-' + (currentDate.getDate());
+  }
+
 	const snapshot = await db
-  .collection('posts')
-  .get()
+        .collection('posts')
+        .orderBy('date')
+        .startAt(today)
+        .get()
 
   const allposts = snapshot.docs.map((doc) => {
     return {
@@ -43,7 +54,7 @@ export async function getServerSideProps(){
 
   const snapshot2 = await db
   .collection('posts')
-  .orderBy('date')
+  .orderBy('date', 'desc')
   .limit(6)
   .get()
 

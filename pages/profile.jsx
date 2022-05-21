@@ -18,7 +18,7 @@ export default function Profile({ allposts }) {
             <div className={styles.profileImg}></div>
             <p className={styles.profilename}>Profilnamn</p>
         </div>
-      <p className={styles.rubrikProfile}>Mina Event</p>
+      <p className={styles.rubrikProfile}>Skapade Event</p>
       <Trending events={allposts}/>
       <p className={styles.rubrikProfile}>Anmälda event</p>
       <Trending events={allposts}/>

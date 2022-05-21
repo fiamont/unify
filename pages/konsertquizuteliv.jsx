@@ -1,22 +1,24 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Eventbutton from '../components/Eventbutton'
 import Event from '../components/Event' 
 import BackToTop from '../components/BackToTopButton'
+import Image from 'next/image'
 
 import React from 'react'
 import { db } from '../utils/firebase'
 
-export default function Konsertquizuteliv({ events }) {
+export default function Nojeuteliv({ events }) {
 
   return (
     <div className={styles.container}>
-      <Head><title>Unify - Konsert, Quiz & Uteliv</title></Head>
+      <Head><title>Unify - Nöje & Uteliv</title></Head>
       <main className={styles.main}>
-      <Eventbutton/>  
-      <h1 className={styles.rubrik2}>Konsert, Quiz & Uteliv</h1>
-      <BackToTop />
-      <Event events={events} eventsKey={events.id}/> 
+        <div className={styles.titleDiv}>
+          <h1 className={styles.rubrik2}>Nöje & Uteliv</h1>
+          <Image className={styles.cross} src="/nojeutelivIcon.png" alt='nojeutelivIcon' width={30} height={30}/>
+        </div> 
+        <BackToTop />
+        <Event events={events} eventsKey={events.id}/> 
       </main>
     </div> 
   )
@@ -24,9 +26,20 @@ export default function Konsertquizuteliv({ events }) {
 
 //Server side code
 export async function getServerSideProps(){
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth()+1;
+  let today = '';
+  if(currentMonth<10){
+    today = currentDate.getFullYear() + '-0' + currentMonth + '-' + (currentDate.getDate());
+  }else{
+    today = currentDate.getFullYear() + '-' + currentMonth + '-' + (currentDate.getDate());
+  }
+
 	const snapshots = await db
     .collection('posts')
     .where("category", "==", "Konsert, Quiz & Uteliv")
+    // .orderBy('date')
+    // .startAt(today)
     .get()
   
 	const events = snapshots.docs.map((doc) => {
