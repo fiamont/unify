@@ -121,6 +121,10 @@
     width: 332px;
     height: 48px;
     position: relative;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
 }
 
 @media screen and (min-width: 320px) {
