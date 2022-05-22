@@ -3,9 +3,6 @@ import EventInfoForm from "./EventInfoForm";
 import DescriptionInfoForm from "./DescriptionForm";
 import PreviewInfoForm from "./PreviewForm";
 import style from '../styles/MultiStepForm.module.css'
-import Head from 'next/head'
-import Link from "next/link";
-import Arrow from "./Icons/arrow";
 
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -17,15 +14,15 @@ export default function NewPost() {
     const [step, setstep] = useState(1);
 
     const [formDatas, setFormDatas] = useState({
-        eventName: "",
-        date: "",
-        time: "",
-        category: "",
-        location: "",
-        city:"",
-        description: "",
-        price: "",
-        numbOfParticipants: "",
+      eventName: "",
+      date: "",
+      time: "",
+      category: "",
+      location: "",
+      city:"",
+      description: "",
+      price: "",
+      numbOfParticipants: "",
     });
 
     // function for going to next step by increasing step state by 1

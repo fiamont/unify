@@ -62,9 +62,9 @@ function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
   
   }
 
-
   //destructuring the object from values
   const { eventName, date, time, category, location, description, price, numbOfParticipants, city } = values;
+  
   return (
     <div className={style.previewinfoContainer}>
         <form onSubmit={handleSubmit} className={style.form}>
