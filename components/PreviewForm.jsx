@@ -210,7 +210,7 @@ function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
                       <p>Om du lämnar nu skapas inte ditt <br/> evenemang och det du hitills har gjort <br/> sparas inte.</p>
                       <Link href="/" passHref><button className={style.cancelBtnPopup}>AVSLUTA</button></Link>
                       <div className={style.solidLinePopUp} />
-                      <button className={style.continueEditBtnPopup} onClick={() => setShowModalCancel(false)}>FORTSÄTT+REDIGERA</button>
+                      <button className={style.continueEditBtnPopup} onClick={() => setShowModalCancel(false)}>FORTSÄTT REDIGERA</button>
                   </div>
                 </div>
             </div>
