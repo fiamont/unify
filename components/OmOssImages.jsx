@@ -26,12 +26,12 @@ function OmOssImages() {
             <p className={style.roll}>UX Designer <Image src="/SofiaIIcon.png" alt='SofiaIIcon' width={13} height={13}/></p>
         </div>
         <div className={style.imgDiv}>
-            <Image src="/random.png" alt='Julio' width={160} height={160}/>
+            <Image className={style.roundImg} src="/Julio.jpg" alt='Julio' width={160} height={160}/>
             <p className={style.name}>Julio Siklander</p>
             <p className={style.roll}>Utvecklare <Image src="/JulioIcon.png" alt='JulioIcon' width={12} height={12}/></p>
         </div>
         <div className={style.imgDiv}>
-            <Image className={style.sofiaM} src="/SofiaM.png" alt='SofiaM' width={160} height={160}/>
+            <Image className={style.roundImg} src="/SofiaM.png" alt='SofiaM' width={160} height={160}/>
             <p className={style.name}>Sofia Montgomery</p>
             <p className={style.roll}>Utvecklare <Image src="/SofiaMIcon.png" alt='SofiaMIcon' width={13} height={13}/></p>
         </div>
@@ -41,7 +41,7 @@ function OmOssImages() {
             <p className={style.roll}>Utvecklare <Image src="/NicoleIcon.png" alt='NicoleIcon' width={13} height={13}/></p>
         </div>
         <div className={style.imgDiv}>
-            <Image src="/random.png" alt='Martin' width={160} height={160}/>
+            <Image src="/Martin.png" alt='Martin' width={160} height={160}/>
             <p className={style.name}>Martin Fethi</p>
             <p className={style.roll}>Utvecklare <Image src="/MartinIcon.png" alt='MartinIcon' width={15} height={16}/></p>
         </div>
