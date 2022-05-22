@@ -6,7 +6,7 @@ import CategorySelector from '../components/CategorySelector'
 import Image from 'next/image'
 import Arrow from './Icons/arrow';
 import Link from 'next/link';
-import ArrowRight from './Icons/arrowRight'
+import ArrowRight from './Icons/ArrowRight'
 import Description from './Icons/Description'
 import EventInfo from './Icons/EventInfo'
 import Adress from './Icons/Adress'
