@@ -6,10 +6,10 @@ import CategorySelector from '../components/CategorySelector'
 import Image from 'next/image'
 import Arrow from './Icons/arrow';
 import Link from 'next/link';
-import ArrowRight from './Icons/ArrowRight'
 import Description from './Icons/Description'
 import EventInfo from './Icons/EventInfo'
 import Adress from './Icons/Adress'
+import RightArrow from './Icons/RightArrow'
 
 
 function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
@@ -134,7 +134,7 @@ function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
             <p>EVENEMANGINFO</p>
           </div>
           <button className={style.backBtn} variant="primary" onClick={prevTwoStep}>
-            <ArrowRight />
+            <RightArrow/>
           </button>
         </div>
         
@@ -144,7 +144,7 @@ function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
             <p>BESKRIVNING</p>
           </div>
           <button className={style.backBtn} variant="primary" onClick={prevStep}>
-            <ArrowRight />
+            <RightArrow/>
           </button>
         </div>
         <div className={style.previewTextarea}>
