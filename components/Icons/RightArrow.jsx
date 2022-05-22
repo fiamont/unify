@@ -1,6 +1,6 @@
 import React from "react";
 
-const ArrowRight = () =>{
+const RightArrow = () =>{
     return(
         <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1.02797 12.1635L0.837001 11.9725C0.710583 11.8461 0.710583 11.6417 0.837001 11.5153L6.09546 6.25948L0.837001 1.00101C0.710583 0.874591 0.710583 0.67017 0.837001 0.543751L1.02797 0.352779C1.15439 0.22636 1.35881 0.22636 1.48523 0.352779L7.16329 6.02816C7.28971 6.15458 7.28971 6.359 7.16329 6.48542L1.48523 12.1608C1.35881 12.2899 1.15439 12.2899 1.02797 12.1635Z" fill="black"/>
@@ -9,4 +9,4 @@ const ArrowRight = () =>{
     );
 }
 
-export default ArrowRight;
+export default RightArrow; 

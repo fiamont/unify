@@ -4,9 +4,9 @@ import style from '../styles/Event.module.css'
 import ShowUpBtn from './ShowUp';
 import Image from 'next/dist/client/image';
 import CategorySelector from './CategorySelector';
-import ArrowRight from './Icons/ArrowRight'
 import Watch from './Icons/Watch';
 import Location from './Icons/Location';
+import RightArrow from './Icons/RightArrow';
 
 const Event = ({events}) =>{
     return(
@@ -40,7 +40,7 @@ const Event = ({events}) =>{
                                     Läs mer
                                 </div>
                                 <div className={style.ArrowRight}>
-                                    <ArrowRight/>
+                                    <RightArrow/>
                                 </div>
                             </a>
                             </Link>
