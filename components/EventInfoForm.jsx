@@ -1,244 +1,305 @@
-import React, { useState} from 'react'
-import style from './../styles/MultiStepForm.module.css'
-import { Form } from "react-bootstrap"
-import validator from "validator"
-import Link from 'next/link';
-import Payments from './Icons/payments';
-import Participants from './Icons/Participants';
+import React, { useState } from "react";
+import style from "./../styles/MultiStepForm.module.css";
+import Link from "next/link";
+import Payments from "./Icons/payments";
+import Participants from "./Icons/Participants";
 
 function EventInfoForm({ nextStep, handleFormData, values }) {
   const [error, setError] = useState(false);
 
-  //PopUp 
+  //PopUp
   const [showModalCancel, setShowModalCancel] = useState(false);
 
   // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
 
-    // checking if value of first name and last name is empty show error else take to step 2
-    if (
-      validator.isEmpty(values.category) ||
-      validator.isEmpty(values.eventName) ||
-      validator.isEmpty(values.date) ||
-      validator.isEmpty(values.time) ||
-      validator.isEmpty(values.location) ||
-      validator.isEmpty(values.city) 
-    ) {
-      setError(true);
-    } else {
+    const isValid = formValidation();
+    if (isValid) {
       nextStep();
     }
   };
 
-  const onSubmit = (e) =>{
-    e.preventDefault();
-   
-    setShowModalCancel(true)
+  //VALIDATION
+  const [categoryErr, setCategoryErr] = useState({});
+  const [eventNameErr, setEventNameErr] = useState({});
+  const [dateErr, setDateErr] = useState({});
+  const [timeErr, setTimeErr] = useState({});
+  const [locationErr, setLocationErr] = useState({});
+  const [cityErr, setCityErr] = useState({});
 
-}
-    
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setShowModalCancel(true);
+  };
+
+  const formValidation = () => {
+    const categoryErr = {};
+    const eventNameErr = {};
+    const dateErr = {};
+    const timeErr = {};
+    const locationErr = {};
+    const cityErr = {};
+    let isValid = true;
+
+    if (values.category.trim().length < 1) {
+      categoryErr.chooseCategory = "Välj kategori";
+      isValid = false;
+    }
+
+    if (values.eventName.trim().length < 5) {
+      eventNameErr.firstNameShort =
+        "Evenemanget måste ha ett namn på minst 5 bokstäver";
+      isValid = false;
+    }
+
+    if (values.date.trim().length < 1) {
+      dateErr.dateShort = "Välj ett datum";
+      isValid = false;
+    }
+
+    if (values.time.trim().length < 1) {
+      timeErr.timeShort = "Ange en tid";
+      isValid = false;
+    }
+
+    if (values.location.trim().length < 2) {
+      locationErr.dateShort = "Adressen måste innehålla minst 2 bokstäver";
+      isValid = false;
+    }
+
+    if (values.city.trim().length < 1) {
+      cityErr.cityShort = "Välj stad";
+      isValid = false;
+    }
+
+    setEventNameErr(eventNameErr);
+    setCategoryErr(categoryErr);
+    setDateErr(dateErr);
+    setTimeErr(timeErr);
+    setLocationErr(locationErr);
+    setCityErr(cityErr);
+    return isValid;
+  };
+
   return (
     <div className={style.eventInfoContainer}>
       <div className={style.form}>
         <div className={style.header}>
           <div className={style.headerBtn}>
-            <button className={style.cancelBtn} onClick={onSubmit}>Avbryt</button>
+            <button className={style.cancelBtn} onClick={onSubmit}>
+              Avbryt
+            </button>
           </div>
           <h1>EvenemangInfo</h1>
         </div>
-        <form className={style.formTag} onSubmit={submitFormData}>  
-        <div className={style.categoryDiv}>
-        <select 
-          className={style.category}
-          name="category"
-          defaultValue={values.category}
-          style={{ border: error ? "2px solid red" : "" }}
-          onChange={handleFormData("category")}
-          >
-          <option label="Välj kategori"></option>
-          <option value="Konsert, Quiz & Uteliv">Konsert, Quiz & Uteliv</option>
-          <option value="Mat & Dryck">Mat & Dryck</option>
-          <option value="Kultur & Livsstil">Kultur & Livsstil</option>
-          <option value="Sport & Fritid">Sport & Fritid</option>
-          <option value="Konst & Hantverk">Konst & hantverk</option>
-          </select>
-          {error ? (
-            <Form.Text style={{ color: "red" }}>
-              Du måste välja en kategori
-            </Form.Text>
-          ) : (
-            ""
-          )}
-        </div>      
+        <form className={style.formTag} onSubmit={submitFormData}>
+          <div className={style.categoryDiv}>
+            <select
+              className={style.category}
+              name="category"
+              defaultValue={values.category}
+              onChange={handleFormData("category")}
+            >
+              <option label="Välj kategori"></option>
+              <option value="Konsert, Quiz & Uteliv">
+                Konsert, Quiz & Uteliv
+              </option>
+              <option value="Mat & Dryck">Mat & Dryck</option>
+              <option value="Kultur & Livsstil">Kultur & Livsstil</option>
+              <option value="Sport & Fritid">Sport & Fritid</option>
+              <option value="Konst & Hantverk">Konst & hantverk</option>
+            </select>
+            {Object.keys(categoryErr).map((key) => {
+              return (
+                <div key={key} style={{ color: "red" }}>
+                  {categoryErr[key]}
+                </div>
+              );
+            })}
+          </div>
 
           <div className={style.titleDiv}>
             <p>Evenemangets namn</p>
             <input
-              style={{ border: error ? "2px solid red" : "" }}
               name="eventName"
               defaultValue={values.eventName}
               type="text"
               onChange={handleFormData("eventName")}
             />
-            {error ? (
-              <Form.Text style={{ color: "red" }}>
-                Du måste ange ett namn på ditt evenemang
-              </Form.Text>
-            ) : (
-              ""
-            )}
+            {Object.keys(eventNameErr).map((key) => {
+              return (
+                <div key={key} style={{ color: "red" }}>
+                  {eventNameErr[key]}
+                </div>
+              );
+            })}
           </div>
-        
+
           <div className={style.dateTimeContainer}>
-          <div className={style.inputDateTime}>
-              
+            <div className={style.inputDateTime}>
               <div className={style.dateTimeBox}>
-              <p>Datum</p>
-              <div className={style.date}>
-              <input
-                style={{ border: error ? "2px solid red" : "" }}
-                name="date"
-                defaultValue={values.date}
-                type="date" 
-                onChange={handleFormData("date")}
-              />
-              {error ? (
-                <Form.Text style={{ color: "red" }}>
-                  Du måste välja ett datum
-                </Form.Text>
-              ) : (
-                ""
-              )}
+                <p>Datum</p>
+                <div className={style.date}>
+                  <input
+                    name="date"
+                    defaultValue={values.date}
+                    type="date"
+                    onChange={handleFormData("date")}
+                  />
+                  {Object.keys(dateErr).map((key) => {
+                    return (
+                      <div key={key} style={{ color: "red" }}>
+                        {dateErr[key]}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-              </div>
-      
+
               <div className={style.dateTimeBox}>
-              <p>Tid</p>
-              <div className={style.time}>
-              <input
-                style={{ border: error ? "2px solid red" : "" }}
-                name="time"
-                defaultValue={values.time}
-                type="time" 
-                onChange={handleFormData("time")}
-              />
-              {error ? (
-                <Form.Text style={{ color: "red" }}>
-                  Du måste välja en tid
-                </Form.Text>
-              ) : (
-                ""
-              )}
-              </div>
+                <p>Tid</p>
+                <div className={style.time}>
+                  <input
+                    name="time"
+                    defaultValue={values.time}
+                    type="time"
+                    onChange={handleFormData("time")}
+                  />
+                  {Object.keys(timeErr).map((key) => {
+                    return (
+                      <div key={key} style={{ color: "red" }}>
+                        {timeErr[key]}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
-         
-          
-          <div className={style.title}>Adress
+
+          <div className={style.title}>
+            Adress
             <div className={style.adressContainer}>
               <div className={style.LocationContainer}>
                 <input
-                  style={{ border: error ? "2px solid red" : "" }}
                   name="location"
                   defaultValue={values.location}
                   type="text"
                   onChange={handleFormData("location")}
                 />
-                {error ? (
-                  <Form.Text style={{ color: "red" }}>
-                    Du måste välja en plats
-                  </Form.Text>
-                ) : (
-                  ""
-                  )}
+                {Object.keys(locationErr).map((key) => {
+                  return (
+                    <div key={key} style={{ color: "red" }}>
+                      {locationErr[key]}
+                    </div>
+                  );
+                })}
               </div>
 
               <div className={style.cityContainer}>
                 <select
-                  className={style.city} 
+                  className={style.city}
                   name="city"
                   defaultValue={values.city}
-                  style={{ border: error ? "2px solid red" : "" }}
-                  onChange={handleFormData("city")}>
-                <option>Välj stad</option>
-                <option value="Stockholm">Stockholm</option>
-                <option value="Göteborg">Göteborg</option>
-                <option value="Malmö">Malmö</option>
-                <option value="Uppsala">Uppsala</option>
-                <option value="Västerås">Västerås</option>
-                <option value="Örebro">Örebro</option>
-                <option value="Linköping">Linköping</option>
-                <option value="Lund">Lund</option>
-                <option value="Jönköping">Jönköping</option>
-                <option value="Umeå">Umeå</option>
+                  onChange={handleFormData("city")}
+                >
+                  <option label="Välj stad"></option>
+                  <option value="Stockholm">Stockholm</option>
+                  <option value="Göteborg">Göteborg</option>
+                  <option value="Malmö">Malmö</option>
+                  <option value="Uppsala">Uppsala</option>
+                  <option value="Västerås">Västerås</option>
+                  <option value="Örebro">Örebro</option>
+                  <option value="Linköping">Linköping</option>
+                  <option value="Lund">Lund</option>
+                  <option value="Jönköping">Jönköping</option>
+                  <option value="Umeå">Umeå</option>
                 </select>
-                {error ? (
-                    <Form.Text style={{ color: "red" }}>
-                      Du måste välja en stad
-                    </Form.Text>
-                  ) : (
-                    ""
-                )}
+                {Object.keys(cityErr).map((key) => {
+                  return (
+                    <div key={key} style={{ color: "red" }}>
+                      {cityErr[key]}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
 
           <div className={style.priceAndParticipants}>
-            <div className={style.priceParticipantsInner}>   
-              <div className={style.priceParticipantsSymbol}><Payments/></div>PRIS  
-            
-                <input
-                  name="price"
-                  defaultValue={values.price}
-                  type="text"
-                  onChange={handleFormData("price")}
-                />
-            
+            <div className={style.priceParticipantsInner}>
+              <div className={style.priceParticipantsSymbol}>
+                <Payments />
+              </div>
+              <div className={style.priceAndParticipantsBox}>
+                <p className={style.textPriceAndParticipants}>PRIS</p>
+                <p className={style.textOptionally}>Valfritt</p>
+              </div>
+              <input
+                name="price"
+                defaultValue={values.price}
+                type="text"
+                onChange={handleFormData("price")}
+              />
               <label className={style.krSt}>KR</label>
             </div>
             <div className={style.priceParticipantsInner}>
-              <div className={style.priceParticipantsSymbol}><Participants/></div>ANTAL DELTAGARE
-                <input
-                  name="price"
-                  defaultValue={values.numbOfParticipants}
-                  type="text"
-                  onChange={handleFormData("numbOfParticipants")}
-                />
-                <label className={style.krSt}>ST</label>
+              <div className={style.priceParticipantsSymbol}>
+                <Participants />
               </div>
+              <div className={style.priceAndParticipantsBox}>
+                <p className={style.textPriceAndParticipants}>
+                  ANTAL DELTAGARE
+                </p>
+                <p className={style.textOptionally}>Valfritt</p>
+              </div>
+              <input
+                name="price"
+                defaultValue={values.numbOfParticipants}
+                type="text"
+                onChange={handleFormData("numbOfParticipants")}
+              />
+              <label className={style.krSt}>ST</label>
             </div>
+          </div>
 
-            <div className={style.progressDots}>
-                        <div className={style.progressDotFilled}/>
-                        <div className={style.progressDotEmpty}/>
-                        <div className={style.progressDotEmpty}/>
-                    </div>
+          <div className={style.progressDots}>
+            <div className={style.progressDotFilled} />
+            <div className={style.progressDotEmpty} />
+            <div className={style.progressDotEmpty} />
+          </div>
 
           <button className={style.nextPageBtn} variant="primary" type="submit">
             Nästa
           </button>
         </form>
         {showModalCancel ? (
-            <div className={style.showModal}>
-                <div className={style.showModalInner}>
-                  <div className={style.cancelContainer}>
-                      <h2>AVSLUTA UTAN ATT SLUTFÖRA?</h2>
-                      <p>Om du lämnar nu skapas inte ditt <br/> evenemang och det du hitills har gjort <br/> sparas inte.</p>
-                      <Link href="/" passHref><button className={style.cancelBtnPopup}>AVSLUTA</button></Link>
-                      <div className={style.solidLinePopUp} />
-                      <button className={style.continueEditBtnPopup} onClick={() => setShowModalCancel(false)}>FORTSÄTT+REDIGERA</button>
-                  </div>
-                </div>
+          <div className={style.showModal}>
+            <div className={style.showModalInner}>
+              <div className={style.cancelContainer}>
+                <h2>AVSLUTA UTAN ATT SLUTFÖRA?</h2>
+                <p>
+                  Om du lämnar nu skapas inte ditt <br /> evenemang och det du
+                  hitills har gjort <br /> sparas inte.
+                </p>
+                <Link href="/" passHref>
+                  <button className={style.cancelBtnPopup}>AVSLUTA</button>
+                </Link>
+                <div className={style.solidLinePopUp} />
+                <button
+                  className={style.continueEditBtnPopup}
+                  onClick={() => setShowModalCancel(false)}
+                >
+                  FORTSÄTT+REDIGERA
+                </button>
+              </div>
             </div>
-
-        ) : null }
-
-
+          </div>
+        ) : null}
       </div>
     </div>
-  )
+  );
 }
-  
-export default EventInfoForm
+
+export default EventInfoForm;

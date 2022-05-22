@@ -6,7 +6,7 @@ import CategorySelector from '../components/CategorySelector'
 import Image from 'next/image'
 import Arrow from './Icons/arrow';
 import Link from 'next/link';
-import ArrowRight from './Icons/arrowRight'
+import ArrowRight from './Icons/ArrowRight'
 import Description from './Icons/Description'
 import EventInfo from './Icons/EventInfo'
 import Adress from './Icons/Adress'
@@ -62,9 +62,9 @@ function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
   
   }
 
-
   //destructuring the object from values
   const { eventName, date, time, category, location, description, price, numbOfParticipants, city } = values;
+  
   return (
     <div className={style.previewinfoContainer}>
         <form onSubmit={handleSubmit} className={style.form}>
