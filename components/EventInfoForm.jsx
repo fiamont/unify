@@ -291,7 +291,7 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
                   className={style.continueEditBtnPopup}
                   onClick={() => setShowModalCancel(false)}
                 >
-                  FORTSÄTT+REDIGERA
+                  FORTSÄTT REDIGERA
                 </button>
               </div>
             </div>
