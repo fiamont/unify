@@ -1,9 +1,12 @@
 .topnavbar{
-  position: relative;
+  position: fixed;
+  top: 0;
   width: 100%;
   margin: 0;
   padding: 0;
-  bottom: 1rem;
+  padding-bottom: 3px;
+  background-color: #fff;
+  z-index: 10;
 }
 
 .images {
@@ -11,6 +14,13 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+
+@media screen and (min-width: 960px){
+  .topnavbar{
+    position: relative;
+  }
 }
 
 
