@@ -64,12 +64,21 @@
     box-shadow: var(--button-box-shadow);
     width: fit-content;
     border-radius: 7px;
-
+    height: 500px;
+    overflow-y: scroll;
+    
     position: absolute;
     animation-name: slideNav;
     animation-duration: 0.5s;
     z-index: 999;
+    
+}
 
+@media screen and (min-height: 750px){
+    .navmenu {
+        height: 700px;
+        overflow: hidden;
+    }
 }
 
 @keyframes slideNav {
@@ -147,6 +156,8 @@
         padding-left: 1rem;
         padding-right: 1rem;
         padding-top: 1rem;
+        height: auto;
+        overflow: hidden;
 
         background: none;
         box-shadow: none;
