@@ -44,7 +44,6 @@ function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
       .post("/api/posts", body)
       .then((res) => {
         const postId = res.data.id;
-        router.push(`/posts/${postId}`);
       })
       .catch((err) => {
         setErrors(err.response.data.errors);
