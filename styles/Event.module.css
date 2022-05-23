@@ -156,13 +156,15 @@
 @media screen and (min-width: 425px) {
     .container{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
     }
 
     .eventbox{
-        width: 425px;
+        width: 400px;
     }
 }
 

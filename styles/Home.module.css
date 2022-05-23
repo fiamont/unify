@@ -100,6 +100,10 @@ margin: 1rem;
     background: transparent;
 }
 
+.eventBtn{
+    display: none;
+}
+
 @media screen and (min-width: 960px){
     .main, .mainHome{
         padding-top: 5.5rem;
@@ -110,4 +114,12 @@ margin: 1rem;
     .container{
         margin-top: 1rem;
     }
+
+    .titleDiv{
+        justify-content: center;
+    }
+
+.eventBtn{
+    display:block;
+}
 }
