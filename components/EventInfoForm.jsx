@@ -179,7 +179,7 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
           </div>
 
           <div className={style.title}>
-            Adress
+            Plats
             <div className={style.adressContainer}>
               <div className={style.LocationContainer}>
                 <input

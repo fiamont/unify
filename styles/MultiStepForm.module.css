@@ -8,7 +8,7 @@
 }
 
 .form {
-  border: 1px solid red;
+  margin-top: 9.5rem;
   background-color: #fff;
   padding: 10px;
   border-radius: 10px;
@@ -320,6 +320,15 @@
   border-bottom: 1px solid #898787;
   width:100%;
 }
+
+
+@media screen and (min-width: 960px){
+  .form{
+    margin-top: 0;
+  }
+}
+
+
   
 /*Description*/
 .eventInfoContainer {
@@ -367,7 +376,7 @@
   flex-direction: row;
   gap: 25px;
   position: absolute;
-  bottom: 5rem;
+  bottom: 5.2rem;
   left: 9rem;
 }
 
@@ -496,16 +505,21 @@
   margin: none;
   padding: none;
   height: 26px;
-
 }
 
 .previewDateTime input {
   width: 100%;
   border: none;
   color: #DC5027;
-  margin-top: 3px;
+  margin-top: 4px;
   font-size: 16px;
   font-weight: 600;
+
+}
+
+.previewTimeP {
+  font-size: 16px;
+
 }
 
 .previewDate {
@@ -535,7 +549,7 @@
 .previewAdressContainer {
   display: flex;
   flex-direction: row;
-  width: auto;
+  width: 100%;
   height: auto;
   margin-top: 6px;
 }
@@ -546,9 +560,12 @@
   justify-content: center;
 }
 
-.previewLocation input {
+.previewLocation  {
+  width: 100%;
+}
+.previewLocation  input{
   font-size: 16px;
-  min-width: 120px;
+  width: 100%;
   padding-left: 12px;
   font-family: var(--default-font-family);
   border: none;
@@ -559,6 +576,7 @@
   padding-left: 27px;
   font-family: var(--default-font-family);
   border: none;
+
 }
 
 .previewHide {
@@ -569,6 +587,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
+  cursor: pointer;
 }
 
 .previewEventInfo {
@@ -602,6 +621,7 @@
   justify-content: space-between;
   margin: 0px;
   margin-top: 30px;
+  cursor: pointer;
 }
 
 .previewDescription {
@@ -657,10 +677,11 @@
   border-radius: 6px;
   width: 333px;
   height: 40px;
-  background-color: #D8D8D8;
+  background-color: var(--button-primary-color);
   box-shadow: var(--button-box-shadow);
-  font-weight: bold;
-  color: #959595;
+  font-weight: 500;
+  font-size: 18px;
+  color: #fff;
   border: 0 none;
   border-radius: 10px;
   cursor: pointer;
@@ -695,7 +716,7 @@
   background-color: #157C79;
   box-shadow: var(--button-box-shadow);
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
   color: #fff;  
   border: 0 none;
   border-radius: 10px;

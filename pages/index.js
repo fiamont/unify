@@ -18,9 +18,12 @@ export default function Home({ allposts, trendingposts }) {
       <EventButton/>
       <TopOfHomepage events={allposts}/>
       <BackToTop />
+      
       <p className={styles.insidetitle}>POPULÄRT</p>
       <TrendingEvents events={trendingposts}/>
+      <div className={styles.categoryContainer}>
       <Categories/>
+      </div>
       </main>
     </div> 
      

@@ -8,7 +8,7 @@
   width: 125px;
   height: 40px;
   background: #fff;
-  border: 2px solid #157C79;
+  border: 2px solid var(--button-primary-color);
   border-radius: 10px;
   font-style: normal;
   font-weight: 500;
@@ -20,7 +20,8 @@
 }
 
 .eventbtn:hover {
-  background-color: #1B4848;
+  background-color: var(--button-primary-color);
+  color: #fff;
 }
 
 .button {
@@ -35,6 +36,6 @@
       flex-direction: row;
       position: absolute;
       top: 3rem;
-      right: 8rem;
+      right: 4rem;
   }
 }
