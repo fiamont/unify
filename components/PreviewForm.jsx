@@ -219,10 +219,10 @@ function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
               />
             </div>
             <h2>
-              BINGOOO! <br /> DIT EVENEMANG HAR SKAPATS
+              BINGOOO! <br /> DITT EVENEMANG HAR SKAPATS
             </h2>
             <p>
-              Grymt Jobbat! Du har puplicerat ditt <br /> första evenemang!
+              Grymt Jobbat! Du har publicerat ditt <br /> evenemang!
             </p>
             <div className={style.solidLinePopUp} />
             <div className={style.buttonContainer}>
@@ -241,7 +241,7 @@ function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
               <h2>AVSLUTA UTAN ATT SLUTFÖRA?</h2>
               <p>
                 Om du lämnar nu skapas inte ditt <br /> evenemang och det du
-                hitills har gjort <br /> sparas inte.
+                hittills har gjort <br /> sparas inte.
               </p>
               <Link href="/" passHref>
                 <button className={style.cancelBtnPopup}>AVSLUTA</button>
