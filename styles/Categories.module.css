@@ -25,5 +25,6 @@
     margin: 18px;
     box-shadow: var(--button-box-shadow);
     text-transform: uppercase;
+    cursor: pointer;
 }
 
