@@ -2,14 +2,6 @@
     margin-top: 9.5rem;
 }
 
-/* .categoryContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid red;
-} */
-
 .rubrik2{
     font-size: 35px;
     color: var(--heading-color);
@@ -20,9 +12,7 @@
     font-size: 30px;
     padding: 15px;
 }
-.title{
-    padding: 0;
-}
+
 
 .titleDiv{
     margin-top: -2rem;
@@ -109,12 +99,17 @@ margin: 1rem;
         padding-top: 5.5rem;
     }
     .rubrik{
-        margin-top: -0.7rem;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        font-size: 40px;
     }
     .container{
         margin-top: 1rem;
     }
-
+    .title{
+        font-size: 40px;
+    }
     .titleDiv{
         justify-content: center;
     }
