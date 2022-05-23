@@ -15,23 +15,35 @@ import Image from 'next/image'
 export default function Navbar() { 
   const [toggleMenu, setToggleMenu] = useState(false)
   const [screenWidth, setScreenWidth] = useState()
+
+  //PopUp 
+  const [showModal, setShowModal] = useState(false);
   
   const toggleNav = () => {
     setToggleMenu(!toggleMenu)
+    if (toggleMenu === true ) {
+      setShowModal(false)
+    } else {
+      setShowModal(true)
+    }
   }
 
+  const toggleNav2 = () => {
+    setToggleMenu(!toggleMenu)
+    setShowModal(false)
+  }
+  
   useEffect(() => {
-
+    
     const changeWidth = () => {
       setScreenWidth(window.innerWidth);
     }
     changeWidth();
     window.addEventListener('resize', changeWidth)
-
     return () => {
-        window.removeEventListener('resize', changeWidth)
+      window.removeEventListener('resize', changeWidth)
     }
-
+    
   }, [])
   return (
       <nav className={style.navbar}>
@@ -48,7 +60,7 @@ export default function Navbar() {
         </div>
         <hr className={style.hr}></hr>
         {(toggleMenu || screenWidth > 960) && (
-        <ul onClick={toggleNav} className={style.navmenu}>
+        <ul onClick={toggleNav2} className={style.navmenu}>
           <li className={style.eventbutton}>
             <Eventbutton />
             <Image className={style.cross} onClick={toggleNav} src="/cross.png" alt='cross' width={25} height={24}/>
@@ -99,7 +111,11 @@ export default function Navbar() {
             </Link>
           </li>
         </ul> )}
+        {showModal ? (
+            <div className={style.showModal} onClick={toggleNav}></div>
+        ) : null }
       </nav>
+      
   )
 
 }
