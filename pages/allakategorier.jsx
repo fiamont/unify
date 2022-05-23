@@ -14,12 +14,11 @@ export default function AllaKategorier({ postsInitial }) {
   let [chosenCity, setChosenCity] = useState("");
 
   useEffect(() => {
-    axios.get().then(({ data }) => {
+    axios.get("/api/posts").then(({ data }) => {
       setPosts(data);
+      console.log(data);
     });
   }, [chosenCity]);
-
-  console.log(chosenCity);
 
   return (
     <div className={styles.container}>

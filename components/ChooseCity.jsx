@@ -23,7 +23,6 @@ const ChooseCity = ({ chosenCity, setChosenCity }) => {
         <option value="Jönköping">Jönköping</option>
         <option value="Umeå">Umeå</option>
       </select>
-      <p>{chosenCity}</p>
     </div>
   );
 };
