@@ -37,7 +37,7 @@ export async function getServerSideProps(){
 
 	const snapshots = await db
     .collection('posts')
-    .where("category", "==", "Konst & Hantverk")
+    .where("category", "==", "Hantverk & Konst")
     // .orderBy('date')
     // .startAt(today)
     .get()

@@ -102,13 +102,13 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
               onChange={handleFormData("category")}
             >
               <option label="Välj kategori"></option>
-              <option value="Konsert, Quiz & Uteliv">
-                Konsert, Quiz & Uteliv
+              <option value="Nöje & Uteliv">
+              Nöje & Uteliv
               </option>
               <option value="Mat & Dryck">Mat & Dryck</option>
               <option value="Kultur & Livsstil">Kultur & Livsstil</option>
               <option value="Sport & Fritid">Sport & Fritid</option>
-              <option value="Konst & Hantverk">Konst & hantverk</option>
+              <option value="Hantverk & Konst">Hantverk & Konst</option>
             </select>
             {Object.keys(categoryErr).map((key) => {
               return (

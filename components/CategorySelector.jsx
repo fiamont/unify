@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/dist/client/image';
+import Image from 'next/image';
 
 function CategorySelector(category) {
     let lightColor = "";
@@ -8,12 +8,12 @@ function CategorySelector(category) {
     let showUpBtn = "";
     let eventImage = "";
 
-    if(category == "Konsert, Quiz & Uteliv") {
+    if(category == "Nöje & Uteliv") {
         lightColor= "#DACAEF";
         darkColor = "#C2A7E4";
         categoryBox = "#DACAEF";
         showUpBtn = "#C2A7E4";
-        eventImage = "/konsertquizuteliv.png"
+        eventImage = "/nojeuteliv.png"
     }
     else if(category == "Kultur & Livsstil"){
         lightColor = "#F7CDC9";
@@ -36,12 +36,12 @@ function CategorySelector(category) {
         showUpBtn = "#C3D5A5";
         eventImage = "/matdryck.png"
     }
-    else if(category == "Konst & Hantverk"){
+    else if(category == "Hantverk & Konst"){
         lightColor = "#FFE9C1";
         darkColor = "#FFDB97";
         categoryBox = "#FFE9C1";
         showUpBtn = "#FFDB97";
-        eventImage = "/konsthantverk.png"
+        eventImage = "/hantverkkonst.png"
     }
     else if(category == "Alla kategorier"){
         darkColor = "#D4BBA1";

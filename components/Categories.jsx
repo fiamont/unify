@@ -15,7 +15,7 @@ function Categories() {
     <div className={style.categoriesbox}>
         <p className={style.title}>KATEGORIER</p>
         <div className={style.gridBox}>
-            <div className={style.category} style={{background: CategorySelector("Konsert, Quiz & Uteliv").darkColor}}>
+            <div className={style.category} style={{background: CategorySelector("Nöje & Uteliv").darkColor}}>
               <Link href='/konsertquizuteliv' passHref > 
                 <a><NojeUtelivIcon/></a>
               </Link>
@@ -35,7 +35,7 @@ function Categories() {
                 <a> <KulturLivsstilIcon/> </a>
               </Link>
             </div>
-            <div className={style.category} style={{background: CategorySelector("Konst & Hantverk").darkColor}}>
+            <div className={style.category} style={{background: CategorySelector("Hantverk & Konst").darkColor}}>
               <Link href='/konsthantverk' passHref >
                 <a> <KonstHantverkIcon/> </a>
               </Link>

@@ -67,11 +67,11 @@ export default function Navbar() {
             />
           </li>
           <li id="konsertquizuteliv">
-            <Link href="/konsertquizuteliv" passHref>
+            <Link href="/nojeuteliv" passHref>
               <div
                 className={style.item}
                 style={{
-                  background: CategorySelector("Konsert, Quiz & Uteliv")
+                  background: CategorySelector("Nöje & Uteliv")
                     .darkColor,
                 }}
               >
@@ -116,11 +116,11 @@ export default function Navbar() {
             </Link>
           </li>
           <li id="konsthantverk">
-            <Link href="/konsthantverk" passHref>
+            <Link href="/hantverkkonst" passHref>
               <div
                 className={style.item}
                 style={{
-                  background: CategorySelector("Konst & Hantverk").darkColor,
+                  background: CategorySelector("Hantverk & Konst").darkColor,
                 }}
               >
                 Hantverk & Konst
