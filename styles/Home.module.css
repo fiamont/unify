@@ -95,6 +95,11 @@ margin: 1rem;
     line-height: 34px;
 }
 
+.arrowBtn{
+    border: none;
+    background: transparent;
+}
+
 @media screen and (min-width: 960px){
     .main, .mainHome{
         padding-top: 5.5rem;

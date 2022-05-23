@@ -1,15 +1,18 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
+import React from "react";
+import Link from "next/link";
+import Arrow from "./Icons/arrow";
+import style from "../styles/Home.module.css";
 
 function BackToHomepage() {
   return (
     <div>
-      <Link href='/' passHref >
-        <Image src="/ArrowLeft.png" alt='ArrowLeft' width={28} height={28}/>
+      <Link href="/" passHref>
+        <button className={style.arrowBtn}>
+          <Arrow />
+        </button>
       </Link>
     </div>
-  )
+  );
 }
 
-export default BackToHomepage
+export default BackToHomepage;
