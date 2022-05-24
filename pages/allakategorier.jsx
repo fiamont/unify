@@ -5,6 +5,7 @@ import BackToTop from "../components/BackToTopButton";
 import Image from "next/image";
 import React from "react";
 import { db } from "../utils/firebase";
+import Eventbutton from "../components/Eventbutton";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ChooseCity from "../components/ChooseCity";
@@ -19,13 +20,15 @@ export default function AllaKategorier({ postsInitial }) {
         setPosts(data);
       });
   }, [chosenCity]);
-
   return (
     <div className={styles.container}>
       <Head>
         <title>Unify - Alla kategorier</title>
       </Head>
       <main className={styles.main}>
+        <div className={styles.eventBtn}>
+          <Eventbutton />
+        </div>
         <div className={styles.titleDiv}>
           <h1 className={styles.rubrik2}>Alla kategorier</h1>
           <Image
@@ -46,8 +49,33 @@ export default function AllaKategorier({ postsInitial }) {
 
 //Server side code
 export async function getServerSideProps() {
-  const valdstad = "Stockholm";
   const snapshot = await db.collection("posts").get();
+
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth() + 1;
+  let today = "";
+  if (currentMonth < 10) {
+    today =
+      currentDate.getFullYear() +
+      "-0" +
+      currentMonth +
+      "-" +
+      currentDate.getDate();
+  } else {
+    today =
+      currentDate.getFullYear() +
+      "-" +
+      currentMonth +
+      "-" +
+      currentDate.getDate();
+  }
+
+  const snapshot = await db
+    .collection("posts")
+    .orderBy("date")
+    .where("date", ">=", today)
+    .get();
+
 
   const posts = snapshot.docs.map((doc) => {
     return {
@@ -59,6 +87,7 @@ export async function getServerSideProps() {
   return {
     props: {
       postsInitial: JSON.parse(JSON.stringify(posts)),
+
     },
   };
 }
