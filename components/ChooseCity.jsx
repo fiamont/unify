@@ -1,16 +1,19 @@
 import React from "react";
 import Location from "./Icons/Location";
 import { useState } from "react";
+import style from "../styles/ChooseCity.module.css";
 
 const ChooseCity = ({ chosenCity, setChosenCity }) => {
   return (
-    <div>
+    <div className={style.chooseCity}>
+      <Location/>
       <select
+        className={style.city}
         name="city"
         value={chosenCity}
         onChange={(e) => setChosenCity(e.target.value)}
       >
-        <option>Välj stad</option>
+        <option> Välj stad</option>
         <option value="Stockholm">Stockholm</option>
         <option value="Göteborg">Göteborg</option>
         <option value="Malmö">Malmö</option>

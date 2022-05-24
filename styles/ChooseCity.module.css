@@ -1,0 +1,23 @@
+.chooseCity {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border:1px solid #4f4f4f;
+  width: 160px;
+  height: 38px;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.city {
+  width: 160px;
+  height: 28px;
+  background-color: #fff;
+  color: #4f4f4f;
+  font-family: var(--default-font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  border: none;
+}
