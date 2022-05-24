@@ -49,8 +49,6 @@ export default function AllaKategorier({ postsInitial }) {
 
 //Server side code
 export async function getServerSideProps() {
-  const snapshot = await db.collection("posts").get();
-
   const currentDate = new Date();
   const currentMonth = currentDate.getMonth() + 1;
   let today = "";
@@ -76,7 +74,6 @@ export async function getServerSideProps() {
     .where("date", ">=", today)
     .get();
 
-
   const posts = snapshot.docs.map((doc) => {
     return {
       id: doc.id,
@@ -87,7 +84,6 @@ export async function getServerSideProps() {
   return {
     props: {
       postsInitial: JSON.parse(JSON.stringify(posts)),
-
     },
   };
 }
