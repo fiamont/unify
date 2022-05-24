@@ -1,10 +1,28 @@
 import { db } from '../../utils/firebase';
 
 export default async function handler(req, res) {
+    const currentDate = new Date();
+  const currentMonth = currentDate.getMonth() + 1;
+  let today = "";
+  if (currentMonth < 10) {
+    today =
+      currentDate.getFullYear() +
+      "-0" +
+      currentMonth +
+      "-" +
+      currentDate.getDate();
+  } else {
+    today =
+      currentDate.getFullYear() +
+      "-" +
+      currentMonth +
+      "-" +
+      currentDate.getDate();
+  }
     switch(req.method) {
         case 'GET': 
             const { city } = req.query
-            let query = db.collection('posts')
+            let query = db.collection('posts').orderBy("date").where("date", ">=", today)
 
             if(city && city != "Välj stad") {
             query = query.where('city', '==', city)
