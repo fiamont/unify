@@ -1,14 +1,24 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Eventbutton from "../components/Eventbutton";
 import Event from "../components/Event";
 import BackToTop from "../components/BackToTopButton";
-
+import { useState, useEffect } from "react";
+import axios from "axios";
+import ChooseCity from "../components/ChooseCity";
 import React from "react";
 import { db } from "../utils/firebase";
 
-export default function HanderIdag({ posts }) {
+export default function HanderIdag({ postsInitial }) {
+  let [posts, setPosts] = useState(postsInitial);
+  let [chosenCity, setChosenCity] = useState("");
+  useEffect(() => {
+    axios
+      .get("/api/posts", { params: { city: chosenCity } })
+      .then(({ data }) => {
+        setPosts(data);
+      });
+  }, [chosenCity]);
   return (
     <div className={styles.container}>
       <Head>
@@ -18,6 +28,7 @@ export default function HanderIdag({ posts }) {
       <main className={styles.main}>
         <h1 className={styles.rubrik}>Händer idag</h1>
         <BackToTop />
+        <ChooseCity chosenCity={chosenCity} setChosenCity={setChosenCity} />
         <Event events={posts} />
       </main>
     </div>
@@ -59,7 +70,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      posts: JSON.parse(JSON.stringify(posts)),
+      postsInitial: JSON.parse(JSON.stringify(posts)),
     },
   };
 }

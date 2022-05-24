@@ -44,7 +44,7 @@ export async function getServerSideProps(){
 	const snapshot = await db
         .collection('posts')
         .orderBy('date')
-        .startAt(today)
+        .where("date", ">=", today)
         .get()
 
   const allposts = snapshot.docs.map((doc) => {
