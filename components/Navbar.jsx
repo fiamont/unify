@@ -67,12 +67,11 @@ export default function Navbar() {
             />
           </li>
           <li id="konsertquizuteliv">
-            <Link href="/nojeuteliv" passHref>
+            <Link href={`/category/${"noje-uteliv"}`} passHref>
               <div
                 className={style.item}
                 style={{
-                  background: CategorySelector("Nöje & Uteliv")
-                    .darkColor,
+                  background: CategorySelector("Nöje & Uteliv").darkColor,
                 }}
               >
                 Nöje & Uteliv
@@ -80,7 +79,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li id="sportfritid">
-            <Link href="/sportfritid" passHref>
+            <Link href={`/category/${"sport-fritid"}`} passHref>
               <div
                 className={style.item}
                 style={{
@@ -92,7 +91,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li id="matdryck">
-            <Link href="/matdryck" passHref>
+            <Link href={`/category/${"mat-dryck"}`} passHref>
               <div
                 className={style.item}
                 style={{
@@ -104,7 +103,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li id="kulturlivsstil">
-            <Link href="/kulturlivsstil" passHref>
+            <Link href={`/category/${"kultur-livsstil"}`} passHref>
               <div
                 className={style.item}
                 style={{
@@ -116,7 +115,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li id="konsthantverk">
-            <Link href="/hantverkkonst" passHref>
+            <Link href={`/category/${"hantverk-konst"}`} passHref>
               <div
                 className={style.item}
                 style={{
