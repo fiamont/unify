@@ -25,7 +25,6 @@ const ShowUpBtn = ({color}) => {
             style={{ backgroundColor: colors, color: fontColors}}
             onClick={toggle}
             className={style.toggleBtn} 
-            /* className={style.toggleBtn + (state ? style.toggleClose : '')} */
             >
             {state ? <div className={style.btnText}><Check/> Hänger med</div> : <div className={style.btnText}><Plus/> Häng med</div>}
             

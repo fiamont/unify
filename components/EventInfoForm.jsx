@@ -5,12 +5,7 @@ import Payments from "./Icons/payments";
 import Participants from "./Icons/Participants";
 
 function EventInfoForm({ nextStep, handleFormData, values }) {
-  const [error, setError] = useState(false);
-
-  //PopUp
   const [showModalCancel, setShowModalCancel] = useState(false);
-
-  // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
 
@@ -20,7 +15,6 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
     }
   };
 
-  //VALIDATION
   const [categoryErr, setCategoryErr] = useState({});
   const [eventNameErr, setEventNameErr] = useState({});
   const [dateErr, setDateErr] = useState({});

@@ -45,7 +45,7 @@ export default async function handler(req, res, context) {
             break
 
         case 'POST':
-            const body = req.body // {title: "", content: "", preview:""}
+            const body = req.body
 
             const ref = await db.collection('posts').add(body)
             const doc = await ref.get()

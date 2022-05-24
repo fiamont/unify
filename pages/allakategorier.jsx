@@ -47,7 +47,6 @@ export default function AllaKategorier({ postsInitial }) {
   );
 }
 
-//Server side code
 export async function getServerSideProps() {
   const currentDate = new Date();
   const currentMonth = currentDate.getMonth() + 1;

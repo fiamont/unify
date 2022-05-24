@@ -16,7 +16,6 @@
   line-height: 7px;
   cursor: pointer;
   color: #030303;
-  
 }
 
 .eventbtn:hover {
@@ -28,14 +27,13 @@
   display: flex;
   justify-content: flex-end;
   padding-right: 10px;
-
 }
 
 @media screen and (min-width: 960px) {
-  .button{
-      flex-direction: row;
-      position: absolute;
-      top: 3rem;
-      right: 4rem;
+  .button {
+    flex-direction: row;
+    position: absolute;
+    top: 3rem;
+    right: 4rem;
   }
 }

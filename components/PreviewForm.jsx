@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import style from "./../styles/MultiStepForm.module.css";
 import axios from "axios";
-import { useRouter } from "next/router";
 import CategorySelector from "../components/CategorySelector";
 import Image from "next/image";
 import Arrow from "./Icons/arrow";
@@ -13,17 +12,8 @@ import RightArrow from "./Icons/RightArrow";
 
 function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
   const [isLoading, setIsLoading] = useState(false);
-  const [errors, setErrors] = useState([]); //Array of string
-  const router = useRouter();
-
-  const [show, setShow] = useState(false);
-  //PopUp
+  const [errors, setErrors] = useState([]);
   const [showModalCancel, setShowModalCancel] = useState(false);
-
-  //creating error state for validation
-  const [error, setError] = useState(false);
-
-  //PopUp
   const [showModal, setShowModal] = useState(false);
 
   const handleSubmit = (event) => {
@@ -34,16 +24,10 @@ function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
     const formData = new FormData(event.target);
     const body = Object.fromEntries(formData.entries());
 
-    // make an http requset
-    // request the endpoint that will create this new post
-    // POSTS /api/posts
-    // fetch('/api/posts', {method: 'POST'})
-
     setIsLoading(true);
     axios
       .post("/api/posts", body)
       .then((res) => {
-        const postId = res.data.id;
       })
       .catch((err) => {
         setErrors(err.response.data.errors);
@@ -59,7 +43,6 @@ function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
     setShowModalCancel(true);
   };
 
-  //destructuring the object from values
   const {
     eventName,
     date,
@@ -103,7 +86,6 @@ function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
             >
               <div className={style.imgWrapper}>
                 <Image
-                  className={style.eventimg}
                   src={CategorySelector(values.category).eventImage}
                   alt="eventbild"
                   width="500"

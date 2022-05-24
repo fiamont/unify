@@ -1,6 +1,3 @@
-import React from 'react'
-import Image from 'next/image';
-
 function CategorySelector(category) {
     let lightColor = "";
     let darkColor = "";

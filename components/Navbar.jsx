@@ -12,8 +12,6 @@ import Image from "next/image";
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [screenWidth, setScreenWidth] = useState();
-
-  //PopUp
   const [showModal, setShowModal] = useState(false);
 
   const toggleNav = () => {

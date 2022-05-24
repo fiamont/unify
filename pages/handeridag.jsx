@@ -1,10 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Eventbutton from "../components/Eventbutton";
 import Event from "../components/Event";
 import BackToTop from "../components/BackToTopButton";
-
 import React from "react";
 import { db } from "../utils/firebase";
 
@@ -24,7 +22,6 @@ export default function HanderIdag({ posts }) {
   );
 }
 
-//Server side code
 export async function getServerSideProps() {
   const currentDate = new Date();
   const currentMonth = currentDate.getMonth() + 1;

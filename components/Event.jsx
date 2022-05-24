@@ -13,15 +13,15 @@ const Event = ({events}) =>{
         
         <div className={style.container}>
             {events.map((events) =>(
-                <div key={events.id} className={style.eventbox} style={{background: CategorySelector(events.category).lightColor}}>{/* outerBorder */}
-                    <div className={style.innerBorder} style={{border:'13px solid ' + CategorySelector(events.category).darkColor}}> {/* innerBorder */}
+                <div key={events.id} className={style.eventbox} style={{background: CategorySelector(events.category).lightColor}}>
+                    <div className={style.innerBorder} style={{border:'13px solid ' + CategorySelector(events.category).darkColor}}>
                         <div className={style.imgWrapper}>
                             <Image src={CategorySelector(events.category).eventImage} alt='eventbild' width="500" height="333"/>
                         </div>
-                        <div className={style.categoryBox} style={{background: CategorySelector(events.category).categoryBox}}> {/* the small categoryBox */}
+                        <div className={style.categoryBox} style={{background: CategorySelector(events.category).categoryBox}}>
                             <p className={style.categoryText}>{events.category}</p>
                         </div>
-                        <div className={style.event}> {/* white box with event text */}
+                        <div className={style.event}>
                             <p className={style.title}>{events.eventName}</p>
                             <div className={style.info}>
                                 <Location/>

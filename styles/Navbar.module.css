@@ -1,214 +1,208 @@
 .navbar {
-    padding-left: 2%;
-    margin-top: -3rem;
-    margin-bottom: -1rem;
+  padding-left: 2%;
+  margin-top: -3rem;
+  margin-bottom: -1rem;
 }
 
 .buttons {
-    display: flex;
-    justify-content: space-between;
-    padding-right: 3%;
-    position: relative;
-    top: -1rem;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 3%;
+  position: relative;
+  top: -1rem;
 }
 
 .hamburger {
-    background: transparent;
-    position: relative;
-    left: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 44px;
-    height: 37px;
-    color: #000;
-    border: none;
-    cursor: pointer;
-    padding-bottom: 15px;
+  background: transparent;
+  position: relative;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 44px;
+  height: 37px;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  padding-bottom: 15px;
 }
 
 .hamburger .bar {
-    height: 3px;
-    width: 100%;
-    background-color: black;
-    border-radius: 10px;
-  }
+  height: 3px;
+  width: 100%;
+  background-color: black;
+  border-radius: 10px;
+}
 
 .hamburger .bar:visited {
-    display: none;
-
+  display: none;
 }
 
 .hamburger .bar1:visited {
-    display: none;
-
+  display: none;
 }
 
 .hamburger .bar1 {
-    height: 3px;
-    width: 50%;
-    background-color: black;
-    border-radius: 10px;
-    
+  height: 3px;
+  width: 50%;
+  background-color: black;
+  border-radius: 10px;
 }
 .navmenu {
-    margin: 0;
-    padding: 1.2rem 1rem;
-    list-style: none;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 27px;
+  margin: 0;
+  padding: 1.2rem 1rem;
+  list-style: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
 
-    background: #fff;
-    box-shadow: var(--button-box-shadow);
-    width: fit-content;
-    border-radius: 7px;
-    height: 500px;
-    overflow-y: scroll;
-    
-    position: absolute;
-    animation-name: slideNav;
-    animation-duration: 0.5s;
-    z-index: 999;
-    
+  background: #fff;
+  box-shadow: var(--button-box-shadow);
+  width: fit-content;
+  border-radius: 7px;
+  height: 500px;
+  overflow-y: scroll;
+
+  position: absolute;
+  animation-name: slideNav;
+  animation-duration: 0.5s;
+  z-index: 999;
 }
 
-@media screen and (min-height: 750px){
-    .navmenu {
-        height: 700px;
-        overflow: hidden;
-    }
+@media screen and (min-height: 750px) {
+  .navmenu {
+    height: 700px;
+    overflow: hidden;
+  }
 }
 
 @keyframes slideNav {
-    from {transform: translateX(-500px);}
-    to {transform: translateX(0px);}
+  from {
+    transform: translateX(-500px);
+  }
+  to {
+    transform: translateX(0px);
+  }
 }
 
-.item, .item2, .eventbutton{
-    font-size: 1.2rem;
-    color: var(--heading-color);
-    padding: 0.4em;
-    margin: 0.4em;
-    width: 263px;
-    height: 58px;
-    left: 16px;
-    top: 152px;
-    background-color: #fff;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+.item,
+.item2,
+.eventbutton {
+  font-size: 1.2rem;
+  color: var(--heading-color);
+  padding: 0.4em;
+  margin: 0.4em;
+  width: 263px;
+  height: 58px;
+  left: 16px;
+  top: 152px;
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
-.item2{
-    height: 40px;
+.item2 {
+  height: 40px;
 }
 
-.eventbutton{
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 3.5rem;
-    
+.eventbutton {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3.5rem;
 }
 
-
-
-.item:hover, .item2:hover {
-    background: rgb(165, 164, 164);
-    color: #fff;
+.item:hover,
+.item2:hover {
+  background: rgb(165, 164, 164);
+  color: #fff;
 }
 
 .icons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  position: absolute;
+  top: -0.5rem;
+  right: 1rem;
+}
+
+.hr {
+  position: absolute;
+  top: 8rem;
+  right: 4%;
+}
+
+.minaevent {
+  padding-top: 1.5rem;
+}
+
+.hbIcon {
+  width: 45px;
+}
+
+@media screen and (min-width: 960px) {
+  .hamburger {
+    display: none;
+  }
+  .navbar {
     display: flex;
-    flex-direction:row;
-    gap: 0.5rem;
-    position: absolute;
-    top: -0.5rem;
-    right: 1rem;
+    justify-content: center;
+    margin-top: 0;
+  }
+  .navmenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: auto;
+    overflow: hidden;
+    background: none;
+    box-shadow: none;
+    width: fit-content;
+    animation-name: none;
+  }
+  .item {
+    display: flex;
+    justify-content: center;
+    width: 132px;
+    height: 45px;
+    font-size: 18px;
+    margin: 0 10px;
+    padding: 0;
   }
 
- .hr{
-     position: absolute;
-     top: 8rem;
-    right: 4%;     
- }
+  .item2,
+  .eventbutton {
+    display: none;
+  }
 
- .minaevent{
-     padding-top: 1.5rem;
- }
+  .buttons {
+    justify-content: flex-end;
+  }
 
- .hbIcon {
-     width: 45px;
- }
-
-
-@media screen and (min-width: 960px){
-    .hamburger {
-        display: none;
-    }
-    .navbar{
-        display: flex;
-        justify-content: center;
-        margin-top: 0;
-    }
-    .navmenu {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        height: auto;
-        overflow: hidden;
-        background: none;
-        box-shadow: none;
-        width: fit-content;
-        animation-name: none;
-        
-
-    }
-    .item{
-        display: flex;
-        justify-content: center;
-        width: 132px;
-        height: 45px;
-        font-size: 18px;
-        margin: 0 10px;
-        padding:0;
-    }
-
-    .item2, .eventbutton {
-        display: none;
-    }
-
-    .buttons {
-        justify-content: flex-end;
-    }
-
-    .icons{
-        position: absolute;
-        top: -6rem;
-        right: -25rem;
-    }
-    .hr{
-        display: none;
-    }
-    .navbar{
-        padding-left: 0;
-    }
- 
-
+  .icons {
+    position: absolute;
+    top: -6rem;
+    right: -25rem;
+  }
+  .hr {
+    display: none;
+  }
+  .navbar {
+    padding-left: 0;
+  }
 }
 
 .showModal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.666);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.666);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
-  

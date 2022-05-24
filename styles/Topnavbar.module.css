@@ -1,4 +1,4 @@
-.topnavbar{
+.topnavbar {
   position: fixed;
   top: 0;
   width: 100%;
@@ -16,9 +16,8 @@
   align-items: center;
 }
 
-
-@media screen and (min-width: 960px){
-  .topnavbar{
+@media screen and (min-width: 960px) {
+  .topnavbar {
     position: relative;
     z-index: 0;
   }

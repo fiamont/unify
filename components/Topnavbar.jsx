@@ -9,8 +9,6 @@ function Topnavbar () {
             <SvgUnifyLogo className={style.unify}/>
             </div>
             <Navbar className={style.navbar}/>
-            {/* <hr className={style.hr}></hr> */}
-
         </header>
     )
 }

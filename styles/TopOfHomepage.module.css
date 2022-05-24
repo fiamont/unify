@@ -1,46 +1,46 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 1rem;
-    margin: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem;
+  margin: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 
-.textPart{
-    margin: 0;
-    padding: 0;
+.textPart {
+  margin: 0;
+  padding: 0;
 }
 
-.nummer{
-    margin: 0;
-    padding: 0;
-    padding-left: 0.5rem;
-    font-size: 50px;
+.nummer {
+  margin: 0;
+  padding: 0;
+  padding-left: 0.5rem;
+  font-size: 50px;
 }
 
-.title{
-    margin: 0;
-    padding: 0;
-    padding-bottom: 4rem;
-    font-size: 25px;
+.title {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 4rem;
+  font-size: 25px;
 }
 
-.greySquare{
-    background-color: #DBD4E4B0;
-    width: 130px;
-    height: 137px;
-    padding: 1rem;
+.greySquare {
+  background-color: #dbd4e4b0;
+  width: 130px;
+  height: 137px;
+  padding: 1rem;
 }
 
-.homepageImg{
-    width: 150%;
-    height: 120%;
+.homepageImg {
+  width: 150%;
+  height: 120%;
 }
 
-@media screen and (min-width: 660px){
-    .container{
-        gap: 8rem;
-    }
-    }
+@media screen and (min-width: 660px) {
+  .container {
+    gap: 8rem;
+  }
+}

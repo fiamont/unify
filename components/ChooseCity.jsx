@@ -1,6 +1,5 @@
 import React from "react";
 import Location from "./Icons/Location";
-import { useState } from "react";
 import style from "../styles/ChooseCity.module.css";
 
 const ChooseCity = ({ chosenCity, setChosenCity }) => {

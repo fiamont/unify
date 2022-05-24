@@ -4,16 +4,9 @@ import Arrow from './Icons/arrow';
 import Link from 'next/link';
 
 function DescriptionInfoForm({ nextStep, handleFormData, prevStep, values }) {
-  //creating error state for validation
-  const [error, setError] = useState(false);
-
-  //PopUp 
   const [showModalCancel, setShowModalCancel] = useState(false);
+  const [descriptionErr, setDescriptionErr] = useState({});
 
-   //VALIDATION
-   const [descriptionErr, setDescriptionErr] = useState({});
-
-  // after form submit validating the form data using validator
   const submitFormData = (e) => {
     e.preventDefault();
 
@@ -61,7 +54,6 @@ function DescriptionInfoForm({ nextStep, handleFormData, prevStep, values }) {
           <div className={style.descriptionDiv}>
             <textarea 
             className={style.descriptionArea}
-            style={{ border: error ? "2px solid red" : "" }}
             name="description"
             id="exampleFormControlTextarea1"
             rows="5"
