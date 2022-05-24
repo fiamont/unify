@@ -6,7 +6,7 @@ export default async function handler(req, res) {
             const { city } = req.query
             let query = db.collection('posts')
 
-            if(city) {
+            if(city && city != "Välj stad") {
             query = query.where('city', '==', city)
             }
             const snapshots = await query.get()

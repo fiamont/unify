@@ -12,12 +12,12 @@ import ChooseCity from "../components/ChooseCity";
 export default function AllaKategorier({ postsInitial }) {
   let [posts, setPosts] = useState(postsInitial);
   let [chosenCity, setChosenCity] = useState("");
-
   useEffect(() => {
-    axios.get("/api/posts").then(({ data }) => {
-      setPosts(data);
-      console.log(data);
-    });
+    axios
+      .get("/api/posts", { params: { city: chosenCity } })
+      .then(({ data }) => {
+        setPosts(data);
+      });
   }, [chosenCity]);
 
   return (

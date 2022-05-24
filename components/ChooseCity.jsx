@@ -11,7 +11,6 @@ const ChooseCity = ({ chosenCity, setChosenCity }) => {
         onChange={(e) => setChosenCity(e.target.value)}
       >
         <option>Välj stad</option>
-        <option value="Alla">Alla städer</option>
         <option value="Stockholm">Stockholm</option>
         <option value="Göteborg">Göteborg</option>
         <option value="Malmö">Malmö</option>
