@@ -20,6 +20,10 @@ export default function KonstHantverk({
   let [posts, setPosts] = useState(postsInitial);
   let [chosenCity, setChosenCity] = useState("");
   useEffect(() => {
+    setChosenCity("Välj stad");
+  }, [categoryTitle]);
+
+  useEffect(() => {
     axios
       .get("/api/posts", {
         params: { city: chosenCity, category: categoryTitle },
@@ -27,7 +31,7 @@ export default function KonstHantverk({
       .then(({ data }) => {
         setPosts(data);
       });
-  }, [chosenCity]);
+  }, [chosenCity, categoryTitle]);
   return (
     <div className={styles.container}>
       <Head>
