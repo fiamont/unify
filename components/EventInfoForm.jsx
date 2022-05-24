@@ -64,7 +64,7 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
     }
 
     if (values.location.trim().length < 2) {
-      locationErr.dateShort = "Adressen måste innehålla minst 2 bokstäver";
+      locationErr.dateShort = "Platsen måste innehålla minst 2 bokstäver";
       isValid = false;
     }
 
@@ -91,7 +91,7 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
               Avbryt
             </button>
           </div>
-          <h1>EvenemangInfo</h1>
+          <h1>Evenemangsinfo</h1>
         </div>
         <form className={style.formTag} onSubmit={submitFormData}>
           <div className={style.categoryDiv}>
@@ -281,7 +281,7 @@ function EventInfoForm({ nextStep, handleFormData, values }) {
                 <h2>AVSLUTA UTAN ATT SLUTFÖRA?</h2>
                 <p>
                   Om du lämnar nu skapas inte ditt <br /> evenemang och det du
-                  hitills har gjort <br /> sparas inte.
+                  hittills har gjort <br /> sparas inte.
                 </p>
                 <Link href="/" passHref>
                   <button className={style.cancelBtnPopup}>AVSLUTA</button>

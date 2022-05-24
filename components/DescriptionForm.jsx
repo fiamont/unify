@@ -91,7 +91,7 @@ function DescriptionInfoForm({ nextStep, handleFormData, prevStep, values }) {
               <div className={style.showModalInner}>
                 <div className={style.cancelContainer}>
                     <h2>AVSLUTA UTAN ATT SLUTFÖRA?</h2>
-                    <p>Om du lämnar nu skapas inte ditt <br/> evenemang och det du hitills har gjort <br/> sparas inte.</p>
+                    <p>Om du lämnar nu skapas inte ditt <br/> evenemang och det du hittills har gjort <br/> sparas inte.</p>
                     <Link href="/" passHref><button className={style.cancelBtnPopup}>AVSLUTA</button></Link>
                     <div className={style.solidLinePopUp} />
                     <button className={style.continueEditBtnPopup} onClick={() => setShowModalCancel(false)}>FORTSÄTT REDIGERA</button>

@@ -152,7 +152,7 @@ function PreviewInfoForm({ prevStep, prevTwoStep, values }) {
             <div className={style.previewEventInfoIcon}>
               <EventInfo />
             </div>
-            <p>EVENEMANGINFO</p>
+            <p>EVENEMANGSINFO</p>
           </div>
           <button className={style.backBtn} variant="primary">
             <RightArrow />
