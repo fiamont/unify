@@ -7,13 +7,31 @@ import Image from "next/image";
 import React from "react";
 import { db } from "../../utils/firebase";
 import Eventbutton from "../../components/Eventbutton";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import ChooseCity from "../../components/ChooseCity";
 
 export default function KonstHantverk({
-  events,
+  postsInitial,
   categoryTitle,
   imagePath,
   imageAlt,
 }) {
+  let [posts, setPosts] = useState(postsInitial);
+  let [chosenCity, setChosenCity] = useState("");
+  useEffect(() => {
+    setChosenCity("Välj stad");
+  }, [categoryTitle]);
+
+  useEffect(() => {
+    axios
+      .get("/api/posts", {
+        params: { city: chosenCity, category: categoryTitle },
+      })
+      .then(({ data }) => {
+        setPosts(data);
+      });
+  }, [chosenCity, categoryTitle]);
   return (
     <div className={styles.container}>
       <Head>
@@ -34,7 +52,8 @@ export default function KonstHantverk({
           />
         </div>
         <BackToTop />
-        <Event events={events} eventsKey={events.id} />
+        <ChooseCity chosenCity={chosenCity} setChosenCity={setChosenCity} />
+        <Event events={posts} />
       </main>
     </div>
   );
@@ -94,7 +113,7 @@ export async function getServerSideProps(context) {
     .where("date", ">=", today)
     .get();
 
-  const events = snapshots.docs.map((doc) => {
+  const posts = snapshots.docs.map((doc) => {
     return {
       id: doc.id,
       ...doc.data(),
@@ -103,7 +122,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      events: JSON.parse(JSON.stringify(events)),
+      postsInitial: JSON.parse(JSON.stringify(posts)),
       categoryTitle: category,
       imagePath: imagePath,
       imageAlt: imageAlt,

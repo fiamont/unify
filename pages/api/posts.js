@@ -1,6 +1,6 @@
 import { db } from '../../utils/firebase';
 
-export default async function handler(req, res) {
+export default async function handler(req, res, context) {
     const currentDate = new Date();
   const currentMonth = currentDate.getMonth() + 1;
   let today = "";
@@ -21,12 +21,22 @@ export default async function handler(req, res) {
   }
     switch(req.method) {
         case 'GET': 
-            const { city } = req.query
+            let { city, category } = req.query
             let query = db.collection('posts').orderBy("date").where("date", ">=", today)
 
             if(city && city != "Välj stad") {
             query = query.where('city', '==', city)
             }
+
+            if(category) {
+                    if(city && city != "Välj stad"){
+                        query = query.where('city', '==', city).where('category', '==', category)
+                    } else{
+                        query = query.where('category', '==', category)
+
+                    }
+                }
+
             const snapshots = await query.get()
             const posts = snapshots.docs.map(doc => ({id:doc.id, ...doc.data()}))
 
