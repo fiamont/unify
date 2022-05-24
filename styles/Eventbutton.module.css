@@ -31,9 +31,9 @@
 
 @media screen and (min-width: 960px) {
   .button {
-    flex-direction: row;
+    /* flex-direction: row;
     position: absolute;
     top: 3rem;
-    right: 4rem;
+    right: 4rem; */
   }
 }

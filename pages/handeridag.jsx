@@ -12,7 +12,9 @@ export default function HanderIdag({ posts }) {
       <Head>
         <title>Unify - Händer idag</title>
       </Head>
-      <Eventbutton />
+      <div className={styles.eventBtn}>
+        <Eventbutton />
+      </div>
       <main className={styles.main}>
         <h1 className={styles.rubrik}>Händer idag</h1>
         <BackToTop />

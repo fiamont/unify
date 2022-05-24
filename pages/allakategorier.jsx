@@ -5,7 +5,6 @@ import BackToTop from "../components/BackToTopButton";
 import Image from "next/image";
 import React from "react";
 import { db } from "../utils/firebase";
-import Eventbutton from "../components/Eventbutton";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ChooseCity from "../components/ChooseCity";
@@ -26,9 +25,6 @@ export default function AllaKategorier({ postsInitial }) {
         <title>Unify - Alla kategorier</title>
       </Head>
       <main className={styles.main}>
-        <div className={styles.eventBtn}>
-          <Eventbutton />
-        </div>
         <div className={styles.titleDiv}>
           <h1 className={styles.rubrik2}>Alla kategorier</h1>
           <Image

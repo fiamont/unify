@@ -48,6 +48,9 @@ export default function Navbar() {
         </button>
         <div className={style.icons}>
           <ProfileIcon />
+          <div className={style.eventBtn}>
+            <Eventbutton />
+          </div>
         </div>
       </div>
       <hr className={style.hr}></hr>

@@ -142,6 +142,10 @@
   width: 45px;
 }
 
+.eventBtn{
+  display: none;
+}
+
 @media screen and (min-width: 960px) {
   .hamburger {
     display: none;
@@ -161,6 +165,7 @@
     box-shadow: none;
     width: fit-content;
     animation-name: none;
+
   }
   .item {
     display: flex;
@@ -185,6 +190,10 @@
     position: absolute;
     top: -6rem;
     right: -25rem;
+
+  }
+  .eventBtn{
+    display: block;
   }
   .hr {
     display: none;

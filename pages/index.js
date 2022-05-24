@@ -4,7 +4,7 @@ import BackToTop from "../components/BackToTopButton";
 import TrendingEvents from "../components/TrendingEvents";
 import Categories from "../components/Categories";
 import TopOfHomepage from "../components/TopOfHomepage";
-import EventButton from "../components/Eventbutton";
+import Eventbutton from "../components/Eventbutton";
 import React from "react";
 import { db } from "../utils/firebase";
 
@@ -15,7 +15,9 @@ export default function Home({ allposts, trendingposts }) {
         <title>Unify</title>
       </Head>
       <main className={styles.mainHome}>
-        <EventButton />
+      <div className={styles.eventBtn}>
+        <Eventbutton />
+      </div>
         <TopOfHomepage events={allposts} />
         <BackToTop />
 
