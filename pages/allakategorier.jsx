@@ -6,8 +6,20 @@ import Image from "next/image";
 import React from "react";
 import { db } from "../utils/firebase";
 import Eventbutton from "../components/Eventbutton";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import ChooseCity from "../components/ChooseCity";
 
-export default function AllaKategorier({ posts }) {
+export default function AllaKategorier({ postsInitial }) {
+  let [posts, setPosts] = useState(postsInitial);
+  let [chosenCity, setChosenCity] = useState("");
+  useEffect(() => {
+    axios
+      .get("/api/posts", { params: { city: chosenCity } })
+      .then(({ data }) => {
+        setPosts(data);
+      });
+  }, [chosenCity]);
   return (
     <div className={styles.container}>
       <Head>
@@ -28,6 +40,7 @@ export default function AllaKategorier({ posts }) {
           />
         </div>
         <BackToTop />
+        <ChooseCity chosenCity={chosenCity} setChosenCity={setChosenCity} />
         <Event events={posts} />
       </main>
     </div>
@@ -70,7 +83,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      posts: JSON.parse(JSON.stringify(posts)),
+      postsInitial: JSON.parse(JSON.stringify(posts)),
     },
   };
 }
